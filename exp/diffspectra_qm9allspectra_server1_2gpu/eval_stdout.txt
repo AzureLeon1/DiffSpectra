@@ -1,2 +1,0 @@
-INFO - run_lib.py - 2025-05-27 16:52:11,763 - model size: 151.2MB
-INFO - run_lib.py - 2025-05-27 16:52:11,773 - loading training mols
