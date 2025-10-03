@@ -2,7 +2,7 @@
 
 This is the code for the Paper: [DiffSpectra: Molecular Structure Elucidation from Spectra using Diffusion Models](https://arxiv.org/abs/2507.06853).
 
-<img src="assets/1_overview.pdf" alt="model" style="zoom: 45%;" />
+<img src="assets/1_overview.png" alt="model" style="zoom: 15%;" />
 
 ## Model Description
 **DiffSpectra** is a generative framework for **molecular structure elucidation from multi-modal spectral data**. Unlike retrieval-based approaches that rely on finite molecular libraries or SMILES-based autoregressive models that often ignore 3D geometry, DiffSpectra formulates structure elucidation as a **conditional diffusion process**.  
@@ -14,9 +14,9 @@ The framework integrates two core components:
 
 Through spectrum-conditioned diffusion modeling, DiffSpectra unifies multi-modal reasoning with 2D/3D generative modeling. Extensive experiments demonstrate that DiffSpectra achieves **40.76% top-1 accuracy** and **99.49% top-10 accuracy** in recovering exact molecular structures.  
 
-<img src="assets/3_performance.pdf" alt="model" style="zoom: 50%;" />
+<img src="assets/3_performance.png" alt="model" style="zoom: 15%;" />
 
-<img src="assets/2_visualization.pdf" alt="model" style="zoom: 55%;" />
+<img src="assets/2_visualization.png" alt="model" style="zoom: 15%;" />
 
 To our knowledge, DiffSpectra is the **first framework** that unifies multi-modal spectral reasoning and joint 2D/3D generative modeling for *de novo* molecular structure elucidation.
 
