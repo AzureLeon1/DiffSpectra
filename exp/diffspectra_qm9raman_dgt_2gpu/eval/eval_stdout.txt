@@ -1,0 +1,97 @@
+INFO - run_lib.py - 2025-06-09 11:12:24,664 - model size: 125.0MB
+INFO - run_lib.py - 2025-06-09 11:12:24,677 - loading training mols
+INFO - run_lib.py - 2025-06-09 11:12:44,797 - loading test mols
+INFO - run_lib.py - 2025-06-09 11:12:50,359 - build EDM metric
+INFO - run_lib.py - 2025-06-09 11:12:55,783 - build EDM 2D metric
+INFO - run_lib.py - 2025-06-09 11:13:00,604 - build mose metric
+INFO - run_lib.py - 2025-06-09 11:13:15,699 - build sub geometry metric
+INFO - run_lib.py - 2025-06-09 11:13:15,785 - load checkpoint: exp/diffspectra_qm9raman_dgt_2gpu/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-06-09 11:13:16,426 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-06-09 12:54:52,950 - Sampling accomplished
+INFO - run_lib.py - 2025-06-09 12:56:53,000 - Number of molecules: 10000
+INFO - run_lib.py - 2025-06-09 12:56:53,000 - Metric-3D || atom stability: 0.9904, mol stability: 0.9083, validity: 0.9686, complete: 0.9631,
+INFO - run_lib.py - 2025-06-09 12:57:54,229 - Metric-3D || FCD: 0.9345
+INFO - run_lib.py - 2025-06-09 12:58:13,521 - Metric-2D || atom stability: 0.9983, mol stability: 0.9771, validity: 0.9797, complete: 0.9796, unique & valid: 0.9582, unique & valid & novelty: 0.9287
+INFO - run_lib.py - 2025-06-09 12:59:17,929 - Metric-2D || FCD: 0.0961, SNN: 0.5246, Frag: 0.9912, Scaf: 0.9437, IntDiv: 0.9193
+INFO - run_lib.py - 2025-06-09 13:07:09,448 - Metric-Align || Bond Length MMD: 0.1724, Bond Angle MMD: 0.0076, Dihedral Angle MMD: 0.000206
+INFO - run_lib.py - 2025-06-09 13:07:09,450 - C1H: 0.0596 C1C: 0.0012 C1O: 0.0007 N1C: 0.0032 N1H: 0.3001 C2O: 0.0864 O1H: 0.9037 C2C: 0.0240 
+INFO - run_lib.py - 2025-06-09 13:07:09,450 - C1C-C1H: 0.0158 C1C-C1C: 0.0036 C1C-C1O: 0.0005 C1C-C1N: 0.0011 C1N-N1C: 0.0142 C1O-O1C: 0.0053 O1C-C1H: 0.0186 C2C-C1C: 0.0014 
+INFO - run_lib.py - 2025-06-09 13:07:09,450 - H1C-C1C-C1C: 0.0001 C1C-C1C-C1C: 0.0000 H1C-C1C-C1H: 0.0006 H1C-C1C-C1O: 0.0001 C1C-C1C-C1O: 0.0005 C1N-N1C-C1C: 0.0001 H1C-C1N-N1C: 0.0001 H1C-C1C-C1N: 0.0002 
+INFO - run_lib.py - 2025-06-09 13:07:09,450 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-06-09 13:07:09,450 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-06-09 13:07:11,941 - 3D分子对统计 - 输入: 10000, 有效: 9556, 跳过: 444
+INFO - run_lib.py - 2025-06-09 13:22:40,015 - 3D similarity metrics saved to: exp/diffspectra_qm9raman_dgt_2gpu/eval/similarity_metrics_3d_ckpt_40.csv
+INFO - run_lib.py - 2025-06-09 13:22:40,018 - 3D 精确匹配率: 0.1015
+INFO - run_lib.py - 2025-06-09 13:22:40,018 - 3D Tanimoto相似度(平均): 0.6008
+INFO - run_lib.py - 2025-06-09 13:22:40,018 - 3D Tanimoto(MACCS)相似度(平均): 0.8355
+INFO - run_lib.py - 2025-06-09 13:22:40,019 - 3D Fraggle相似度(平均): 0.8887
+INFO - run_lib.py - 2025-06-09 13:22:40,019 - 3D 余弦相似度(平均): 0.6986
+INFO - run_lib.py - 2025-06-09 13:22:40,019 - 3D 近似匹配率(Tanimoto≥0.675): 0.3874
+INFO - run_lib.py - 2025-06-09 13:22:40,020 - 3D 有效匹配率(Tanimoto≥0.4): 0.6061
+INFO - run_lib.py - 2025-06-09 13:22:40,020 - 3D 官能团相似度(平均): 0.8845
+INFO - run_lib.py - 2025-06-09 13:22:40,020 - Successfully computed 3D metrics for 9556 molecule pairs
+INFO - run_lib.py - 2025-06-09 13:22:40,024 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-06-09 13:22:41,971 - 2D分子对统计 - 输入: 10000, 有效: 9724, 跳过: 276
+INFO - run_lib.py - 2025-06-09 13:33:55,782 - 2D similarity metrics saved to: exp/diffspectra_qm9raman_dgt_2gpu/eval/similarity_metrics_2d_ckpt_40.csv
+INFO - run_lib.py - 2025-06-09 13:33:55,784 - 2D 精确匹配率: 0.1251
+INFO - run_lib.py - 2025-06-09 13:33:55,784 - 2D Tanimoto相似度(平均): 0.6691
+INFO - run_lib.py - 2025-06-09 13:33:55,784 - 2D Tanimoto(MACCS)相似度(平均): 0.8601
+INFO - run_lib.py - 2025-06-09 13:33:55,785 - 2D Fraggle相似度(平均): 0.9308
+INFO - run_lib.py - 2025-06-09 13:33:55,785 - 2D 余弦相似度(平均): 0.7533
+INFO - run_lib.py - 2025-06-09 13:33:55,785 - 2D 近似匹配率(Tanimoto≥0.675): 0.4802
+INFO - run_lib.py - 2025-06-09 13:33:55,786 - 2D 有效匹配率(Tanimoto≥0.4): 0.6899
+INFO - run_lib.py - 2025-06-09 13:33:55,786 - 2D 官能团相似度(平均): 0.9279
+INFO - run_lib.py - 2025-06-09 13:33:55,786 - Successfully computed 2D metrics for 9724 molecule pairs
+INFO - run_lib.py - 2025-06-09 13:33:56,784 - Molecules saved for analysis in: exp/diffspectra_qm9raman_dgt_2gpu/eval/molecules_ckpt_40
+
+
+
+3D 相似度分布：                                            
+Tanimoto相似度分布:
+相似度 0-0.2: 512个 (5.36%)
+相似度 0.2-0.4: 3252个 (34.03%)
+相似度 0.4-0.6: 2046个 (21.41%)
+相似度 0.6-0.8: 75个 (0.78%)
+相似度 0.8-1.0: 6个 (0.06%)
+相似度 1.0: 3665个 (38.35%)
+
+Tanimoto(MACCS)相似度分布:
+相似度 0-0.2: 3个 (0.03%)                                                                         
+相似度 0.2-0.4: 302个 (3.16%)                                                                     
+相似度 0.4-0.6: 1017个 (10.64%)                                                                   
+相似度 0.6-0.8: 1939个 (20.29%)                                                                   
+相似度 0.8-1.0: 2410个 (25.22%)                                                                   
+相似度 1.0: 3885个 (40.66%)                                                                       
+
+Fraggle相似度分布:                                                                                
+相似度 0-0.2: 390个 (4.08%)                                                                       
+相似度 0.2-0.4: 155个 (1.62%)                                                                     
+相似度 0.4-0.6: 426个 (4.46%)                                                                     
+相似度 0.6-0.8: 839个 (8.78%)                                                                     
+相似度 0.8-1.0: 1682个 (17.60%)                                                                   
+相似度 1.0: 6064个 (63.46%)  
+
+2D 相似度分布                                                                  
+Tanimoto相似度分布:                                                                               
+相似度 0-0.2: 313个 (3.22%)                                                                       
+相似度 0.2-0.4: 2702个 (27.79%)                                                                   
+相似度 0.4-0.6: 1986个 (20.42%)                                                                   
+相似度 0.6-0.8: 100个 (1.03%)                                                                     
+相似度 0.8-1.0: 8个 (0.08%)                                                                       
+相似度 1.0: 4615个 (47.46%)                                                                       
+
+Tanimoto(MACCS)相似度分布:                                                                        
+相似度 0-0.2: 6个 (0.06%)                                                                         
+相似度 0.2-0.4: 309个 (3.18%)                                                                     
+相似度 0.4-0.6: 885个 (9.10%)                                                                     
+相似度 0.6-0.8: 1634个 (16.80%)                                                                   
+相似度 0.8-1.0: 1988个 (20.44%)                                                                   
+相似度 1.0: 4902个 (50.41%)                                                                       
+
+Fraggle相似度分布:                                                                                
+相似度 0-0.2: 260个 (2.67%)                                                                       
+相似度 0.2-0.4: 73个 (0.75%)                                                                      
+相似度 0.4-0.6: 183个 (1.88%)                                                                     
+相似度 0.6-0.8: 489个 (5.03%)                                                                     
+相似度 0.8-1.0: 1788个 (18.39%)                                                                   
+相似度 1.0: 6931个 (71.28%)

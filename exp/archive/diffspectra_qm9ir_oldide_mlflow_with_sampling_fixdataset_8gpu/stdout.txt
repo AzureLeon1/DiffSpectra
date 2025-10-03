@@ -1,0 +1,126 @@
+INFO - run_lib.py - 2025-01-12 12:30:36,109 - model size: 125.0MB
+WARNING - utils.py - 2025-01-12 12:30:36,119 - No checkpoint found at exp/diffspectra_qm9ir_oldide_mlflow_with_sampling_fixdataset_8gpu/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-01-12 12:30:36,119 - data:
+  atom_types: 5
+  bond_types: 4
+  centered: true
+  collate: collate_spectra_ir
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /mnt/ai4sci_develop_fast/liangwang/datasets/MolGeneration/DiffSpectra/QM9
+  spectra_version: ir
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 2500
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 10000
+  save_graph: false
+  sub_geometry: false
+exp_type: vpsde_edge_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dist_gbf: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  gbf_name: CondGaussianLayer
+  include_fc_charge: true
+  loss_weights: 1., 0.25, 0.1
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: diffspectra_cond_DGT_concat
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 4, 4, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: true
+  self_cond: true
+  self_cond_type: ori
+  softmax_inf: true
+  spatial_cut_off: 2.0
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: false
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 1024
+  dataloader_drop_last: true
+  distributed: true
+  eval_batch_size: 1024
+  eval_samples: 1024
+  local_rank: 0
+  log_freq: 500
+  n_iters: 2000000
+  num_gpus: 8
+  reduce_mean: false
+  snapshot_freq: 50000
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-01-12 12:31:18,244 - step: 0, training_loss: 5.00291e+01
+INFO - run_lib.py - 2025-01-12 12:39:36,140 - step: 500, training_loss: 3.25969e+01
+INFO - run_lib.py - 2025-01-12 12:48:19,572 - step: 1000, training_loss: 1.40403e+01
+INFO - run_lib.py - 2025-01-12 12:57:06,077 - step: 1500, training_loss: 1.01010e+01
+INFO - run_lib.py - 2025-01-12 13:05:46,988 - step: 2000, training_loss: 1.00896e+01
+INFO - run_lib.py - 2025-01-12 13:14:34,197 - step: 2500, training_loss: 9.93613e+00
+INFO - run_lib.py - 2025-01-12 13:23:19,018 - step: 3000, training_loss: 9.97103e+00
+INFO - run_lib.py - 2025-01-12 13:32:07,864 - step: 3500, training_loss: 1.00317e+01
+INFO - run_lib.py - 2025-01-12 13:40:55,172 - step: 4000, training_loss: 1.02146e+01
+INFO - run_lib.py - 2025-01-12 13:50:05,760 - step: 4500, training_loss: 9.81561e+00
+INFO - run_lib.py - 2025-01-12 13:59:09,655 - step: 5000, training_loss: 9.85335e+00
+INFO - run_lib.py - 2025-01-12 14:07:53,851 - step: 5500, training_loss: 9.58825e+00
+INFO - run_lib.py - 2025-01-12 14:16:47,010 - step: 6000, training_loss: 9.01573e+00
+INFO - run_lib.py - 2025-01-12 14:25:34,247 - step: 6500, training_loss: 9.32798e+00
+INFO - run_lib.py - 2025-01-12 14:32:53,202 - step: 7000, training_loss: 9.86174e+00
+INFO - run_lib.py - 2025-01-12 14:40:42,756 - step: 7500, training_loss: 8.78348e+00
+INFO - run_lib.py - 2025-01-12 14:49:30,712 - step: 8000, training_loss: 9.67891e+00
+INFO - run_lib.py - 2025-01-12 14:58:02,164 - step: 8500, training_loss: 9.30005e+00
+INFO - run_lib.py - 2025-01-12 15:06:57,633 - step: 9000, training_loss: 9.18544e+00
+INFO - run_lib.py - 2025-01-12 15:15:55,958 - step: 9500, training_loss: 8.63416e+00
+INFO - run_lib.py - 2025-01-12 15:24:52,863 - step: 10000, training_loss: 9.17479e+00

@@ -1,0 +1,45 @@
+INFO - run_lib.py - 2025-06-21 17:08:27,765 - model size: 84.2MB
+INFO - run_lib.py - 2025-06-21 17:08:27,781 - loading training mols
+INFO - run_lib.py - 2025-06-21 17:08:48,175 - loading test mols
+INFO - run_lib.py - 2025-06-21 17:08:53,752 - build EDM 2D metric
+INFO - run_lib.py - 2025-06-21 17:08:59,008 - build mose metric
+INFO - run_lib.py - 2025-06-21 17:09:14,490 - load checkpoint: exp/diffspectra_2d_qm9allspectra_pretrained_specformer/checkpoints/checkpoint_30.pth
+INFO - run_lib.py - 2025-06-21 17:09:15,071 - Sampling -- ckpt: 30
+INFO - run_lib.py - 2025-06-21 21:27:20,878 - Sampling accomplished
+INFO - run_lib.py - 2025-06-21 21:27:35,534 - Metric-2D || atom stability: 0.9946, mol stability: 0.9240, validity: 0.9310, complete: 0.9166, unique & valid: 0.9121, unique & valid & novelty: 0.8904
+INFO - run_lib.py - 2025-06-21 21:28:48,037 - Metric-2D || FCD: 0.7573, SNN: 0.4981, Frag: 0.9794, Scaf: 0.8151, IntDiv: 0.9166
+INFO - run_lib.py - 2025-06-21 21:28:48,037 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-06-21 21:28:48,037 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-06-21 21:28:50,262 - 2D分子对统计 - 输入: 10000, 有效: 9262, 跳过: 738
+INFO - run_lib.py - 2025-06-21 21:44:48,480 - 2D similarity metrics saved to: exp/diffspectra_2d_qm9allspectra_pretrained_specformer/eval/similarity_metrics_2d_ckpt_30.csv
+INFO - run_lib.py - 2025-06-21 21:44:48,483 - 2D 精确匹配率: 0.0892
+INFO - run_lib.py - 2025-06-21 21:44:48,483 - 2D Tanimoto相似度(平均): 0.5609
+INFO - run_lib.py - 2025-06-21 21:44:48,483 - 2D Tanimoto(MACCS)相似度(平均): 0.835
+INFO - run_lib.py - 2025-06-21 21:44:48,483 - 2D Fraggle相似度(平均): 0.9072
+INFO - run_lib.py - 2025-06-21 21:44:48,484 - 2D 余弦相似度(平均): 0.6734
+INFO - run_lib.py - 2025-06-21 21:44:48,484 - 2D 近似匹配率(Tanimoto≥0.675): 0.3072
+INFO - run_lib.py - 2025-06-21 21:44:48,484 - 2D 有效匹配率(Tanimoto≥0.4): 0.5983
+INFO - run_lib.py - 2025-06-21 21:44:48,485 - 2D 官能团相似度(平均): 0.9034
+INFO - run_lib.py - 2025-06-21 21:44:48,485 - Successfully computed 2D metrics for 9262 molecule pairs
+INFO - run_lib.py - 2025-09-06 02:14:24,020 - model size: 84.2MB
+INFO - run_lib.py - 2025-09-06 02:14:24,041 - loading training mols
+INFO - run_lib.py - 2025-09-06 02:14:45,220 - loading test mols
+INFO - run_lib.py - 2025-09-06 02:14:51,084 - build EDM 2D metric
+INFO - run_lib.py - 2025-09-06 02:14:57,023 - build mose metric
+INFO - run_lib.py - 2025-09-06 02:15:20,754 - load checkpoint: exp/diffspectra_2d_qm9allspectra_pretrained_specformer/checkpoints/checkpoint_30.pth
+INFO - run_lib.py - 2025-09-06 02:15:29,816 - Sampling -- ckpt: 30
+INFO - run_lib.py - 2025-09-06 06:18:30,110 - Sampling accomplished
+INFO - run_lib.py - 2025-09-06 06:18:44,908 - Metric-2D || atom stability: 0.9946, mol stability: 0.9240, validity: 0.9310, complete: 0.9166, unique & valid: 0.9121, unique & valid & novelty: 0.8904
+INFO - run_lib.py - 2025-09-06 06:19:50,691 - Metric-2D || FCD: 0.7573, SNN: 0.4982, Frag: 0.9794, Scaf: 0.8151, IntDiv: 0.9166
+INFO - run_lib.py - 2025-09-06 06:19:50,691 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-09-06 06:19:50,691 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-09-06 06:19:52,583 - 2D分子对统计 - 输入: 10000, 有效: 9262, 跳过: 738
+INFO - run_lib.py - 2025-09-06 06:36:00,379 - 2D similarity metrics saved to: exp/diffspectra_2d_qm9allspectra_pretrained_specformer/eval/similarity_metrics_2d_ckpt_30.csv
+INFO - run_lib.py - 2025-09-06 06:36:00,381 - 2D Tanimoto相似度(平均): 0.5609
+INFO - run_lib.py - 2025-09-06 06:36:00,382 - 2D Tanimoto(MACCS)相似度(平均): 0.835
+INFO - run_lib.py - 2025-09-06 06:36:00,382 - 2D Fraggle相似度(平均): 0.9072
+INFO - run_lib.py - 2025-09-06 06:36:00,382 - 2D 余弦相似度(平均): 0.6733
+INFO - run_lib.py - 2025-09-06 06:36:00,383 - 2D 近似匹配率(Tanimoto≥0.675): 0.3071
+INFO - run_lib.py - 2025-09-06 06:36:00,383 - 2D 有效匹配率(Tanimoto≥0.4): 0.5983
+INFO - run_lib.py - 2025-09-06 06:36:00,383 - 2D 官能团相似度(平均): 0.9034
+INFO - run_lib.py - 2025-09-06 06:36:00,383 - Successfully computed 2D metrics for 9262 molecule pairs

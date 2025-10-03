@@ -1,0 +1,868 @@
+INFO - run_lib.py - 2025-06-11 17:55:44,372 - model size: 84.2MB
+WARNING - utils.py - 2025-06-11 17:55:44,374 - No checkpoint found at exp/diffspectra_2d_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-06-11 17:55:44,374 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 128
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 256
+  sampling_temperature: 1.0
+  save_mols: 'false'
+  sub_geometry: true
+exp_type: vpsde_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  include_fc_charge: false
+  loss_weights: 1., 1, 0.5
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: CDGS
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 2, 2, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: false
+  rw_depth: 8
+  self_cond: false
+  self_cond_type: ori
+  softmax_inf: false
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: true
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 1500000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-06-11 17:55:44,459 - loading test mols
+INFO - run_lib.py - 2025-06-11 18:05:28,428 - model size: 84.2MB
+WARNING - utils.py - 2025-06-11 18:05:28,429 - No checkpoint found at exp/diffspectra_2d_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-06-11 18:05:28,429 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 128
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 256
+  sampling_temperature: 1.0
+  save_mols: 'false'
+  sub_geometry: true
+exp_type: vpsde_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  include_fc_charge: false
+  loss_weights: 1., 1, 0.5
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: CDGS
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 2, 2, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: false
+  rw_depth: 8
+  self_cond: false
+  self_cond_type: ori
+  softmax_inf: false
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: true
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 1500000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-06-11 18:05:28,471 - loading test mols
+INFO - run_lib.py - 2025-06-11 18:06:07,553 - model size: 84.2MB
+WARNING - utils.py - 2025-06-11 18:06:07,554 - No checkpoint found at exp/diffspectra_2d_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-06-11 18:06:07,554 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 128
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 256
+  sampling_temperature: 1.0
+  save_mols: 'false'
+  sub_geometry: true
+exp_type: vpsde_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  include_fc_charge: false
+  loss_weights: 1., 1, 0.5
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: CDGS
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 2, 2, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: false
+  rw_depth: 8
+  self_cond: false
+  self_cond_type: ori
+  softmax_inf: false
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: true
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 1500000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-06-11 18:06:07,596 - loading test mols
+INFO - run_lib.py - 2025-06-11 18:06:29,941 - step: 0, training_loss: 1.11615e+02
+INFO - run_lib.py - 2025-06-11 18:18:47,534 - model size: 84.2MB
+WARNING - utils.py - 2025-06-11 18:18:47,535 - No checkpoint found at exp/diffspectra_2d_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-06-11 18:18:47,535 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 128
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 256
+  sampling_temperature: 1.0
+  save_mols: 'false'
+  sub_geometry: true
+exp_type: vpsde_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  include_fc_charge: false
+  loss_weights: 1., 1, 0.5
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: CDGS
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 2, 2, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: false
+  rw_depth: 8
+  self_cond: false
+  self_cond_type: ori
+  softmax_inf: false
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: true
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 1500000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-06-11 18:18:47,576 - loading test mols
+INFO - run_lib.py - 2025-06-11 18:20:06,650 - model size: 84.2MB
+WARNING - utils.py - 2025-06-11 18:20:06,651 - No checkpoint found at exp/diffspectra_2d_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-06-11 18:20:06,651 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 128
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 256
+  sampling_temperature: 1.0
+  save_mols: 'false'
+  sub_geometry: true
+exp_type: vpsde_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  include_fc_charge: false
+  loss_weights: 1., 1, 0.5
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: CDGS
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 2, 2, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: false
+  rw_depth: 8
+  self_cond: false
+  self_cond_type: ori
+  softmax_inf: false
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: true
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 1500000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-06-11 18:20:06,702 - loading test mols
+INFO - run_lib.py - 2025-06-11 18:20:10,146 - step: 0, training_loss: 1.11615e+02
+INFO - run_lib.py - 2025-06-11 19:35:56,814 - model size: 84.2MB
+WARNING - utils.py - 2025-06-11 19:35:56,815 - No checkpoint found at exp/diffspectra_2d_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-06-11 19:35:56,815 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 128
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 256
+  sampling_temperature: 1.0
+  save_mols: 'false'
+  sub_geometry: true
+exp_type: vpsde_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  include_fc_charge: false
+  loss_weights: 1., 1, 0.5
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: CDGS
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 2, 2, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: false
+  rw_depth: 8
+  self_cond: false
+  self_cond_type: ori
+  softmax_inf: false
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: true
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 1500000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-06-11 19:35:56,857 - loading test mols
+INFO - run_lib.py - 2025-06-11 19:36:00,291 - step: 0, training_loss: 1.11615e+02
+INFO - run_lib.py - 2025-06-11 19:44:56,053 - model size: 84.2MB
+WARNING - utils.py - 2025-06-11 19:44:56,054 - No checkpoint found at exp/diffspectra_2d_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-06-11 19:44:56,054 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 128
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 256
+  sampling_temperature: 1.0
+  save_mols: 'false'
+  sub_geometry: true
+exp_type: vpsde_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  include_fc_charge: false
+  loss_weights: 1., 1, 0.5
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: CDGS
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 2, 2, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: false
+  rw_depth: 8
+  self_cond: false
+  self_cond_type: ori
+  softmax_inf: false
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: true
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 1500000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-06-11 19:44:56,097 - loading test mols
+INFO - run_lib.py - 2025-06-11 19:44:59,702 - step: 0, training_loss: 1.11615e+02
+INFO - run_lib.py - 2025-06-11 19:46:44,849 - step: 5, n_mol: 128, 2D atom stability: 0.0433, mol stability: 0.0000, validity: 0.0000, complete: 0.0000, unique & valid: 0.0000
+INFO - run_lib.py - 2025-06-11 19:46:55,145 - step: 10, training_loss: 1.15000e+02
+INFO - run_lib.py - 2025-06-11 19:48:34,480 - step: 10, n_mol: 128, 2D atom stability: 0.0467, mol stability: 0.0000, validity: 0.0000, complete: 0.0000, unique & valid: 0.0000
+INFO - run_lib.py - 2025-06-11 19:50:28,863 - step: 15, n_mol: 128, 2D atom stability: 0.0415, mol stability: 0.0000, validity: 0.0078, complete: 0.0000, unique & valid: 0.0078
+INFO - run_lib.py - 2025-06-11 19:50:36,645 - step: 20, training_loss: 1.15717e+02
+INFO - run_lib.py - 2025-06-11 19:56:23,384 - model size: 84.2MB
+WARNING - utils.py - 2025-06-11 19:56:23,385 - No checkpoint found at exp/diffspectra_2d_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-06-11 19:56:23,385 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 128
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 256
+  sampling_temperature: 1.0
+  save_mols: 'false'
+  sub_geometry: true
+exp_type: vpsde_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  include_fc_charge: false
+  loss_weights: 1., 1, 0.5
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: CDGS
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 2, 2, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: false
+  pretrained_specformer_path: exp/pretrained_specformer.ckpt
+  rw_depth: 8
+  self_cond: false
+  self_cond_type: ori
+  softmax_inf: false
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: true
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 1500000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-06-11 19:56:23,429 - loading test mols
+INFO - run_lib.py - 2025-06-11 19:56:27,261 - step: 0, training_loss: 1.11623e+02
+INFO - run_lib.py - 2025-06-11 19:58:12,727 - step: 5, n_mol: 128, 2D atom stability: 0.0460, mol stability: 0.0000, validity: 0.0000, complete: 0.0000, unique & valid: 0.0000
+INFO - run_lib.py - 2025-06-11 19:58:23,256 - step: 10, training_loss: 1.15011e+02
+INFO - run_lib.py - 2025-06-11 20:00:03,787 - step: 10, n_mol: 128, 2D atom stability: 0.0511, mol stability: 0.0000, validity: 0.0000, complete: 0.0000, unique & valid: 0.0000
+INFO - run_lib.py - 2025-06-11 20:01:58,224 - step: 15, n_mol: 128, 2D atom stability: 0.0415, mol stability: 0.0000, validity: 0.0078, complete: 0.0000, unique & valid: 0.0078
+INFO - run_lib.py - 2025-06-11 20:02:06,126 - step: 20, training_loss: 1.15736e+02
+INFO - run_lib.py - 2025-06-11 20:03:45,446 - step: 20, n_mol: 128, 2D atom stability: 0.0462, mol stability: 0.0000, validity: 0.0078, complete: 0.0000, unique & valid: 0.0078
+INFO - run_lib.py - 2025-06-11 20:05:32,054 - step: 25, n_mol: 128, 2D atom stability: 0.0360, mol stability: 0.0000, validity: 0.0000, complete: 0.0000, unique & valid: 0.0000
+INFO - run_lib.py - 2025-06-11 20:05:37,658 - step: 30, training_loss: 1.14534e+02
+INFO - run_lib.py - 2025-06-11 20:07:23,925 - step: 30, n_mol: 128, 2D atom stability: 0.0411, mol stability: 0.0000, validity: 0.0000, complete: 0.0000, unique & valid: 0.0000
+INFO - run_lib.py - 2025-06-11 20:09:05,409 - step: 35, n_mol: 128, 2D atom stability: 0.0414, mol stability: 0.0000, validity: 0.0078, complete: 0.0000, unique & valid: 0.0078
+INFO - run_lib.py - 2025-06-11 20:09:16,409 - step: 40, training_loss: 1.10138e+02
+INFO - run_lib.py - 2025-06-11 20:10:55,884 - step: 40, n_mol: 128, 2D atom stability: 0.0391, mol stability: 0.0000, validity: 0.0000, complete: 0.0000, unique & valid: 0.0000
+INFO - run_lib.py - 2025-06-11 20:12:50,566 - step: 45, n_mol: 128, 2D atom stability: 0.0464, mol stability: 0.0000, validity: 0.0078, complete: 0.0000, unique & valid: 0.0078
+INFO - run_lib.py - 2025-06-11 20:12:59,367 - step: 50, training_loss: 1.13508e+02
+INFO - run_lib.py - 2025-06-11 20:15:06,690 - step: 50, n_mol: 128, 2D atom stability: 0.0350, mol stability: 0.0000, validity: 0.0078, complete: 0.0000, unique & valid: 0.0078
+INFO - run_lib.py - 2025-06-11 20:17:21,369 - step: 55, n_mol: 128, 2D atom stability: 0.0386, mol stability: 0.0000, validity: 0.0078, complete: 0.0000, unique & valid: 0.0078
+INFO - run_lib.py - 2025-06-11 20:17:28,167 - step: 60, training_loss: 1.12510e+02

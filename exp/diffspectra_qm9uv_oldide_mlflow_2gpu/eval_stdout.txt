@@ -1,0 +1,22 @@
+INFO - run_lib.py - 2025-03-24 06:05:11,668 - model size: 116.2MB
+INFO - run_lib.py - 2025-03-24 06:05:11,768 - loading training mols
+INFO - run_lib.py - 2025-03-24 06:05:29,664 - loading test mols
+INFO - run_lib.py - 2025-03-24 06:05:34,497 - build EDM metric
+INFO - run_lib.py - 2025-03-24 06:05:41,924 - build EDM 2D metric
+INFO - run_lib.py - 2025-03-24 06:05:49,394 - build mose metric
+INFO - run_lib.py - 2025-03-24 06:06:03,240 - load checkpoint: exp/diffspectra_qm9uv_oldide_mlflow_2gpu/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-03-24 06:06:06,322 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-03-24 06:16:59,067 - model size: 116.2MB
+INFO - run_lib.py - 2025-03-24 06:16:59,074 - loading training mols
+INFO - run_lib.py - 2025-03-24 06:17:11,306 - loading test mols
+INFO - run_lib.py - 2025-03-24 06:17:14,744 - build EDM metric
+INFO - run_lib.py - 2025-03-24 06:17:19,177 - build EDM 2D metric
+INFO - run_lib.py - 2025-03-24 06:17:23,385 - build mose metric
+INFO - run_lib.py - 2025-03-24 06:17:31,239 - load checkpoint: exp/diffspectra_qm9uv_oldide_mlflow_2gpu/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-03-24 06:17:32,892 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-03-24 06:26:57,495 - Sampling accomplished
+INFO - run_lib.py - 2025-03-24 06:27:04,892 - Number of molecules: 100
+INFO - run_lib.py - 2025-03-24 06:27:04,892 - Metric-3D || atom stability: 0.9963, mol stability: 0.9500, validity: 0.9700, complete: 0.9700,
+INFO - run_lib.py - 2025-03-24 06:27:23,982 - Metric-3D || FCD: 4.3507
+INFO - run_lib.py - 2025-03-24 06:27:24,121 - Metric-2D || atom stability: 0.9995, mol stability: 0.9900, validity: 0.9900, complete: 0.9900, unique & valid: 0.9900, unique & valid & novelty: 0.9800
+INFO - run_lib.py - 2025-03-24 06:27:43,433 - Metric-2D || FCD: 3.6010, SNN: 0.5106, Frag: 0.7431, Scaf: 0.4922, IntDiv: 0.9010

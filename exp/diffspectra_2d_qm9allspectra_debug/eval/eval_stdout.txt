@@ -1,0 +1,11 @@
+INFO - run_lib.py - 2025-06-11 20:21:33,055 - model size: 84.2MB
+INFO - run_lib.py - 2025-06-11 20:21:33,077 - loading training mols
+INFO - run_lib.py - 2025-06-11 20:22:20,261 - loading test mols
+INFO - run_lib.py - 2025-06-11 20:22:31,702 - build EDM metric
+INFO - run_lib.py - 2025-06-11 20:22:38,884 - build EDM 2D metric
+INFO - run_lib.py - 2025-06-11 20:22:44,813 - build mose metric
+INFO - run_lib.py - 2025-06-11 20:24:26,225 - build sub geometry metric
+INFO - run_lib.py - 2025-06-11 20:25:29,627 - load checkpoint: exp/diffspectra_2d_qm9allspectra_debug/checkpoints/checkpoint_11.pth
+INFO - run_lib.py - 2025-06-11 20:25:30,835 - Sampling -- ckpt: 11
+INFO - run_lib.py - 2025-06-11 20:34:51,022 - Sampling accomplished
+INFO - run_lib.py - 2025-06-11 20:34:51,299 - Metric-2D || atom stability: 0.0566, mol stability: 0.0000, validity: 0.0000, complete: 0.0000, unique & valid: 0.0000, unique & valid & novelty: 0.0000

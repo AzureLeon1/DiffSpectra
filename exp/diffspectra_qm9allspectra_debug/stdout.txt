@@ -1,0 +1,427 @@
+INFO - run_lib.py - 2025-05-20 12:43:25,007 - model size: 131.7MB
+WARNING - utils.py - 2025-05-20 12:43:25,008 - No checkpoint found at exp/diffspectra_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-05-20 12:43:25,009 - data:
+  atom_types: 5
+  bond_types: 4
+  centered: true
+  collate: collate_spectra_allspectra
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 2500
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 10000
+  save_graph: false
+  sub_geometry: false
+exp_type: vpsde_edge_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dist_gbf: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  gbf_name: CondGaussianLayer
+  include_fc_charge: true
+  loss_weights: 1., 0.25, 0.1
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: DiffSpectra_DMT
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 4, 4, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: true
+  self_cond: true
+  self_cond_type: ori
+  softmax_inf: true
+  spatial_cut_off: 2.0
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: false
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 2000000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-05-20 12:43:25,152 - loading test mols
+INFO - run_lib.py - 2025-05-20 13:36:14,415 - model size: 131.7MB
+WARNING - utils.py - 2025-05-20 13:36:14,416 - No checkpoint found at exp/diffspectra_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-05-20 13:36:14,416 - data:
+  atom_types: 5
+  aug_rotation: true
+  aug_translation: true
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 2500
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 10000
+  save_graph: false
+  sub_geometry: false
+exp_type: vpsde_edge_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dist_gbf: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  gbf_name: CondGaussianLayer
+  include_fc_charge: true
+  loss_weights: 1., 0.25, 0.1
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: DiffSpectra_DMT
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 4, 4, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: true
+  self_cond: true
+  self_cond_type: ori
+  softmax_inf: true
+  spatial_cut_off: 2.0
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: false
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 2000000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-05-20 13:36:14,451 - loading test mols
+INFO - run_lib.py - 2025-05-20 14:08:25,297 - model size: 131.7MB
+WARNING - utils.py - 2025-05-20 14:08:25,298 - No checkpoint found at exp/diffspectra_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-05-20 14:08:25,298 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 2500
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 10000
+  save_graph: false
+  sub_geometry: false
+exp_type: vpsde_edge_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dist_gbf: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  gbf_name: CondGaussianLayer
+  include_fc_charge: true
+  loss_weights: 1., 0.25, 0.1
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: DiffSpectra_DMT
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 4, 4, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: true
+  self_cond: true
+  self_cond_type: ori
+  softmax_inf: true
+  spatial_cut_off: 2.0
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: false
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 2000000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-05-20 14:08:25,333 - loading test mols
+INFO - run_lib.py - 2025-05-20 14:12:48,958 - model size: 131.7MB
+WARNING - utils.py - 2025-05-20 14:12:48,959 - No checkpoint found at exp/diffspectra_qm9allspectra_debug/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-05-20 14:12:48,959 - data:
+  atom_types: 5
+  aug_translation_scale: 0.1
+  bond_types: 4
+  centered: true
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9Debug
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 2500
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 10000
+  save_graph: false
+  sub_geometry: false
+exp_type: vpsde_edge_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dist_gbf: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  gbf_name: CondGaussianLayer
+  include_fc_charge: true
+  loss_weights: 1., 0.25, 0.1
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: DiffSpectra_DMT
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 4, 4, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: true
+  self_cond: true
+  self_cond_type: ori
+  softmax_inf: true
+  spatial_cut_off: 2.0
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: false
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 10
+  n_iters: 2000000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 5
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-05-20 14:12:48,994 - loading test mols
+INFO - run_lib.py - 2025-05-20 14:16:28,599 - step: 0, training_loss: 5.06580e+01

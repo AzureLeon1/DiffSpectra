@@ -1,0 +1,495 @@
+INFO - run_lib.py - 2025-05-27 16:52:11,763 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 16:52:11,773 - loading training mols
+INFO - run_lib.py - 2025-05-27 17:23:41,535 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 17:23:41,546 - loading training mols
+INFO - run_lib.py - 2025-05-27 17:23:58,439 - loading test mols
+INFO - run_lib.py - 2025-05-27 17:24:03,070 - build EDM metric
+INFO - run_lib.py - 2025-05-27 17:24:07,234 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-27 17:24:11,119 - build mose metric
+INFO - run_lib.py - 2025-05-27 17:24:20,202 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-27 17:24:20,996 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-27 17:25:01,422 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 17:25:01,433 - loading training mols
+INFO - run_lib.py - 2025-05-27 17:25:18,977 - loading test mols
+INFO - run_lib.py - 2025-05-27 17:25:23,774 - build EDM metric
+INFO - run_lib.py - 2025-05-27 17:25:28,050 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-27 17:25:32,147 - build mose metric
+INFO - run_lib.py - 2025-05-27 17:25:41,419 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-27 17:25:42,183 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-27 17:32:51,859 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 17:32:51,870 - loading training mols
+INFO - run_lib.py - 2025-05-27 17:33:09,250 - loading test mols
+INFO - run_lib.py - 2025-05-27 17:33:14,012 - build EDM metric
+INFO - run_lib.py - 2025-05-27 17:33:18,191 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-27 17:33:22,101 - build mose metric
+INFO - run_lib.py - 2025-05-27 17:33:31,274 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-27 17:33:32,061 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-27 17:36:49,079 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 17:36:49,090 - loading training mols
+INFO - run_lib.py - 2025-05-27 17:37:06,293 - loading test mols
+INFO - run_lib.py - 2025-05-27 17:37:10,935 - build EDM metric
+INFO - run_lib.py - 2025-05-27 17:37:14,903 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-27 17:37:18,716 - build mose metric
+INFO - run_lib.py - 2025-05-27 17:37:28,505 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-27 17:37:29,236 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-27 20:26:48,589 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 20:26:48,598 - loading training mols
+INFO - run_lib.py - 2025-05-27 20:27:05,983 - loading test mols
+INFO - run_lib.py - 2025-05-27 20:27:10,782 - build EDM metric
+INFO - run_lib.py - 2025-05-27 20:27:14,957 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-27 20:27:19,021 - build mose metric
+INFO - run_lib.py - 2025-05-27 20:27:28,337 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-27 20:27:29,062 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-27 20:39:25,344 - Sampling accomplished
+INFO - run_lib.py - 2025-05-27 20:39:35,256 - Number of molecules: 1000
+INFO - run_lib.py - 2025-05-27 20:39:35,256 - Metric-3D || atom stability: 0.9914, mol stability: 0.9110, validity: 0.9710, complete: 0.9700,
+INFO - run_lib.py - 2025-05-27 20:39:56,905 - Metric-3D || FCD: 1.2580
+INFO - run_lib.py - 2025-05-27 20:39:58,644 - Metric-2D || atom stability: 0.9989, mol stability: 0.9850, validity: 0.9860, complete: 0.9860, unique & valid: 0.9840, unique & valid & novelty: 0.9590
+INFO - run_lib.py - 2025-05-27 20:40:19,616 - Metric-2D || FCD: 0.4338, SNN: 0.5319, Frag: 0.9472, Scaf: 0.7408, IntDiv: 0.9172
+INFO - run_lib.py - 2025-05-27 21:51:37,227 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 21:51:37,237 - loading training mols
+INFO - run_lib.py - 2025-05-27 21:51:54,106 - loading test mols
+INFO - run_lib.py - 2025-05-27 21:51:58,714 - build EDM metric
+INFO - run_lib.py - 2025-05-27 21:52:02,923 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-27 21:52:06,844 - build mose metric
+INFO - run_lib.py - 2025-05-27 21:52:15,941 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-27 21:52:16,673 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-27 22:50:14,187 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 22:50:14,198 - loading training mols
+INFO - run_lib.py - 2025-05-27 22:50:31,347 - loading test mols
+INFO - run_lib.py - 2025-05-27 22:50:36,038 - build EDM metric
+INFO - run_lib.py - 2025-05-27 22:50:40,252 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-27 22:50:44,174 - build mose metric
+INFO - run_lib.py - 2025-05-27 22:50:54,384 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-27 22:50:55,144 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-27 22:54:00,509 - Sampling accomplished
+INFO - run_lib.py - 2025-05-27 22:54:01,813 - Number of molecules: 100
+INFO - run_lib.py - 2025-05-27 22:54:01,813 - Metric-3D || atom stability: 0.9919, mol stability: 0.9100, validity: 0.9800, complete: 0.9700,
+INFO - run_lib.py - 2025-05-27 22:54:21,014 - Metric-3D || FCD: 4.4118
+INFO - run_lib.py - 2025-05-27 22:54:21,226 - Metric-2D || atom stability: 0.9995, mol stability: 0.9900, validity: 0.9900, complete: 0.9900, unique & valid: 0.9900, unique & valid & novelty: 0.9600
+INFO - run_lib.py - 2025-05-27 22:54:40,098 - Metric-2D || FCD: 3.3924, SNN: 0.5512, Frag: 0.7595, Scaf: 0.3127, IntDiv: 0.9065
+INFO - run_lib.py - 2025-05-27 22:56:53,764 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 22:56:53,775 - loading training mols
+INFO - run_lib.py - 2025-05-27 22:57:11,099 - loading test mols
+INFO - run_lib.py - 2025-05-27 22:57:15,842 - build EDM metric
+INFO - run_lib.py - 2025-05-27 22:57:19,994 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-27 22:57:23,910 - build mose metric
+INFO - run_lib.py - 2025-05-27 22:57:33,486 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-27 22:57:34,240 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-27 23:03:35,636 - Sampling accomplished
+INFO - run_lib.py - 2025-05-27 23:03:40,587 - Number of molecules: 500
+INFO - run_lib.py - 2025-05-27 23:03:40,588 - Metric-3D || atom stability: 0.9922, mol stability: 0.9100, validity: 0.9740, complete: 0.9720,
+INFO - run_lib.py - 2025-05-27 23:04:01,661 - Metric-3D || FCD: 1.6349
+INFO - run_lib.py - 2025-05-27 23:04:02,626 - Metric-2D || atom stability: 0.9991, mol stability: 0.9880, validity: 0.9900, complete: 0.9900, unique & valid: 0.9880, unique & valid & novelty: 0.9620
+INFO - run_lib.py - 2025-05-27 23:04:23,340 - Metric-2D || FCD: 0.7847, SNN: 0.5255, Frag: 0.9183, Scaf: 0.5615, IntDiv: 0.9171
+INFO - run_lib.py - 2025-05-27 23:11:41,085 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-27 23:11:41,096 - loading training mols
+INFO - run_lib.py - 2025-05-27 23:11:57,989 - loading test mols
+INFO - run_lib.py - 2025-05-27 23:12:02,632 - build EDM metric
+INFO - run_lib.py - 2025-05-27 23:12:06,824 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-27 23:12:10,747 - build mose metric
+INFO - run_lib.py - 2025-05-27 23:12:20,270 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-27 23:12:20,994 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-27 23:24:23,981 - Sampling accomplished
+INFO - run_lib.py - 2025-05-27 23:24:33,749 - Number of molecules: 1000
+INFO - run_lib.py - 2025-05-27 23:24:33,749 - Metric-3D || atom stability: 0.9914, mol stability: 0.9110, validity: 0.9710, complete: 0.9700,
+INFO - run_lib.py - 2025-05-27 23:24:55,733 - Metric-3D || FCD: 1.2580
+INFO - run_lib.py - 2025-05-27 23:24:57,561 - Metric-2D || atom stability: 0.9989, mol stability: 0.9850, validity: 0.9860, complete: 0.9860, unique & valid: 0.9840, unique & valid & novelty: 0.9590
+INFO - run_lib.py - 2025-05-27 23:25:18,609 - Metric-2D || FCD: 0.4338, SNN: 0.5319, Frag: 0.9472, Scaf: 0.7408, IntDiv: 0.9172
+INFO - run_lib.py - 2025-05-28 00:05:18,552 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-28 00:05:18,563 - loading training mols
+INFO - run_lib.py - 2025-05-28 00:05:35,618 - loading test mols
+INFO - run_lib.py - 2025-05-28 00:05:40,333 - build EDM metric
+INFO - run_lib.py - 2025-05-28 00:05:44,474 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-28 00:05:48,460 - build mose metric
+INFO - run_lib.py - 2025-05-28 00:05:57,755 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-28 00:05:58,480 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-28 00:18:02,564 - Sampling accomplished
+INFO - run_lib.py - 2025-05-28 00:18:12,783 - Number of molecules: 1000
+INFO - run_lib.py - 2025-05-28 00:18:12,784 - Metric-3D || atom stability: 0.9914, mol stability: 0.9110, validity: 0.9710, complete: 0.9700,
+INFO - run_lib.py - 2025-05-28 00:18:33,182 - Metric-3D || FCD: 1.2568
+INFO - run_lib.py - 2025-05-28 00:18:35,005 - Metric-2D || atom stability: 0.9989, mol stability: 0.9850, validity: 0.9860, complete: 0.9860, unique & valid: 0.9840, unique & valid & novelty: 0.9590
+INFO - run_lib.py - 2025-05-28 00:18:56,796 - Metric-2D || FCD: 0.4340, SNN: 0.5322, Frag: 0.9472, Scaf: 0.7408, IntDiv: 0.9172
+INFO - run_lib.py - 2025-05-28 00:18:56,797 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-05-28 00:18:56,798 - Computing 3D version similarity metrics
+ERROR - run_lib.py - 2025-05-28 00:19:14,821 - Error computing 3D similarity metrics: No registered converter was able to produce a C++ rvalue of type std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > from this Python object of type NoneType
+INFO - run_lib.py - 2025-05-28 00:19:14,826 - Computing 2D version similarity metrics
+ERROR - run_lib.py - 2025-05-28 00:19:32,643 - Error computing 2D similarity metrics: No registered converter was able to produce a C++ rvalue of type std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > from this Python object of type NoneType
+INFO - run_lib.py - 2025-05-28 00:27:09,948 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-28 00:27:09,958 - loading training mols
+INFO - run_lib.py - 2025-05-28 00:27:27,225 - loading test mols
+INFO - run_lib.py - 2025-05-28 00:27:31,970 - build EDM metric
+INFO - run_lib.py - 2025-05-28 00:27:36,148 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-28 00:27:40,079 - build mose metric
+INFO - run_lib.py - 2025-05-28 00:27:50,293 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-28 00:27:51,016 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-28 00:39:40,540 - Sampling accomplished
+INFO - run_lib.py - 2025-05-28 00:39:50,563 - Number of molecules: 1000
+INFO - run_lib.py - 2025-05-28 00:39:50,563 - Metric-3D || atom stability: 0.9914, mol stability: 0.9110, validity: 0.9710, complete: 0.9700,
+INFO - run_lib.py - 2025-05-28 00:40:11,383 - Metric-3D || FCD: 1.2580
+INFO - run_lib.py - 2025-05-28 00:40:13,213 - Metric-2D || atom stability: 0.9989, mol stability: 0.9850, validity: 0.9860, complete: 0.9860, unique & valid: 0.9840, unique & valid & novelty: 0.9590
+INFO - run_lib.py - 2025-05-28 00:40:34,094 - Metric-2D || FCD: 0.4338, SNN: 0.5319, Frag: 0.9472, Scaf: 0.7408, IntDiv: 0.9172
+INFO - run_lib.py - 2025-05-28 00:40:34,095 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-05-28 00:40:34,095 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-05-28 00:40:34,270 - 3D分子对统计 - 输入: 1000, 有效: 1000, 跳过: 0
+ERROR - run_lib.py - 2025-05-28 00:40:52,258 - Error computing 3D similarity metrics: No registered converter was able to produce a C++ rvalue of type std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > from this Python object of type NoneType
+ERROR - run_lib.py - 2025-05-28 00:40:52,261 - Traceback: joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py", line 463, in _process_worker
+    r = call_item()
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 598, in __call__
+    return [func(*args, **kwargs)
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 598, in <listcomp>
+    return [func(*args, **kwargs)
+  File "/data/zhongzhenyi/project/DiffSpectra/compute_metrics.py", line 102, in compute_metrics_for_one
+    true_mol = canonical_mol_from_smiles(t_smiles)
+  File "/data/zhongzhenyi/project/DiffSpectra/compute_metrics.py", line 64, in canonical_mol_from_smiles
+    mol = Chem.MolFromSmiles(smiles)
+TypeError: No registered converter was able to produce a C++ rvalue of type std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > from this Python object of type NoneType
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/zhongzhenyi/project/DiffSpectra/run_lib.py", line 276, in compute_similarity_metrics
+    compute_metrics.compute_metrics(true_mols, pred_mols, csv_path, doMCES=False, doFull=False)
+  File "/data/zhongzhenyi/project/DiffSpectra/compute_metrics.py", line 215, in compute_metrics
+    results = Parallel(n_jobs=-1)(
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 2007, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 1650, in _get_outputs
+    yield from self._retrieve()
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 1754, in _retrieve
+    self._raise_error_fast()
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 1789, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 745, in get_result
+    return self._return_or_raise()
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 763, in _return_or_raise
+    raise self._result
+TypeError: No registered converter was able to produce a C++ rvalue of type std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > from this Python object of type NoneType
+
+INFO - run_lib.py - 2025-05-28 00:40:52,266 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-05-28 00:40:52,403 - 2D分子对统计 - 输入: 1000, 有效: 1000, 跳过: 0
+ERROR - run_lib.py - 2025-05-28 00:41:10,377 - Error computing 2D similarity metrics: No registered converter was able to produce a C++ rvalue of type std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > from this Python object of type NoneType
+ERROR - run_lib.py - 2025-05-28 00:41:10,378 - Traceback: joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py", line 463, in _process_worker
+    r = call_item()
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/externals/loky/process_executor.py", line 291, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 598, in __call__
+    return [func(*args, **kwargs)
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 598, in <listcomp>
+    return [func(*args, **kwargs)
+  File "/data/zhongzhenyi/project/DiffSpectra/compute_metrics.py", line 102, in compute_metrics_for_one
+    true_mol = canonical_mol_from_smiles(t_smiles)
+  File "/data/zhongzhenyi/project/DiffSpectra/compute_metrics.py", line 64, in canonical_mol_from_smiles
+    mol = Chem.MolFromSmiles(smiles)
+TypeError: No registered converter was able to produce a C++ rvalue of type std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > from this Python object of type NoneType
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/data/zhongzhenyi/project/DiffSpectra/run_lib.py", line 276, in compute_similarity_metrics
+    compute_metrics.compute_metrics(true_mols, pred_mols, csv_path, doMCES=False, doFull=False)
+  File "/data/zhongzhenyi/project/DiffSpectra/compute_metrics.py", line 215, in compute_metrics
+    results = Parallel(n_jobs=-1)(
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 2007, in __call__
+    return output if self.return_generator else list(output)
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 1650, in _get_outputs
+    yield from self._retrieve()
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 1754, in _retrieve
+    self._raise_error_fast()
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 1789, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 745, in get_result
+    return self._return_or_raise()
+  File "/home/zhongzhenyi/miniconda3/envs/diffspectra/lib/python3.10/site-packages/joblib/parallel.py", line 763, in _return_or_raise
+    raise self._result
+TypeError: No registered converter was able to produce a C++ rvalue of type std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > from this Python object of type NoneType
+
+INFO - run_lib.py - 2025-05-28 00:47:22,647 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-28 00:47:22,660 - loading training mols
+INFO - run_lib.py - 2025-05-28 00:47:40,035 - loading test mols
+INFO - run_lib.py - 2025-05-28 00:47:44,797 - build EDM metric
+INFO - run_lib.py - 2025-05-28 00:47:48,989 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-28 00:47:52,934 - build mose metric
+INFO - run_lib.py - 2025-05-28 00:48:02,870 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-28 00:48:03,606 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-28 01:00:05,632 - Sampling accomplished
+INFO - run_lib.py - 2025-05-28 01:00:15,605 - Number of molecules: 1000
+INFO - run_lib.py - 2025-05-28 01:00:15,606 - Metric-3D || atom stability: 0.9914, mol stability: 0.9110, validity: 0.9710, complete: 0.9700,
+INFO - run_lib.py - 2025-05-28 01:00:36,105 - Metric-3D || FCD: 1.2580
+INFO - run_lib.py - 2025-05-28 01:00:37,912 - Metric-2D || atom stability: 0.9989, mol stability: 0.9850, validity: 0.9860, complete: 0.9860, unique & valid: 0.9840, unique & valid & novelty: 0.9590
+INFO - run_lib.py - 2025-05-28 01:00:58,629 - Metric-2D || FCD: 0.4338, SNN: 0.5319, Frag: 0.9472, Scaf: 0.7408, IntDiv: 0.9172
+INFO - run_lib.py - 2025-05-28 01:00:58,629 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-05-28 01:00:58,630 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-05-28 01:00:58,808 - 3D分子对统计 - 输入: 1000, 有效: 1000, 跳过: 0
+INFO - run_lib.py - 2025-05-28 01:01:12,585 - 3D similarity metrics saved to: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/similarity_metrics_3d_ckpt_40.csv
+INFO - run_lib.py - 2025-05-28 01:01:12,585 - Successfully computed 3D metrics for 1000 molecule pairs
+INFO - run_lib.py - 2025-05-28 01:01:12,586 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-05-28 01:01:12,753 - 2D分子对统计 - 输入: 1000, 有效: 1000, 跳过: 0
+INFO - run_lib.py - 2025-05-28 01:01:13,544 - 2D similarity metrics saved to: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/similarity_metrics_2d_ckpt_40.csv
+INFO - run_lib.py - 2025-05-28 01:01:13,544 - Successfully computed 2D metrics for 1000 molecule pairs
+INFO - run_lib.py - 2025-05-28 01:01:13,637 - Molecules saved for analysis in: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/molecules_ckpt_40
+INFO - run_lib.py - 2025-05-28 10:07:53,727 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-28 10:07:53,738 - loading training mols
+INFO - run_lib.py - 2025-05-28 10:08:10,834 - loading test mols
+INFO - run_lib.py - 2025-05-28 10:08:15,560 - build EDM metric
+INFO - run_lib.py - 2025-05-28 10:08:19,674 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-28 10:08:23,666 - build mose metric
+INFO - run_lib.py - 2025-05-28 10:08:34,344 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-28 10:08:35,071 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-28 10:12:53,656 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-28 10:12:53,667 - loading training mols
+INFO - run_lib.py - 2025-05-28 10:13:10,855 - loading test mols
+INFO - run_lib.py - 2025-05-28 10:13:15,569 - build EDM metric
+INFO - run_lib.py - 2025-05-28 10:13:19,717 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-28 10:13:23,623 - build mose metric
+INFO - run_lib.py - 2025-05-28 10:13:33,058 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-28 10:13:33,801 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-28 12:15:14,380 - Sampling accomplished
+INFO - run_lib.py - 2025-05-28 12:16:50,572 - Number of molecules: 10000
+INFO - run_lib.py - 2025-05-28 12:16:50,572 - Metric-3D || atom stability: 0.9912, mol stability: 0.9083, validity: 0.9648, complete: 0.9632,
+INFO - run_lib.py - 2025-05-28 12:17:15,512 - Metric-3D || FCD: 0.9454
+INFO - run_lib.py - 2025-05-28 12:17:31,040 - Metric-2D || atom stability: 0.9985, mol stability: 0.9804, validity: 0.9826, complete: 0.9826, unique & valid: 0.9650, unique & valid & novelty: 0.9327
+INFO - run_lib.py - 2025-05-28 12:17:56,646 - Metric-2D || FCD: 0.0955, SNN: 0.5303, Frag: 0.9922, Scaf: 0.9344, IntDiv: 0.9190
+INFO - run_lib.py - 2025-05-28 12:17:56,646 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-05-28 12:17:56,646 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-05-28 12:17:58,316 - 3D分子对统计 - 输入: 10000, 有效: 10000, 跳过: 0
+INFO - run_lib.py - 2025-05-28 12:18:16,948 - 3D similarity metrics saved to: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/similarity_metrics_3d_ckpt_40.csv
+INFO - run_lib.py - 2025-05-28 12:18:16,949 - Successfully computed 3D metrics for 10000 molecule pairs
+INFO - run_lib.py - 2025-05-28 12:18:16,952 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-05-28 12:18:18,267 - 2D分子对统计 - 输入: 10000, 有效: 10000, 跳过: 0
+INFO - run_lib.py - 2025-05-28 12:18:23,309 - 2D similarity metrics saved to: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/similarity_metrics_2d_ckpt_40.csv
+INFO - run_lib.py - 2025-05-28 12:18:23,309 - Successfully computed 2D metrics for 10000 molecule pairs
+INFO - run_lib.py - 2025-05-28 12:18:24,287 - Molecules saved for analysis in: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/molecules_ckpt_40
+INFO - run_lib.py - 2025-05-31 20:55:37,013 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-31 20:55:37,024 - loading training mols
+INFO - run_lib.py - 2025-05-31 20:55:54,038 - loading test mols
+INFO - run_lib.py - 2025-05-31 20:55:58,713 - build EDM metric
+INFO - run_lib.py - 2025-05-31 20:56:02,924 - build EDM 2D metric
+INFO - run_lib.py INFO - run_lib.py - 2025-05-31 21:04:43,198 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-31 21:04:43,237 - loading training mols
+INFO - run_lib.py - 2025-05-31 21:05:00,130 - loading test mols
+INFO - run_lib.py - 2025-05-31 21:05:04,801 - build EDM metric
+INFO - run_lib.py - 2025-05-31 21:05:08,810 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-31 21:05:12,648 - build mose metric
+INFO - run_lib.py - 2025-05-31 21:05:20,533 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-31 21:05:30,391 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-05-31 23:07:25,116 - Sampling accomplished
+INFO - run_lib.py - 2025-05-31 23:09:01,076 - Number of molecules: 10000
+INFO - run_lib.py - 2025-05-31 23:09:01,076 - Metric-3D || atom stability: 0.9911, mol stability: 0.9083, validity: 0.9649, complete: 0.9633,
+INFO - run_lib.py - 2025-05-31 23:09:21,051 - Metric-3D || FCD: 0.9451
+INFO - run_lib.py - 2025-05-31 23:09:36,439 - Metric-2D || atom stability: 0.9985, mol stability: 0.9805, validity: 0.9827, complete: 0.9827, unique & valid: 0.9650, unique & valid & novelty: 0.9328
+INFO - run_lib.py - 2025-05-31 23:09:57,423 - Metric-2D || FCD: 0.0955, SNN: 0.5303, Frag: 0.9922, Scaf: 0.9341, IntDiv: 0.9190
+INFO - run_lib.py - 2025-05-31 23:09:57,424 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-05-31 23:09:57,424 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-05-31 23:09:58,816 - 3D分子对统计 - 输入: 10000, 有效: 10000, 跳过: 0
+ERROR - run_lib.py - 2025-05-31 23:09:58,816 - Error computing 3D similarity metrics: module 'compute_metrics' has no attribute 'compute_metrics'
+ERROR - run_lib.py - 2025-05-31 23:09:58,817 - Traceback: Traceback (most recent call last):
+  File "/data/zhongzhenyi/project/DiffSpectra/run_lib.py", line 277, in compute_similarity_metrics
+    compute_metrics.compute_metrics(true_mols, pred_mols, csv_path, doMCES=False, doFull=True)  # 设置doFull=True以计算所有指标
+AttributeError: module 'compute_metrics' has no attribute 'compute_metrics'
+
+INFO - run_lib.py - 2025-05-31 23:09:58,817 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-05-31 23:10:00,092 - 2D分子对统计 - 输入: 10000, 有效: 10000, 跳过: 0
+ERROR - run_lib.py - 2025-05-31 23:10:00,093 - Error computing 2D similarity metrics: module 'compute_metrics' has no attribute 'compute_metrics'
+ERROR - run_lib.py - 2025-05-31 23:10:00,093 - Traceback: Traceback (most recent call last):
+  File "/data/zhongzhenyi/project/DiffSpectra/run_lib.py", line 277, in compute_similarity_metrics
+    compute_metrics.compute_metrics(true_mols, pred_mols, csv_path, doMCES=False, doFull=True)  # 设置doFull=True以计算所有指标
+AttributeError: module 'compute_metrics' has no attribute 'compute_metrics'
+
+INFO - run_lib.py - 2025-05-31 23:10:01,042 - Molecules saved for analysis in: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/molecules_ckpt_40
+INFO - run_lib.py - 2025-05-31 23:12:50,270 - model size: 151.2MB
+INFO - run_lib.py - 2025-05-31 23:12:50,280 - loading training mols
+INFO - run_lib.py - 2025-05-31 23:13:07,278 - loading test mols
+INFO - run_lib.py - 2025-05-31 23:13:11,987 - build EDM metric
+INFO - run_lib.py - 2025-05-31 23:13:16,068 - build EDM 2D metric
+INFO - run_lib.py - 2025-05-31 23:13:19,975 - build mose metric
+INFO - run_lib.py - 2025-05-31 23:13:28,289 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-05-31 23:13:29,145 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-06-01 01:15:09,500 - Sampling accomplished
+INFO - run_lib.py - 2025-06-01 01:16:45,452 - Number of molecules: 10000
+INFO - run_lib.py - 2025-06-01 01:16:45,452 - Metric-3D || atom stability: 0.9911, mol stability: 0.9081, validity: 0.9648, complete: 0.9632,
+INFO - run_lib.py - 2025-06-01 01:17:08,422 - Metric-3D || FCD: 0.9450
+INFO - run_lib.py - 2025-06-01 01:17:24,343 - Metric-2D || atom stability: 0.9985, mol stability: 0.9804, validity: 0.9826, complete: 0.9826, unique & valid: 0.9650, unique & valid & novelty: 0.9328
+INFO - run_lib.py - 2025-06-01 01:17:47,880 - Metric-2D || FCD: 0.0955, SNN: 0.5303, Frag: 0.9922, Scaf: 0.9344, IntDiv: 0.9190
+INFO - run_lib.py - 2025-06-01 01:17:47,880 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-06-01 01:17:47,880 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-06-01 01:17:49,622 - 3D分子对统计 - 输入: 10000, 有效: 10000, 跳过: 0
+ERROR - run_lib.py - 2025-06-01 01:17:49,623 - Error computing 3D similarity metrics: evaluate_jsonl_predictions() got multiple values for argument 'doMCES'
+ERROR - run_lib.py - 2025-06-01 01:17:49,623 - Traceback: Traceback (most recent call last):
+  File "/data/zhongzhenyi/project/DiffSpectra/run_lib.py", line 277, in compute_similarity_metrics
+    compute_metrics.evaluate_jsonl_predictions(true_mols, pred_mols, csv_path, doMCES=False)
+TypeError: evaluate_jsonl_predictions() got multiple values for argument 'doMCES'
+
+INFO - run_lib.py - 2025-06-01 01:17:49,624 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-06-01 01:17:50,932 - 2D分子对统计 - 输入: 10000, 有效: 10000, 跳过: 0
+ERROR - run_lib.py - 2025-06-01 01:17:50,933 - Error computing 2D similarity metrics: evaluate_jsonl_predictions() got multiple values for argument 'doMCES'
+ERROR - run_lib.py - 2025-06-01 01:17:50,933 - Traceback: Traceback (most recent call last):
+  File "/data/zhongzhenyi/project/DiffSpectra/run_lib.py", line 277, in compute_similarity_metrics
+    compute_metrics.evaluate_jsonl_predictions(true_mols, pred_mols, csv_path, doMCES=False)
+TypeError: evaluate_jsonl_predictions() got multiple values for argument 'doMCES'
+
+INFO - run_lib.py - 2025-06-01 01:17:51,654 - Molecules saved for analysis in: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/molecules_ckpt_40
+INFO - run_lib.py - 2025-06-01 16:34:23,743 - model size: 151.2MB
+INFO - run_lib.py - 2025-06-01 16:34:23,754 - loading training mols
+INFO - run_lib.py - 2025-06-01 16:34:40,704 - loading test mols
+INFO - run_lib.py - 2025-06-01 16:34:45,388 - build EDM metric
+INFO - run_lib.py - 2025-06-01 16:34:49,610 - build EDM 2D metric
+INFO - run_lib.py - 2025-06-01 16:34:53,538 - build mose metric
+INFO - run_lib.py - 2025-06-01 16:40:25,273 - model size: 151.2MB
+INFO - run_lib.py - 2025-06-01 16:40:25,314 - loading training mols
+INFO - run_lib.py - 2025-06-01 16:40:41,883 - loading test mols
+INFO - run_lib.py - 2025-06-01 16:40:46,454 - build EDM metric
+INFO - run_lib.py - 2025-06-01 16:40:50,469 - build EDM 2D metric
+INFO - run_lib.py - 2025-06-01 16:40:54,285 - build mose metric
+INFO - run_lib.py - 2025-06-01 16:41:02,038 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-06-01 16:41:05,675 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-06-01 16:44:21,869 - model size: 151.2MB
+INFO - run_lib.py - 2025-06-01 16:44:21,880 - loading training mols
+INFO - run_lib.py - 2025-06-01 16:44:38,822 - loading test mols
+INFO - run_lib.py - 2025-06-01 16:44:43,498 - build EDM metric
+INFO - run_lib.py - 2025-06-01 16:44:47,536 - build EDM 2D metric
+INFO - run_lib.py - 2025-06-01 16:44:51,488 - build mose metric
+INFO - run_lib.py - 2025-06-01 16:44:59,995 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-06-01 16:45:00,937 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-06-01 16:57:06,490 - Sampling accomplished
+INFO - run_lib.py - 2025-06-01 16:57:16,257 - Number of molecules: 1000
+INFO - run_lib.py - 2025-06-01 16:57:16,258 - Metric-3D || atom stability: 0.9914, mol stability: 0.9110, validity: 0.9710, complete: 0.9700,
+INFO - run_lib.py - 2025-06-01 16:57:34,139 - Metric-3D || FCD: 1.2580
+INFO - run_lib.py - 2025-06-01 16:57:36,144 - Metric-2D || atom stability: 0.9989, mol stability: 0.9850, validity: 0.9860, complete: 0.9860, unique & valid: 0.9840, unique & valid & novelty: 0.9590
+INFO - run_lib.py - 2025-06-01 16:57:55,087 - Metric-2D || FCD: 0.4338, SNN: 0.5319, Frag: 0.9472, Scaf: 0.7408, IntDiv: 0.9172
+INFO - run_lib.py - 2025-06-01 16:57:55,088 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-06-01 16:57:55,088 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-06-01 16:57:55,267 - 3D分子对统计 - 输入: 1000, 有效: 1000, 跳过: 0
+ERROR - run_lib.py - 2025-06-01 16:58:00,053 - Error computing 3D similarity metrics: Pre-condition Violation
+	RingInfo not initialized
+	Violation occurred on line 52 in file Code/GraphMol/RingInfo.cpp
+	Failed Expression: df_init
+	RDKIT: 2023.03.3
+	BOOST: 1_78
+
+ERROR - run_lib.py - 2025-06-01 16:58:00,070 - Traceback: Traceback (most recent call last):
+  File "/data/zhongzhenyi/project/DiffSpectra/run_lib.py", line 278, in compute_similarity_metrics
+    compute_metrics.evaluate_jsonl_predictions((true_mols, pred_mols), csv_path, doMCES=False)
+  File "/data/zhongzhenyi/project/DiffSpectra/compute_metrics.py", line 224, in evaluate_jsonl_predictions
+    pred_fp = AllChem.GetMorganFingerprintAsBitVect(pred_mol, 2, nBits=2048)
+RuntimeError: Pre-condition Violation
+	RingInfo not initialized
+	Violation occurred on line 52 in file Code/GraphMol/RingInfo.cpp
+	Failed Expression: df_init
+	RDKIT: 2023.03.3
+	BOOST: 1_78
+
+
+INFO - run_lib.py - 2025-06-01 16:58:00,071 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-06-01 16:58:00,208 - 2D分子对统计 - 输入: 1000, 有效: 1000, 跳过: 0
+ERROR - run_lib.py - 2025-06-01 16:58:09,888 - Error computing 2D similarity metrics: Pre-condition Violation
+	RingInfo not initialized
+	Violation occurred on line 52 in file Code/GraphMol/RingInfo.cpp
+	Failed Expression: df_init
+	RDKIT: 2023.03.3
+	BOOST: 1_78
+
+ERROR - run_lib.py - 2025-06-01 16:58:09,888 - Traceback: Traceback (most recent call last):
+  File "/data/zhongzhenyi/project/DiffSpectra/run_lib.py", line 278, in compute_similarity_metrics
+    compute_metrics.evaluate_jsonl_predictions((true_mols, pred_mols), csv_path, doMCES=False)
+  File "/data/zhongzhenyi/project/DiffSpectra/compute_metrics.py", line 224, in evaluate_jsonl_predictions
+    pred_fp = AllChem.GetMorganFingerprintAsBitVect(pred_mol, 2, nBits=2048)
+RuntimeError: Pre-condition Violation
+	RingInfo not initialized
+	Violation occurred on line 52 in file Code/GraphMol/RingInfo.cpp
+	Failed Expression: df_init
+	RDKIT: 2023.03.3
+	BOOST: 1_78
+
+
+INFO - run_lib.py - 2025-06-01 16:58:10,076 - Molecules saved for analysis in: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/molecules_ckpt_40
+INFO - run_lib.py - 2025-06-01 16:59:41,194 - model size: 151.2MB
+INFO - run_lib.py - 2025-06-01 16:59:41,204 - loading training mols
+INFO - run_lib.py - 2025-06-01 16:59:58,226 - loading test mols
+INFO - run_lib.py - 2025-06-01 17:00:02,900 - build EDM metric
+INFO - run_lib.py - 2025-06-01 17:00:06,989 - build EDM 2D metric
+INFO - run_lib.py - 2025-06-01 17:00:10,847 - build mose metric
+INFO - run_lib.py - 2025-06-01 17:00:20,476 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-06-01 17:00:21,400 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-06-01 17:12:19,837 - Sampling accomplished
+INFO - run_lib.py - 2025-06-01 17:12:29,885 - Number of molecules: 1000
+INFO - run_lib.py - 2025-06-01 17:12:29,885 - Metric-3D || atom stability: 0.9914, mol stability: 0.9110, validity: 0.9710, complete: 0.9700,
+INFO - run_lib.py - 2025-06-01 17:12:51,404 - Metric-3D || FCD: 1.2580
+INFO - run_lib.py - 2025-06-01 17:12:52,969 - Metric-2D || atom stability: 0.9989, mol stability: 0.9850, validity: 0.9860, complete: 0.9860, unique & valid: 0.9840, unique & valid & novelty: 0.9590
+INFO - run_lib.py - 2025-06-01 17:13:12,882 - Metric-2D || FCD: 0.4338, SNN: 0.5319, Frag: 0.9472, Scaf: 0.7408, IntDiv: 0.9172
+INFO - run_lib.py - 2025-06-01 17:13:12,882 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-06-01 17:13:12,882 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-06-01 17:13:13,119 - 3D分子对统计 - 输入: 1000, 有效: 962, 跳过: 38
+INFO - run_lib.py - 2025-06-01 17:13:59,519 - 3D similarity metrics saved to: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/similarity_metrics_3d_ckpt_40.csv
+INFO - run_lib.py - 2025-06-01 17:13:59,521 - 3D 精确匹配率: 0.1237
+INFO - run_lib.py - 2025-06-01 17:13:59,522 - 3D Tanimoto相似度(平均): 0.6586
+INFO - run_lib.py - 2025-06-01 17:13:59,522 - 3D Tanimoto(MACCS)相似度(平均): 0.8714
+INFO - run_lib.py - 2025-06-01 17:13:59,522 - 3D Fraggle相似度(平均): 0.9043
+INFO - run_lib.py - 2025-06-01 17:13:59,523 - 3D 余弦相似度(平均): 0.7449
+INFO - run_lib.py - 2025-06-01 17:13:59,523 - 3D 近似匹配率(Tanimoto≥0.675): 0.4667
+INFO - run_lib.py - 2025-06-01 17:13:59,523 - 3D 有效匹配率(Tanimoto≥0.4): 0.683
+INFO - run_lib.py - 2025-06-01 17:13:59,524 - 3D 官能团相似度(平均): 0.8989
+INFO - run_lib.py - 2025-06-01 17:13:59,524 - Successfully computed 3D metrics for 962 molecule pairs
+INFO - run_lib.py - 2025-06-01 17:13:59,524 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-06-01 17:13:59,695 - 2D分子对统计 - 输入: 1000, 有效: 980, 跳过: 20
+INFO - run_lib.py - 2025-06-01 17:14:23,316 - 2D similarity metrics saved to: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/similarity_metrics_2d_ckpt_40.csv
+INFO - run_lib.py - 2025-06-01 17:14:23,318 - 2D 精确匹配率: 0.148
+INFO - run_lib.py - 2025-06-01 17:14:23,318 - 2D Tanimoto相似度(平均): 0.7421
+INFO - run_lib.py - 2025-06-01 17:14:23,319 - 2D Tanimoto(MACCS)相似度(平均): 0.8962
+INFO - run_lib.py - 2025-06-01 17:14:23,319 - 2D Fraggle相似度(平均): 0.9349
+INFO - run_lib.py - 2025-06-01 17:14:23,319 - 2D 余弦相似度(平均): 0.8094
+INFO - run_lib.py - 2025-06-01 17:14:23,320 - 2D 近似匹配率(Tanimoto≥0.675): 0.5878
+INFO - run_lib.py - 2025-06-01 17:14:23,320 - 2D 有效匹配率(Tanimoto≥0.4): 0.7796
+INFO - run_lib.py - 2025-06-01 17:14:23,320 - 2D 官能团相似度(平均): 0.9496
+INFO - run_lib.py - 2025-06-01 17:14:23,320 - Successfully computed 2D metrics for 980 molecule pairs
+INFO - run_lib.py - 2025-06-01 17:14:23,396 - Molecules saved for analysis in: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/molecules_ckpt_40
+INFO - run_lib.py - 2025-06-01 17:37:42,723 - model size: 151.2MB
+INFO - run_lib.py - 2025-06-01 17:37:42,734 - loading training mols
+INFO - run_lib.py - 2025-06-01 17:37:59,643 - loading test mols
+INFO - run_lib.py - 2025-06-01 17:38:04,310 - build EDM metric
+INFO - run_lib.py - 2025-06-01 17:38:08,364 - build EDM 2D metric
+INFO - run_lib.py - 2025-06-01 17:38:12,215 - build mose metric
+INFO - run_lib.py - 2025-06-01 17:38:20,868 - load checkpoint: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-06-01 17:38:21,736 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-06-01 19:39:51,563 - Sampling accomplished
+INFO - run_lib.py - 2025-06-01 19:41:27,410 - Number of molecules: 10000
+INFO - run_lib.py - 2025-06-01 19:41:27,410 - Metric-3D || atom stability: 0.9912, mol stability: 0.9083, validity: 0.9649, complete: 0.9633,
+INFO - run_lib.py - 2025-06-01 19:41:52,002 - Metric-3D || FCD: 0.9447
+INFO - run_lib.py - 2025-06-01 19:42:07,741 - Metric-2D || atom stability: 0.9985, mol stability: 0.9805, validity: 0.9827, complete: 0.9827, unique & valid: 0.9652, unique & valid & novelty: 0.9330
+INFO - run_lib.py - 2025-06-01 19:42:32,440 - Metric-2D || FCD: 0.0956, SNN: 0.5303, Frag: 0.9922, Scaf: 0.9343, IntDiv: 0.9190
+INFO - run_lib.py - 2025-06-01 19:42:32,440 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-06-01 19:42:32,440 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-06-01 19:42:34,729 - 3D分子对统计 - 输入: 10000, 有效: 9522, 跳过: 478
+INFO - run_lib.py - 2025-06-01 19:49:55,820 - 3D similarity metrics saved to: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/similarity_metrics_3d_ckpt_40.csv
+INFO - run_lib.py - 2025-06-01 19:49:55,822 - 3D 精确匹配率: 0.116
+INFO - run_lib.py - 2025-06-01 19:49:55,823 - 3D Tanimoto相似度(平均): 0.6476
+INFO - run_lib.py - 2025-06-01 19:49:55,823 - 3D Tanimoto(MACCS)相似度(平均): 0.8694
+INFO - run_lib.py - 2025-06-01 19:49:55,823 - 3D Fraggle相似度(平均): 0.8988
+INFO - run_lib.py - 2025-06-01 19:49:55,824 - 3D 余弦相似度(平均): 0.7365
+INFO - run_lib.py - 2025-06-01 19:49:55,824 - 3D 近似匹配率(Tanimoto≥0.675): 0.4485
+INFO - run_lib.py - 2025-06-01 19:49:55,824 - 3D 有效匹配率(Tanimoto≥0.4): 0.6671
+INFO - run_lib.py - 2025-06-01 19:49:55,825 - 3D 官能团相似度(平均): 0.9061
+INFO - run_lib.py - 2025-06-01 19:49:55,825 - Successfully computed 3D metrics for 9522 molecule pairs
+INFO - run_lib.py - 2025-06-01 19:49:55,827 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-06-01 19:49:57,496 - 2D分子对统计 - 输入: 10000, 有效: 9756, 跳过: 244
+INFO - run_lib.py - 2025-06-01 19:53:52,304 - 2D similarity metrics saved to: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/similarity_metrics_2d_ckpt_40.csv
+INFO - run_lib.py - 2025-06-01 19:53:52,306 - 2D 精确匹配率: 0.1399
+INFO - run_lib.py - 2025-06-01 19:53:52,306 - 2D Tanimoto相似度(平均): 0.7246
+INFO - run_lib.py - 2025-06-01 19:53:52,307 - 2D Tanimoto(MACCS)相似度(平均): 0.894
+INFO - run_lib.py - 2025-06-01 19:53:52,307 - 2D Fraggle相似度(平均): 0.9385
+INFO - run_lib.py - 2025-06-01 19:53:52,307 - 2D 余弦相似度(平均): 0.7973
+INFO - run_lib.py - 2025-06-01 19:53:52,308 - 2D 近似匹配率(Tanimoto≥0.675): 0.5559
+INFO - run_lib.py - 2025-06-01 19:53:52,308 - 2D 有效匹配率(Tanimoto≥0.4): 0.7653
+INFO - run_lib.py - 2025-06-01 19:53:52,308 - 2D 官能团相似度(平均): 0.9512
+INFO - run_lib.py - 2025-06-01 19:53:52,308 - Successfully computed 2D metrics for 9756 molecule pairs
+INFO - run_lib.py - 2025-06-01 19:53:53,118 - Molecules saved for analysis in: exp/diffspectra_qm9allspectra_server1_2gpu_dev_metrics/eval/molecules_ckpt_40

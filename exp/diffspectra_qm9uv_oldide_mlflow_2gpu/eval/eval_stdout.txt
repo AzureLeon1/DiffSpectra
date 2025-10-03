@@ -1,0 +1,45 @@
+INFO - run_lib.py - 2025-06-03 22:05:49,138 - model size: 116.2MB
+INFO - run_lib.py - 2025-06-03 22:05:49,149 - loading training mols
+INFO - run_lib.py - 2025-06-03 22:06:09,411 - loading test mols
+INFO - run_lib.py - 2025-06-03 22:06:15,033 - build EDM metric
+INFO - run_lib.py - 2025-06-03 22:06:20,504 - build EDM 2D metric
+INFO - run_lib.py - 2025-06-03 22:06:25,714 - build mose metric
+INFO - run_lib.py - 2025-06-03 22:06:38,582 - build sub geometry metric
+INFO - run_lib.py - 2025-06-03 22:06:38,615 - load checkpoint: exp/diffspectra_qm9uv_oldide_mlflow_2gpu/checkpoints/checkpoint_33.pth
+INFO - run_lib.py - 2025-06-03 22:06:39,184 - Sampling -- ckpt: 33
+INFO - run_lib.py - 2025-06-04 00:53:39,185 - Sampling accomplished
+INFO - run_lib.py - 2025-06-04 00:55:37,977 - Number of molecules: 10000
+INFO - run_lib.py - 2025-06-04 00:55:37,978 - Metric-3D || atom stability: 0.9950, mol stability: 0.9465, validity: 0.9778, complete: 0.9759,
+INFO - run_lib.py - 2025-06-04 00:56:25,286 - Metric-3D || FCD: 1.6949
+INFO - run_lib.py - 2025-06-04 00:56:44,484 - Metric-2D || atom stability: 0.9988, mol stability: 0.9853, validity: 0.9871, complete: 0.9868, unique & valid: 0.8358, unique & valid & novelty: 0.8154
+INFO - run_lib.py - 2025-06-04 00:57:33,477 - Metric-2D || FCD: 1.0526, SNN: 0.5256, Frag: 0.8573, Scaf: 0.8504, IntDiv: 0.9138
+INFO - run_lib.py - 2025-06-04 01:02:56,245 - Metric-Align || Bond Length MMD: 0.1725, Bond Angle MMD: 0.0524, Dihedral Angle MMD: 0.004741
+INFO - run_lib.py - 2025-06-04 01:02:56,246 - C1H: 0.0917 C1C: 0.0250 C1O: 0.2344 N1C: 0.0744 N1H: 0.1539 C2O: 0.0845 O1H: 0.5542 C2C: 0.1616 
+INFO - run_lib.py - 2025-06-04 01:02:56,246 - C1C-C1H: 0.0081 C1C-C1C: 0.0175 C1C-C1O: 0.0692 C1C-C1N: 0.0043 C1N-N1C: 0.0334 C1O-O1C: 0.2348 O1C-C1H: 0.0485 C2C-C1C: 0.0032 
+INFO - run_lib.py - 2025-06-04 01:02:56,246 - H1C-C1C-C1C: 0.0073 C1C-C1C-C1C: 0.0079 H1C-C1C-C1H: 0.0080 H1C-C1C-C1O: 0.0046 C1C-C1C-C1O: 0.0061 C1N-N1C-C1C: 0.0011 H1C-C1N-N1C: 0.0027 H1C-C1C-C1N: 0.0003 
+INFO - run_lib.py - 2025-06-04 01:02:56,246 - Computing similarity metrics from compute_metrics.py
+INFO - run_lib.py - 2025-06-04 01:02:56,246 - Computing 3D version similarity metrics
+INFO - run_lib.py - 2025-06-04 01:02:58,479 - 3D分子对统计 - 输入: 10000, 有效: 9637, 跳过: 363
+INFO - run_lib.py - 2025-06-04 01:28:12,290 - 3D similarity metrics saved to: exp/diffspectra_qm9uv_oldide_mlflow_2gpu/eval/similarity_metrics_3d_ckpt_33.csv
+INFO - run_lib.py - 2025-06-04 01:28:12,292 - 3D 精确匹配率: 0.0006
+INFO - run_lib.py - 2025-06-04 01:28:12,292 - 3D Tanimoto相似度(平均): 0.1537
+INFO - run_lib.py - 2025-06-04 01:28:12,293 - 3D Tanimoto(MACCS)相似度(平均): 0.3592
+INFO - run_lib.py - 2025-06-04 01:28:12,293 - 3D Fraggle相似度(平均): 0.5567
+INFO - run_lib.py - 2025-06-04 01:28:12,293 - 3D 余弦相似度(平均): 0.2603
+INFO - run_lib.py - 2025-06-04 01:28:12,293 - 3D 近似匹配率(Tanimoto≥0.675): 0.0011
+INFO - run_lib.py - 2025-06-04 01:28:12,294 - 3D 有效匹配率(Tanimoto≥0.4): 0.0088
+INFO - run_lib.py - 2025-06-04 01:28:12,294 - 3D 官能团相似度(平均): 0.4499
+INFO - run_lib.py - 2025-06-04 01:28:12,294 - Successfully computed 3D metrics for 9637 molecule pairs
+INFO - run_lib.py - 2025-06-04 01:28:12,297 - Computing 2D version similarity metrics
+INFO - run_lib.py - 2025-06-04 01:28:14,234 - 2D分子对统计 - 输入: 10000, 有效: 9726, 跳过: 274
+INFO - run_lib.py - 2025-06-04 01:49:00,127 - 2D similarity metrics saved to: exp/diffspectra_qm9uv_oldide_mlflow_2gpu/eval/similarity_metrics_2d_ckpt_33.csv
+INFO - run_lib.py - 2025-06-04 01:49:00,128 - 2D 精确匹配率: 0.001
+INFO - run_lib.py - 2025-06-04 01:49:00,129 - 2D Tanimoto相似度(平均): 0.1556
+INFO - run_lib.py - 2025-06-04 01:49:00,129 - 2D Tanimoto(MACCS)相似度(平均): 0.3634
+INFO - run_lib.py - 2025-06-04 01:49:00,129 - 2D Fraggle相似度(平均): 0.5581
+INFO - run_lib.py - 2025-06-04 01:49:00,130 - 2D 余弦相似度(平均): 0.2625
+INFO - run_lib.py - 2025-06-04 01:49:00,130 - 2D 近似匹配率(Tanimoto≥0.675): 0.0019
+INFO - run_lib.py - 2025-06-04 01:49:00,130 - 2D 有效匹配率(Tanimoto≥0.4): 0.0109
+INFO - run_lib.py - 2025-06-04 01:49:00,131 - 2D 官能团相似度(平均): 0.4567
+INFO - run_lib.py - 2025-06-04 01:49:00,131 - Successfully computed 2D metrics for 9726 molecule pairs
+INFO - run_lib.py - 2025-06-04 01:49:01,138 - Molecules saved for analysis in: exp/diffspectra_qm9uv_oldide_mlflow_2gpu/eval/molecules_ckpt_33

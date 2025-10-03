@@ -1,0 +1,32 @@
+INFO - run_lib.py - 2025-02-24 13:09:27,629 - model size: 125.0MB
+INFO - run_lib.py - 2025-02-24 13:09:27,637 - loading training mols
+INFO - run_lib.py - 2025-02-24 13:09:40,108 - loading test mols
+INFO - run_lib.py - 2025-02-24 13:09:43,537 - build EDM metric
+INFO - run_lib.py - 2025-02-24 13:09:48,000 - build EDM 2D metric
+INFO - run_lib.py - 2025-02-24 13:09:52,267 - build mose metric
+INFO - run_lib.py - 2025-02-24 13:10:03,149 - load checkpoint: exp/diffspectra_qm9ir_oldide_mlflow_1gpu/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-02-24 13:10:06,455 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-02-24 13:31:18,035 - Sampling accomplished
+INFO - run_lib.py - 2025-02-24 13:31:23,939 - Number of molecules: 100
+INFO - run_lib.py - 2025-02-24 13:31:23,939 - Metric-3D || atom stability: 0.9902, mol stability: 0.9100, validity: 0.9700, complete: 0.9700,
+INFO - run_lib.py - 2025-02-24 13:31:54,291 - Metric-3D || FCD: 4.3284
+INFO - run_lib.py - 2025-02-24 13:31:54,475 - Metric-2D || atom stability: 0.9989, mol stability: 0.9800, validity: 0.9800, complete: 0.9800, unique & valid: 0.9800, unique & valid & novelty: 0.9600
+INFO - run_lib.py - 2025-02-24 13:32:25,234 - Metric-2D || FCD: 3.3706, SNN: 0.5365, Frag: 0.7673, Scaf: 0.3662, IntDiv: 0.9079
+INFO - run_lib.py - 2025-02-24 14:12:38,011 - model size: 125.0MB
+INFO - run_lib.py - 2025-02-24 14:12:38,022 - loading training mols
+INFO - run_lib.py - 2025-02-24 14:12:50,213 - loading test mols
+INFO - run_lib.py - 2025-02-24 14:12:53,578 - build EDM metric
+INFO - run_lib.py - 2025-02-24 14:12:57,918 - build EDM 2D metric
+INFO - run_lib.py - 2025-02-24 14:13:01,895 - build mose metric
+INFO - run_lib.py - 2025-02-24 14:13:11,491 - load checkpoint: exp/diffspectra_qm9ir_oldide_mlflow_1gpu/checkpoints/checkpoint_40.pth
+INFO - run_lib.py - 2025-02-24 14:13:13,314 - Sampling -- ckpt: 40
+INFO - run_lib.py - 2025-02-24 15:37:55,754 - Sampling accomplished
+INFO - run_lib.py - 2025-02-24 15:38:59,694 - Number of molecules: 10000
+INFO - run_lib.py - 2025-02-24 15:38:59,695 - Metric-3D || atom stability: 0.9900, mol stability: 0.9024, validity: 0.9645, complete: 0.9612,
+INFO - run_lib.py - 2025-02-24 15:39:43,970 - Metric-3D || FCD: 0.9807
+INFO - run_lib.py - 2025-02-24 15:39:56,169 - Metric-2D || atom stability: 0.9985, mol stability: 0.9783, validity: 0.9800, complete: 0.9799, unique & valid: 0.9595, unique & valid & novelty: 0.9286
+INFO - run_lib.py - 2025-02-24 15:40:40,757 - Metric-2D || FCD: 0.1002, SNN: 0.5293, Frag: 0.9901, Scaf: 0.9380, IntDiv: 0.9198
+INFO - run_lib.py - 2025-02-24 15:45:49,952 - model size: 125.0MB
+INFO - run_lib.py - 2025-02-24 15:45:49,959 - loading training mols
+INFO - run_lib.py - 2025-02-24 15:46:02,395 - loading test mols
+INFO - run_lib.py - 2025-02-24 15:46:05,789 - build EDM metric

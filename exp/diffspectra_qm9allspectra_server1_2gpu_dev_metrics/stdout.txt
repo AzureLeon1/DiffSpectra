@@ -1,0 +1,2244 @@
+INFO - run_lib.py - 2025-03-22 12:36:45,025 - model size: 151.2MB
+WARNING - utils.py - 2025-03-22 12:36:45,026 - No checkpoint found at exp/diffspectra_qm9allspectra_server1_2gpu/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-03-22 12:36:45,026 - data:
+  atom_types: 5
+  bond_types: 4
+  centered: true
+  collate: collate_spectra_allspectra
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 2500
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 10000
+  save_graph: false
+  save_mols: 'true'
+  sub_geometry: false
+exp_type: vpsde_edge_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dist_gbf: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  gbf_name: CondGaussianLayer
+  include_fc_charge: true
+  loss_weights: 1., 0.25, 0.1
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: diffspectra_cond_DGT_concat
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 4, 4, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: true
+  self_cond: true
+  self_cond_type: ori
+  softmax_inf: true
+  spatial_cut_off: 2.0
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: false
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 256
+  dataloader_drop_last: true
+  distributed: true
+  eval_batch_size: 256
+  eval_samples: 256
+  local_rank: 0
+  log_freq: 250
+  n_iters: 1000000
+  num_gpus: 2
+  reduce_mean: false
+  snapshot_freq: 25000
+  snapshot_freq_for_preemption: 5000
+  snapshot_sampling: true
+  world_size: 2
+
+INFO - run_lib.py - 2025-03-22 12:36:45,043 - loading test mols
+INFO - run_lib.py - 2025-03-22 12:39:23,739 - model size: 151.2MB
+WARNING - utils.py - 2025-03-22 12:39:23,740 - No checkpoint found at exp/diffspectra_qm9allspectra_server1_2gpu/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-03-22 12:39:23,740 - data:
+  atom_types: 5
+  bond_types: 4
+  centered: true
+  collate: collate_spectra_allspectra
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 2500
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 10000
+  save_graph: false
+  save_mols: 'true'
+  sub_geometry: false
+exp_type: vpsde_edge_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dist_gbf: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  gbf_name: CondGaussianLayer
+  include_fc_charge: true
+  loss_weights: 1., 0.25, 0.1
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: diffspectra_cond_DGT_concat
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 4, 4, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: true
+  self_cond: true
+  self_cond_type: ori
+  softmax_inf: true
+  spatial_cut_off: 2.0
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: false
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 256
+  dataloader_drop_last: true
+  distributed: true
+  eval_batch_size: 256
+  eval_samples: 256
+  local_rank: 0
+  log_freq: 250
+  n_iters: 1000000
+  num_gpus: 2
+  reduce_mean: false
+  snapshot_freq: 25000
+  snapshot_freq_for_preemption: 5000
+  snapshot_sampling: true
+  world_size: 2
+
+INFO - run_lib.py - 2025-03-22 12:39:23,758 - loading test mols
+INFO - run_lib.py - 2025-03-22 12:39:41,318 - step: 0, training_loss: 4.63985e+01
+INFO - run_lib.py - 2025-03-22 12:42:12,960 - step: 250, training_loss: 3.76837e+01
+INFO - run_lib.py - 2025-03-22 12:44:43,793 - step: 500, training_loss: 3.00048e+01
+INFO - run_lib.py - 2025-03-22 12:47:14,962 - step: 750, training_loss: 1.89187e+01
+INFO - run_lib.py - 2025-03-22 12:49:45,971 - step: 1000, training_loss: 1.39004e+01
+INFO - run_lib.py - 2025-03-22 12:52:17,145 - step: 1250, training_loss: 9.95269e+00
+INFO - run_lib.py - 2025-03-22 12:54:48,028 - step: 1500, training_loss: 1.08800e+01
+INFO - run_lib.py - 2025-03-22 12:57:20,481 - step: 1750, training_loss: 1.16194e+01
+INFO - run_lib.py - 2025-03-22 12:59:51,294 - step: 2000, training_loss: 1.07309e+01
+INFO - run_lib.py - 2025-03-22 13:02:24,252 - step: 2250, training_loss: 9.56915e+00
+INFO - run_lib.py - 2025-03-22 13:04:58,858 - step: 2500, training_loss: 1.06874e+01
+INFO - run_lib.py - 2025-03-22 13:07:30,525 - step: 2750, training_loss: 9.45246e+00
+INFO - run_lib.py - 2025-03-22 13:10:02,137 - step: 3000, training_loss: 1.08223e+01
+INFO - run_lib.py - 2025-03-22 13:12:35,817 - step: 3250, training_loss: 1.02958e+01
+INFO - run_lib.py - 2025-03-22 13:15:08,584 - step: 3500, training_loss: 1.10329e+01
+INFO - run_lib.py - 2025-03-22 13:17:37,306 - step: 3750, training_loss: 9.65722e+00
+INFO - run_lib.py - 2025-03-22 13:20:11,618 - step: 4000, training_loss: 1.03299e+01
+INFO - run_lib.py - 2025-03-22 13:22:45,384 - step: 4250, training_loss: 1.06714e+01
+INFO - run_lib.py - 2025-03-22 13:25:22,782 - step: 4500, training_loss: 1.07437e+01
+INFO - run_lib.py - 2025-03-22 13:28:01,564 - step: 4750, training_loss: 9.68299e+00
+INFO - run_lib.py - 2025-03-22 13:30:33,603 - step: 5000, training_loss: 9.89433e+00
+INFO - run_lib.py - 2025-03-22 13:33:06,235 - step: 5250, training_loss: 1.00570e+01
+INFO - run_lib.py - 2025-03-22 13:35:39,299 - step: 5500, training_loss: 9.42515e+00
+INFO - run_lib.py - 2025-03-22 13:38:10,139 - step: 5750, training_loss: 9.53339e+00
+INFO - run_lib.py - 2025-03-22 13:40:43,236 - step: 6000, training_loss: 9.39594e+00
+INFO - run_lib.py - 2025-03-22 13:43:18,878 - step: 6250, training_loss: 9.44378e+00
+INFO - run_lib.py - 2025-03-22 13:45:48,109 - step: 6500, training_loss: 9.25299e+00
+INFO - run_lib.py - 2025-03-22 13:48:19,109 - step: 6750, training_loss: 8.77140e+00
+INFO - run_lib.py - 2025-03-22 13:50:52,808 - step: 7000, training_loss: 1.02710e+01
+INFO - run_lib.py - 2025-03-22 13:53:27,081 - step: 7250, training_loss: 9.54427e+00
+INFO - run_lib.py - 2025-03-22 13:56:00,374 - step: 7500, training_loss: 9.48774e+00
+INFO - run_lib.py - 2025-03-22 13:58:34,503 - step: 7750, training_loss: 8.72726e+00
+INFO - run_lib.py - 2025-03-22 14:01:06,434 - step: 8000, training_loss: 9.18113e+00
+INFO - run_lib.py - 2025-03-22 14:03:35,007 - step: 8250, training_loss: 9.62421e+00
+INFO - run_lib.py - 2025-03-22 14:06:05,184 - step: 8500, training_loss: 9.05054e+00
+INFO - run_lib.py - 2025-03-22 14:08:38,715 - step: 8750, training_loss: 9.85732e+00
+INFO - run_lib.py - 2025-03-22 14:11:09,795 - step: 9000, training_loss: 9.09970e+00
+INFO - run_lib.py - 2025-03-22 14:13:43,338 - step: 9250, training_loss: 9.82448e+00
+INFO - run_lib.py - 2025-03-22 14:16:18,468 - step: 9500, training_loss: 9.77186e+00
+INFO - run_lib.py - 2025-03-22 14:18:51,799 - step: 9750, training_loss: 9.30734e+00
+INFO - run_lib.py - 2025-03-22 14:21:24,615 - step: 10000, training_loss: 9.88555e+00
+INFO - run_lib.py - 2025-03-22 14:23:59,767 - step: 10250, training_loss: 9.21144e+00
+INFO - run_lib.py - 2025-03-22 14:26:31,260 - step: 10500, training_loss: 9.94436e+00
+INFO - run_lib.py - 2025-03-22 14:29:03,335 - step: 10750, training_loss: 9.70177e+00
+INFO - run_lib.py - 2025-03-22 14:31:38,274 - step: 11000, training_loss: 9.13589e+00
+INFO - run_lib.py - 2025-03-22 14:34:12,057 - step: 11250, training_loss: 7.99846e+00
+INFO - run_lib.py - 2025-03-22 14:36:43,628 - step: 11500, training_loss: 8.72856e+00
+INFO - run_lib.py - 2025-03-22 14:39:19,863 - step: 11750, training_loss: 9.39958e+00
+INFO - run_lib.py - 2025-03-22 14:41:49,888 - step: 12000, training_loss: 9.85312e+00
+INFO - run_lib.py - 2025-03-22 14:44:17,750 - step: 12250, training_loss: 9.68296e+00
+INFO - run_lib.py - 2025-03-22 14:46:49,788 - step: 12500, training_loss: 8.54336e+00
+INFO - run_lib.py - 2025-03-22 14:49:18,952 - step: 12750, training_loss: 8.60294e+00
+INFO - run_lib.py - 2025-03-22 14:51:52,259 - step: 13000, training_loss: 8.66362e+00
+INFO - run_lib.py - 2025-03-22 14:54:25,931 - step: 13250, training_loss: 8.38245e+00
+INFO - run_lib.py - 2025-03-22 14:56:57,705 - step: 13500, training_loss: 8.47250e+00
+INFO - run_lib.py - 2025-03-22 14:59:31,904 - step: 13750, training_loss: 9.60586e+00
+INFO - run_lib.py - 2025-03-22 15:02:06,937 - step: 14000, training_loss: 9.21165e+00
+INFO - run_lib.py - 2025-03-22 15:04:37,293 - step: 14250, training_loss: 8.46632e+00
+INFO - run_lib.py - 2025-03-22 15:07:08,105 - step: 14500, training_loss: 8.63757e+00
+INFO - run_lib.py - 2025-03-22 15:09:42,435 - step: 14750, training_loss: 9.29414e+00
+INFO - run_lib.py - 2025-03-22 15:12:12,011 - step: 15000, training_loss: 9.51882e+00
+INFO - run_lib.py - 2025-03-22 15:14:44,006 - step: 15250, training_loss: 8.69536e+00
+INFO - run_lib.py - 2025-03-22 15:17:16,271 - step: 15500, training_loss: 9.32560e+00
+INFO - run_lib.py - 2025-03-22 15:19:46,931 - step: 15750, training_loss: 8.67638e+00
+INFO - run_lib.py - 2025-03-22 15:22:21,313 - step: 16000, training_loss: 8.40688e+00
+INFO - run_lib.py - 2025-03-22 15:24:51,009 - step: 16250, training_loss: 8.49764e+00
+INFO - run_lib.py - 2025-03-22 15:27:23,716 - step: 16500, training_loss: 9.07697e+00
+INFO - run_lib.py - 2025-03-22 15:29:52,406 - step: 16750, training_loss: 7.73958e+00
+INFO - run_lib.py - 2025-03-22 15:32:23,890 - step: 17000, training_loss: 9.18805e+00
+INFO - run_lib.py - 2025-03-22 15:34:58,731 - step: 17250, training_loss: 7.68588e+00
+INFO - run_lib.py - 2025-03-22 15:37:31,062 - step: 17500, training_loss: 8.36486e+00
+INFO - run_lib.py - 2025-03-22 15:40:01,067 - step: 17750, training_loss: 8.27715e+00
+INFO - run_lib.py - 2025-03-22 15:42:34,107 - step: 18000, training_loss: 7.94095e+00
+INFO - run_lib.py - 2025-03-22 15:45:05,108 - step: 18250, training_loss: 8.68545e+00
+INFO - run_lib.py - 2025-03-22 15:47:34,629 - step: 18500, training_loss: 8.66687e+00
+INFO - run_lib.py - 2025-03-22 15:50:10,530 - step: 18750, training_loss: 9.14527e+00
+INFO - run_lib.py - 2025-03-22 15:52:39,714 - step: 19000, training_loss: 9.08728e+00
+INFO - run_lib.py - 2025-03-22 15:55:12,174 - step: 19250, training_loss: 8.81707e+00
+INFO - run_lib.py - 2025-03-22 15:57:45,642 - step: 19500, training_loss: 9.24443e+00
+INFO - run_lib.py - 2025-03-22 16:00:17,881 - step: 19750, training_loss: 7.99085e+00
+INFO - run_lib.py - 2025-03-22 16:02:49,559 - step: 20000, training_loss: 9.20032e+00
+INFO - run_lib.py - 2025-03-22 16:05:27,101 - step: 20250, training_loss: 9.04113e+00
+INFO - run_lib.py - 2025-03-22 16:08:00,499 - step: 20500, training_loss: 8.75587e+00
+INFO - run_lib.py - 2025-03-22 16:10:30,327 - step: 20750, training_loss: 8.90335e+00
+INFO - run_lib.py - 2025-03-22 16:13:02,886 - step: 21000, training_loss: 7.51592e+00
+INFO - run_lib.py - 2025-03-22 16:15:35,415 - step: 21250, training_loss: 8.32351e+00
+INFO - run_lib.py - 2025-03-22 16:18:09,885 - step: 21500, training_loss: 8.24217e+00
+INFO - run_lib.py - 2025-03-22 16:20:42,669 - step: 21750, training_loss: 9.24493e+00
+INFO - run_lib.py - 2025-03-22 16:23:12,928 - step: 22000, training_loss: 9.10632e+00
+INFO - run_lib.py - 2025-03-22 16:25:45,023 - step: 22250, training_loss: 9.80963e+00
+INFO - run_lib.py - 2025-03-22 16:28:21,775 - step: 22500, training_loss: 9.36643e+00
+INFO - run_lib.py - 2025-03-22 16:30:54,366 - step: 22750, training_loss: 8.60130e+00
+INFO - run_lib.py - 2025-03-22 16:33:27,123 - step: 23000, training_loss: 7.95836e+00
+INFO - run_lib.py - 2025-03-22 16:36:04,554 - step: 23250, training_loss: 8.12441e+00
+INFO - run_lib.py - 2025-03-22 16:38:35,157 - step: 23500, training_loss: 8.45391e+00
+INFO - run_lib.py - 2025-03-22 16:41:05,144 - step: 23750, training_loss: 8.90290e+00
+INFO - run_lib.py - 2025-03-22 16:43:38,012 - step: 24000, training_loss: 8.74932e+00
+INFO - run_lib.py - 2025-03-22 16:46:14,853 - step: 24250, training_loss: 8.06731e+00
+INFO - run_lib.py - 2025-03-22 16:48:48,148 - step: 24500, training_loss: 8.36693e+00
+INFO - run_lib.py - 2025-03-22 16:51:20,767 - step: 24750, training_loss: 8.55864e+00
+INFO - run_lib.py - 2025-03-22 16:53:56,543 - step: 25000, training_loss: 9.55770e+00
+INFO - run_lib.py - 2025-03-22 16:57:06,600 - step: 25000, n_mol: 256, 3D atom stability: 0.8727, mol stability: 0.2617, validity: 0.6992, complete: 0.5781, unique & valid: 0.6992
+INFO - run_lib.py - 2025-03-22 16:57:06,994 - step: 25000, n_mol: 256, 2D atom stability: 0.9556, mol stability: 0.5508, validity: 0.6172, complete: 0.5117, unique & valid: 0.6172
+INFO - run_lib.py - 2025-03-22 16:57:06,999 - step: 25000, pos RMSE: 2.1858
+INFO - run_lib.py - 2025-03-22 16:59:38,659 - step: 25250, training_loss: 8.58829e+00
+INFO - run_lib.py - 2025-03-22 17:02:08,471 - step: 25500, training_loss: 8.82825e+00
+INFO - run_lib.py - 2025-03-22 17:04:40,659 - step: 25750, training_loss: 8.45814e+00
+INFO - run_lib.py - 2025-03-22 17:07:13,109 - step: 26000, training_loss: 8.95698e+00
+INFO - run_lib.py - 2025-03-22 17:09:45,937 - step: 26250, training_loss: 7.74142e+00
+INFO - run_lib.py - 2025-03-22 17:12:20,211 - step: 26500, training_loss: 8.05399e+00
+INFO - run_lib.py - 2025-03-22 17:14:51,490 - step: 26750, training_loss: 7.42840e+00
+INFO - run_lib.py - 2025-03-22 17:17:24,836 - step: 27000, training_loss: 8.47649e+00
+INFO - run_lib.py - 2025-03-22 17:19:59,462 - step: 27250, training_loss: 9.21155e+00
+INFO - run_lib.py - 2025-03-22 17:22:33,220 - step: 27500, training_loss: 7.67005e+00
+INFO - run_lib.py - 2025-03-22 17:25:03,579 - step: 27750, training_loss: 7.65547e+00
+INFO - run_lib.py - 2025-03-22 17:27:36,754 - step: 28000, training_loss: 7.60866e+00
+INFO - run_lib.py - 2025-03-22 17:30:10,425 - step: 28250, training_loss: 9.39122e+00
+INFO - run_lib.py - 2025-03-22 17:32:43,153 - step: 28500, training_loss: 7.88894e+00
+INFO - run_lib.py - 2025-03-22 17:35:16,647 - step: 28750, training_loss: 7.19650e+00
+INFO - run_lib.py - 2025-03-22 17:37:48,092 - step: 29000, training_loss: 8.16120e+00
+INFO - run_lib.py - 2025-03-22 17:40:20,738 - step: 29250, training_loss: 8.33877e+00
+INFO - run_lib.py - 2025-03-22 17:42:54,087 - step: 29500, training_loss: 8.79094e+00
+INFO - run_lib.py - 2025-03-22 17:45:23,011 - step: 29750, training_loss: 7.54684e+00
+INFO - run_lib.py - 2025-03-22 17:47:53,896 - step: 30000, training_loss: 7.57690e+00
+INFO - run_lib.py - 2025-03-22 17:50:30,882 - step: 30250, training_loss: 8.72530e+00
+INFO - run_lib.py - 2025-03-22 17:53:03,126 - step: 30500, training_loss: 8.96429e+00
+INFO - run_lib.py - 2025-03-22 17:55:37,300 - step: 30750, training_loss: 8.06577e+00
+INFO - run_lib.py - 2025-03-22 17:58:09,692 - step: 31000, training_loss: 8.46762e+00
+INFO - run_lib.py - 2025-03-22 18:00:42,415 - step: 31250, training_loss: 8.59133e+00
+INFO - run_lib.py - 2025-03-22 18:03:15,714 - step: 31500, training_loss: 7.89626e+00
+INFO - run_lib.py - 2025-03-22 18:05:47,197 - step: 31750, training_loss: 8.53475e+00
+INFO - run_lib.py - 2025-03-22 18:08:21,084 - step: 32000, training_loss: 8.29060e+00
+INFO - run_lib.py - 2025-03-22 18:10:50,996 - step: 32250, training_loss: 7.58923e+00
+INFO - run_lib.py - 2025-03-22 18:13:22,613 - step: 32500, training_loss: 9.03832e+00
+INFO - run_lib.py - 2025-03-22 18:15:55,840 - step: 32750, training_loss: 8.38855e+00
+INFO - run_lib.py - 2025-03-22 18:18:25,863 - step: 33000, training_loss: 8.01628e+00
+INFO - run_lib.py - 2025-03-22 18:20:54,976 - step: 33250, training_loss: 8.54816e+00
+INFO - run_lib.py - 2025-03-22 18:23:30,796 - step: 33500, training_loss: 7.62819e+00
+INFO - run_lib.py - 2025-03-22 18:26:02,719 - step: 33750, training_loss: 8.55652e+00
+INFO - run_lib.py - 2025-03-22 18:28:36,553 - step: 34000, training_loss: 8.34815e+00
+INFO - run_lib.py - 2025-03-22 18:31:14,129 - step: 34250, training_loss: 8.48773e+00
+INFO - run_lib.py - 2025-03-22 18:33:49,214 - step: 34500, training_loss: 8.25119e+00
+INFO - run_lib.py - 2025-03-22 18:36:21,308 - step: 34750, training_loss: 8.62565e+00
+INFO - run_lib.py - 2025-03-22 18:38:53,904 - step: 35000, training_loss: 8.24773e+00
+INFO - run_lib.py - 2025-03-22 18:41:27,456 - step: 35250, training_loss: 8.39855e+00
+INFO - run_lib.py - 2025-03-22 18:43:58,902 - step: 35500, training_loss: 9.20507e+00
+INFO - run_lib.py - 2025-03-22 18:46:32,007 - step: 35750, training_loss: 7.87048e+00
+INFO - run_lib.py - 2025-03-22 18:49:04,540 - step: 36000, training_loss: 8.97044e+00
+INFO - run_lib.py - 2025-03-22 18:51:36,454 - step: 36250, training_loss: 8.97457e+00
+INFO - run_lib.py - 2025-03-22 18:54:08,098 - step: 36500, training_loss: 7.91951e+00
+INFO - run_lib.py - 2025-03-22 18:56:40,341 - step: 36750, training_loss: 8.42359e+00
+INFO - run_lib.py - 2025-03-22 18:59:12,854 - step: 37000, training_loss: 8.38688e+00
+INFO - run_lib.py - 2025-03-22 19:01:47,776 - step: 37250, training_loss: 8.17405e+00
+INFO - run_lib.py - 2025-03-22 19:04:22,459 - step: 37500, training_loss: 7.76303e+00
+INFO - run_lib.py - 2025-03-22 19:06:56,785 - step: 37750, training_loss: 9.41915e+00
+INFO - run_lib.py - 2025-03-22 19:09:29,640 - step: 38000, training_loss: 7.95655e+00
+INFO - run_lib.py - 2025-03-22 19:11:58,820 - step: 38250, training_loss: 7.98749e+00
+INFO - run_lib.py - 2025-03-22 19:14:30,226 - step: 38500, training_loss: 8.65287e+00
+INFO - run_lib.py - 2025-03-22 19:17:04,013 - step: 38750, training_loss: 8.76773e+00
+INFO - run_lib.py - 2025-03-22 19:19:36,954 - step: 39000, training_loss: 8.00201e+00
+INFO - run_lib.py - 2025-03-22 19:22:08,295 - step: 39250, training_loss: 8.44844e+00
+INFO - run_lib.py - 2025-03-22 19:24:41,729 - step: 39500, training_loss: 7.33387e+00
+INFO - run_lib.py - 2025-03-22 19:27:15,558 - step: 39750, training_loss: 8.48211e+00
+INFO - run_lib.py - 2025-03-22 19:29:45,185 - step: 40000, training_loss: 8.38639e+00
+INFO - run_lib.py - 2025-03-22 19:32:19,314 - step: 40250, training_loss: 8.39102e+00
+INFO - run_lib.py - 2025-03-22 19:34:54,098 - step: 40500, training_loss: 9.11329e+00
+INFO - run_lib.py - 2025-03-22 19:37:27,549 - step: 40750, training_loss: 8.51417e+00
+INFO - run_lib.py - 2025-03-22 19:39:59,543 - step: 41000, training_loss: 9.19715e+00
+INFO - run_lib.py - 2025-03-22 19:42:35,057 - step: 41250, training_loss: 8.02139e+00
+INFO - run_lib.py - 2025-03-22 19:45:07,258 - step: 41500, training_loss: 7.86244e+00
+INFO - run_lib.py - 2025-03-22 19:47:38,804 - step: 41750, training_loss: 8.22171e+00
+INFO - run_lib.py - 2025-03-22 19:50:11,951 - step: 42000, training_loss: 8.06016e+00
+INFO - run_lib.py - 2025-03-22 19:52:43,992 - step: 42250, training_loss: 7.38105e+00
+INFO - run_lib.py - 2025-03-22 19:55:17,894 - step: 42500, training_loss: 7.42520e+00
+INFO - run_lib.py - 2025-03-22 19:57:51,168 - step: 42750, training_loss: 7.94374e+00
+INFO - run_lib.py - 2025-03-22 20:00:22,039 - step: 43000, training_loss: 8.66681e+00
+INFO - run_lib.py - 2025-03-22 20:02:53,890 - step: 43250, training_loss: 8.04038e+00
+INFO - run_lib.py - 2025-03-22 20:05:27,641 - step: 43500, training_loss: 8.42075e+00
+INFO - run_lib.py - 2025-03-22 20:08:01,665 - step: 43750, training_loss: 8.16692e+00
+INFO - run_lib.py - 2025-03-22 20:10:34,043 - step: 44000, training_loss: 7.85919e+00
+INFO - run_lib.py - 2025-03-22 20:13:06,789 - step: 44250, training_loss: 8.88621e+00
+INFO - run_lib.py - 2025-03-22 20:15:39,555 - step: 44500, training_loss: 8.80907e+00
+INFO - run_lib.py - 2025-03-22 20:18:11,838 - step: 44750, training_loss: 8.01464e+00
+INFO - run_lib.py - 2025-03-22 20:20:47,200 - step: 45000, training_loss: 8.68730e+00
+INFO - run_lib.py - 2025-03-22 20:23:24,220 - step: 45250, training_loss: 7.90674e+00
+INFO - run_lib.py - 2025-03-22 20:25:56,810 - step: 45500, training_loss: 8.15232e+00
+INFO - run_lib.py - 2025-03-22 20:28:30,146 - step: 45750, training_loss: 8.65957e+00
+INFO - run_lib.py - 2025-03-22 20:31:01,746 - step: 46000, training_loss: 7.10778e+00
+INFO - run_lib.py - 2025-03-22 20:33:35,793 - step: 46250, training_loss: 8.38724e+00
+INFO - run_lib.py - 2025-03-22 20:36:09,434 - step: 46500, training_loss: 8.60484e+00
+INFO - run_lib.py - 2025-03-22 20:38:40,857 - step: 46750, training_loss: 8.75092e+00
+INFO - run_lib.py - 2025-03-22 20:41:15,586 - step: 47000, training_loss: 8.10931e+00
+INFO - run_lib.py - 2025-03-22 20:43:49,633 - step: 47250, training_loss: 8.82526e+00
+INFO - run_lib.py - 2025-03-22 20:46:22,873 - step: 47500, training_loss: 6.90728e+00
+INFO - run_lib.py - 2025-03-22 20:48:54,610 - step: 47750, training_loss: 7.69406e+00
+INFO - run_lib.py - 2025-03-22 20:51:25,120 - step: 48000, training_loss: 8.02343e+00
+INFO - run_lib.py - 2025-03-22 20:53:59,828 - step: 48250, training_loss: 7.29587e+00
+INFO - run_lib.py - 2025-03-22 20:56:31,214 - step: 48500, training_loss: 7.97211e+00
+INFO - run_lib.py - 2025-03-22 20:59:03,295 - step: 48750, training_loss: 7.88890e+00
+INFO - run_lib.py - 2025-03-22 21:01:38,625 - step: 49000, training_loss: 7.85275e+00
+INFO - run_lib.py - 2025-03-22 21:04:12,500 - step: 49250, training_loss: 8.15388e+00
+INFO - run_lib.py - 2025-03-22 21:06:42,028 - step: 49500, training_loss: 8.29769e+00
+INFO - run_lib.py - 2025-03-22 21:09:15,058 - step: 49750, training_loss: 8.29008e+00
+INFO - run_lib.py - 2025-03-22 21:11:45,526 - step: 50000, training_loss: 7.80326e+00
+INFO - run_lib.py - 2025-03-22 21:14:55,220 - step: 50000, n_mol: 256, 3D atom stability: 0.9703, mol stability: 0.7188, validity: 0.8867, complete: 0.8828, unique & valid: 0.8828
+INFO - run_lib.py - 2025-03-22 21:14:55,623 - step: 50000, n_mol: 256, 2D atom stability: 0.9942, mol stability: 0.9297, validity: 0.9570, complete: 0.9570, unique & valid: 0.9570
+INFO - run_lib.py - 2025-03-22 21:14:55,628 - step: 50000, pos RMSE: 2.1854
+INFO - run_lib.py - 2025-03-22 21:17:29,842 - step: 50250, training_loss: 8.40851e+00
+INFO - run_lib.py - 2025-03-22 21:20:05,129 - step: 50500, training_loss: 7.22261e+00
+INFO - run_lib.py - 2025-03-22 21:22:36,167 - step: 50750, training_loss: 8.28102e+00
+INFO - run_lib.py - 2025-03-22 21:25:07,014 - step: 51000, training_loss: 8.38504e+00
+INFO - run_lib.py - 2025-03-22 21:27:41,948 - step: 51250, training_loss: 7.60734e+00
+INFO - run_lib.py - 2025-03-22 21:30:14,737 - step: 51500, training_loss: 8.57001e+00
+INFO - run_lib.py - 2025-03-22 21:32:46,740 - step: 51750, training_loss: 8.34516e+00
+INFO - run_lib.py - 2025-03-22 21:35:21,685 - step: 52000, training_loss: 8.19874e+00
+INFO - run_lib.py - 2025-03-22 21:37:53,962 - step: 52250, training_loss: 8.34156e+00
+INFO - run_lib.py - 2025-03-22 21:40:26,380 - step: 52500, training_loss: 8.05652e+00
+INFO - run_lib.py - 2025-03-22 21:42:57,538 - step: 52750, training_loss: 6.90305e+00
+INFO - run_lib.py - 2025-03-22 21:45:29,670 - step: 53000, training_loss: 8.96128e+00
+INFO - run_lib.py - 2025-03-22 21:48:01,867 - step: 53250, training_loss: 7.67416e+00
+INFO - run_lib.py - 2025-03-22 21:50:37,680 - step: 53500, training_loss: 8.27670e+00
+INFO - run_lib.py - 2025-03-22 21:53:08,778 - step: 53750, training_loss: 8.22161e+00
+INFO - run_lib.py - 2025-03-22 21:55:41,637 - step: 54000, training_loss: 7.59143e+00
+INFO - run_lib.py - 2025-03-22 21:58:15,642 - step: 54250, training_loss: 8.20495e+00
+INFO - run_lib.py - 2025-03-22 22:00:46,552 - step: 54500, training_loss: 7.97511e+00
+INFO - run_lib.py - 2025-03-22 22:03:18,564 - step: 54750, training_loss: 8.14793e+00
+INFO - run_lib.py - 2025-03-22 22:05:53,631 - step: 55000, training_loss: 8.71876e+00
+INFO - run_lib.py - 2025-03-22 22:08:27,937 - step: 55250, training_loss: 8.25240e+00
+INFO - run_lib.py - 2025-03-22 22:11:00,738 - step: 55500, training_loss: 8.66121e+00
+INFO - run_lib.py - 2025-03-22 22:13:32,238 - step: 55750, training_loss: 8.85887e+00
+INFO - run_lib.py - 2025-03-22 22:16:06,604 - step: 56000, training_loss: 7.75929e+00
+INFO - run_lib.py - 2025-03-22 22:18:38,323 - step: 56250, training_loss: 8.16221e+00
+INFO - run_lib.py - 2025-03-22 22:21:09,534 - step: 56500, training_loss: 7.51469e+00
+INFO - run_lib.py - 2025-03-22 22:23:43,828 - step: 56750, training_loss: 8.40456e+00
+INFO - run_lib.py - 2025-03-22 22:26:16,141 - step: 57000, training_loss: 8.30816e+00
+INFO - run_lib.py - 2025-03-22 22:28:49,668 - step: 57250, training_loss: 8.47213e+00
+INFO - run_lib.py - 2025-03-22 22:31:24,583 - step: 57500, training_loss: 7.95904e+00
+INFO - run_lib.py - 2025-03-22 22:33:58,433 - step: 57750, training_loss: 8.02807e+00
+INFO - run_lib.py - 2025-03-22 22:36:31,293 - step: 58000, training_loss: 7.42417e+00
+INFO - run_lib.py - 2025-03-22 22:39:07,958 - step: 58250, training_loss: 8.74399e+00
+INFO - run_lib.py - 2025-03-22 22:41:38,092 - step: 58500, training_loss: 8.51731e+00
+INFO - run_lib.py - 2025-03-22 22:44:07,448 - step: 58750, training_loss: 7.28611e+00
+INFO - run_lib.py - 2025-03-22 22:46:42,778 - step: 59000, training_loss: 8.76380e+00
+INFO - run_lib.py - 2025-03-22 22:49:13,448 - step: 59250, training_loss: 8.52336e+00
+INFO - run_lib.py - 2025-03-22 22:51:44,910 - step: 59500, training_loss: 8.16625e+00
+INFO - run_lib.py - 2025-03-22 22:54:16,846 - step: 59750, training_loss: 8.27889e+00
+INFO - run_lib.py - 2025-03-22 22:56:47,586 - step: 60000, training_loss: 9.36471e+00
+INFO - run_lib.py - 2025-03-22 22:59:22,648 - step: 60250, training_loss: 8.26321e+00
+INFO - run_lib.py - 2025-03-22 23:01:58,916 - step: 60500, training_loss: 7.21029e+00
+INFO - run_lib.py - 2025-03-22 23:04:29,736 - step: 60750, training_loss: 8.69419e+00
+INFO - run_lib.py - 2025-03-22 23:07:03,019 - step: 61000, training_loss: 8.44939e+00
+INFO - run_lib.py - 2025-03-22 23:09:38,141 - step: 61250, training_loss: 8.21681e+00
+INFO - run_lib.py - 2025-03-22 23:12:08,643 - step: 61500, training_loss: 8.01706e+00
+INFO - run_lib.py - 2025-03-22 23:14:41,884 - step: 61750, training_loss: 8.44878e+00
+INFO - run_lib.py - 2025-03-22 23:17:18,329 - step: 62000, training_loss: 7.46530e+00
+INFO - run_lib.py - 2025-03-22 23:19:47,804 - step: 62250, training_loss: 7.70543e+00
+INFO - run_lib.py - 2025-03-22 23:22:20,676 - step: 62500, training_loss: 9.07391e+00
+INFO - run_lib.py - 2025-03-22 23:24:54,794 - step: 62750, training_loss: 8.55924e+00
+INFO - run_lib.py - 2025-03-22 23:27:24,899 - step: 63000, training_loss: 7.75151e+00
+INFO - run_lib.py - 2025-03-22 23:29:57,807 - step: 63250, training_loss: 8.77476e+00
+INFO - run_lib.py - 2025-03-22 23:32:29,424 - step: 63500, training_loss: 7.73616e+00
+INFO - run_lib.py - 2025-03-22 23:35:02,832 - step: 63750, training_loss: 8.36096e+00
+INFO - run_lib.py - 2025-03-22 23:37:37,237 - step: 64000, training_loss: 8.79755e+00
+INFO - run_lib.py - 2025-03-22 23:40:09,199 - step: 64250, training_loss: 8.76635e+00
+INFO - run_lib.py - 2025-03-22 23:42:43,705 - step: 64500, training_loss: 7.88604e+00
+INFO - run_lib.py - 2025-03-22 23:45:17,235 - step: 64750, training_loss: 7.61488e+00
+INFO - run_lib.py - 2025-03-22 23:47:47,800 - step: 65000, training_loss: 7.44478e+00
+INFO - run_lib.py - 2025-03-22 23:50:27,640 - step: 65250, training_loss: 9.00741e+00
+INFO - run_lib.py - 2025-03-22 23:53:00,324 - step: 65500, training_loss: 7.56236e+00
+INFO - run_lib.py - 2025-03-22 23:55:36,858 - step: 65750, training_loss: 9.41642e+00
+INFO - run_lib.py - 2025-03-22 23:58:15,307 - step: 66000, training_loss: 8.78153e+00
+INFO - run_lib.py - 2025-03-23 00:00:46,529 - step: 66250, training_loss: 8.23969e+00
+INFO - run_lib.py - 2025-03-23 00:03:17,848 - step: 66500, training_loss: 8.03139e+00
+INFO - run_lib.py - 2025-03-23 00:05:50,930 - step: 66750, training_loss: 8.59774e+00
+INFO - run_lib.py - 2025-03-23 00:08:23,006 - step: 67000, training_loss: 7.75929e+00
+INFO - run_lib.py - 2025-03-23 00:10:57,425 - step: 67250, training_loss: 7.72676e+00
+INFO - run_lib.py - 2025-03-23 00:13:30,815 - step: 67500, training_loss: 8.19156e+00
+INFO - run_lib.py - 2025-03-23 00:16:03,106 - step: 67750, training_loss: 8.24264e+00
+INFO - run_lib.py - 2025-03-23 00:18:33,402 - step: 68000, training_loss: 7.74502e+00
+INFO - run_lib.py - 2025-03-23 00:21:07,437 - step: 68250, training_loss: 7.99933e+00
+INFO - run_lib.py - 2025-03-23 00:23:42,043 - step: 68500, training_loss: 6.78036e+00
+INFO - run_lib.py - 2025-03-23 00:26:15,724 - step: 68750, training_loss: 9.00267e+00
+INFO - run_lib.py - 2025-03-23 00:28:51,055 - step: 69000, training_loss: 8.98970e+00
+INFO - run_lib.py - 2025-03-23 00:31:21,011 - step: 69250, training_loss: 7.60161e+00
+INFO - run_lib.py - 2025-03-23 00:33:52,232 - step: 69500, training_loss: 7.93746e+00
+INFO - run_lib.py - 2025-03-23 00:36:28,224 - step: 69750, training_loss: 8.15724e+00
+INFO - run_lib.py - 2025-03-23 00:39:00,893 - step: 70000, training_loss: 7.99970e+00
+INFO - run_lib.py - 2025-03-23 00:41:34,843 - step: 70250, training_loss: 8.60402e+00
+INFO - run_lib.py - 2025-03-23 00:44:09,201 - step: 70500, training_loss: 8.76177e+00
+INFO - run_lib.py - 2025-03-23 00:46:41,940 - step: 70750, training_loss: 7.67927e+00
+INFO - run_lib.py - 2025-03-23 00:49:14,430 - step: 71000, training_loss: 8.55526e+00
+INFO - run_lib.py - 2025-03-23 00:51:46,502 - step: 71250, training_loss: 7.74054e+00
+INFO - run_lib.py - 2025-03-23 00:54:19,501 - step: 71500, training_loss: 7.80239e+00
+INFO - run_lib.py - 2025-03-23 00:56:50,852 - step: 71750, training_loss: 7.38627e+00
+INFO - run_lib.py - 2025-03-23 00:59:23,993 - step: 72000, training_loss: 7.65796e+00
+INFO - run_lib.py - 2025-03-23 01:01:57,732 - step: 72250, training_loss: 8.38864e+00
+INFO - run_lib.py - 2025-03-23 01:04:29,191 - step: 72500, training_loss: 7.86534e+00
+INFO - run_lib.py - 2025-03-23 01:07:00,644 - step: 72750, training_loss: 8.48045e+00
+INFO - run_lib.py - 2025-03-23 01:09:36,117 - step: 73000, training_loss: 7.85098e+00
+INFO - run_lib.py - 2025-03-23 01:12:07,411 - step: 73250, training_loss: 8.26790e+00
+INFO - run_lib.py - 2025-03-23 01:14:37,787 - step: 73500, training_loss: 7.63880e+00
+INFO - run_lib.py - 2025-03-23 01:17:09,923 - step: 73750, training_loss: 8.14825e+00
+INFO - run_lib.py - 2025-03-23 01:19:41,247 - step: 74000, training_loss: 8.15989e+00
+INFO - run_lib.py - 2025-03-23 01:22:16,678 - step: 74250, training_loss: 8.04281e+00
+INFO - run_lib.py - 2025-03-23 01:24:50,709 - step: 74500, training_loss: 9.22861e+00
+INFO - run_lib.py - 2025-03-23 01:27:23,815 - step: 74750, training_loss: 8.28314e+00
+INFO - run_lib.py - 2025-03-23 01:29:56,344 - step: 75000, training_loss: 7.57292e+00
+INFO - run_lib.py - 2025-03-23 01:33:13,679 - step: 75000, n_mol: 256, 3D atom stability: 0.9719, mol stability: 0.7148, validity: 0.9023, complete: 0.8906, unique & valid: 0.8984
+INFO - run_lib.py - 2025-03-23 01:33:14,088 - step: 75000, n_mol: 256, 2D atom stability: 0.9964, mol stability: 0.9492, validity: 0.9570, complete: 0.9492, unique & valid: 0.9531
+INFO - run_lib.py - 2025-03-23 01:33:14,094 - step: 75000, pos RMSE: 2.1696
+INFO - run_lib.py - 2025-03-23 01:35:48,915 - step: 75250, training_loss: 7.55703e+00
+INFO - run_lib.py - 2025-03-23 01:38:21,031 - step: 75500, training_loss: 8.56422e+00
+INFO - run_lib.py - 2025-03-23 01:40:51,812 - step: 75750, training_loss: 7.98010e+00
+INFO - run_lib.py - 2025-03-23 01:43:26,086 - step: 76000, training_loss: 8.03876e+00
+INFO - run_lib.py - 2025-03-23 01:46:00,293 - step: 76250, training_loss: 7.97682e+00
+INFO - run_lib.py - 2025-03-23 01:48:34,615 - step: 76500, training_loss: 8.56065e+00
+INFO - run_lib.py - 2025-03-23 01:51:07,727 - step: 76750, training_loss: 7.99785e+00
+INFO - run_lib.py - 2025-03-23 01:53:39,791 - step: 77000, training_loss: 7.81787e+00
+INFO - run_lib.py - 2025-03-23 01:56:12,807 - step: 77250, training_loss: 7.91268e+00
+INFO - run_lib.py - 2025-03-23 01:58:46,827 - step: 77500, training_loss: 7.84703e+00
+INFO - run_lib.py - 2025-03-23 02:01:20,752 - step: 77750, training_loss: 8.32215e+00
+INFO - run_lib.py - 2025-03-23 02:03:52,656 - step: 78000, training_loss: 7.76372e+00
+INFO - run_lib.py - 2025-03-23 02:06:25,016 - step: 78250, training_loss: 6.56992e+00
+INFO - run_lib.py - 2025-03-23 02:08:56,934 - step: 78500, training_loss: 8.00598e+00
+INFO - run_lib.py - 2025-03-23 02:11:28,287 - step: 78750, training_loss: 7.73533e+00
+INFO - run_lib.py - 2025-03-23 02:14:01,929 - step: 79000, training_loss: 7.75632e+00
+INFO - run_lib.py - 2025-03-23 02:16:36,415 - step: 79250, training_loss: 6.77382e+00
+INFO - run_lib.py - 2025-03-23 02:19:10,805 - step: 79500, training_loss: 7.05854e+00
+INFO - run_lib.py - 2025-03-23 02:21:41,599 - step: 79750, training_loss: 8.29864e+00
+INFO - run_lib.py - 2025-03-23 02:24:15,092 - step: 80000, training_loss: 7.26250e+00
+INFO - run_lib.py - 2025-03-23 02:26:51,298 - step: 80250, training_loss: 8.29747e+00
+INFO - run_lib.py - 2025-03-23 02:29:21,760 - step: 80500, training_loss: 8.02822e+00
+INFO - run_lib.py - 2025-03-23 02:31:57,751 - step: 80750, training_loss: 7.65469e+00
+INFO - run_lib.py - 2025-03-23 02:34:27,813 - step: 81000, training_loss: 8.79290e+00
+INFO - run_lib.py - 2025-03-23 02:36:58,972 - step: 81250, training_loss: 7.66352e+00
+INFO - run_lib.py - 2025-03-23 02:39:31,584 - step: 81500, training_loss: 8.16710e+00
+INFO - run_lib.py - 2025-03-23 02:42:11,454 - step: 81750, training_loss: 8.35723e+00
+INFO - run_lib.py - 2025-03-23 02:44:46,410 - step: 82000, training_loss: 7.90557e+00
+INFO - run_lib.py - 2025-03-23 02:47:26,079 - step: 82250, training_loss: 7.88348e+00
+INFO - run_lib.py - 2025-03-23 02:50:00,781 - step: 82500, training_loss: 7.41375e+00
+INFO - run_lib.py - 2025-03-23 02:52:34,597 - step: 82750, training_loss: 8.56188e+00
+INFO - run_lib.py - 2025-03-23 02:55:15,415 - step: 83000, training_loss: 6.96033e+00
+INFO - run_lib.py - 2025-03-23 02:57:52,144 - step: 83250, training_loss: 7.86125e+00
+INFO - run_lib.py - 2025-03-23 03:00:31,741 - step: 83500, training_loss: 8.12313e+00
+INFO - run_lib.py - 2025-03-23 03:03:10,886 - step: 83750, training_loss: 6.98995e+00
+INFO - run_lib.py - 2025-03-23 03:05:50,297 - step: 84000, training_loss: 7.87808e+00
+INFO - run_lib.py - 2025-03-23 03:08:30,567 - step: 84250, training_loss: 7.49244e+00
+INFO - run_lib.py - 2025-03-23 03:11:13,511 - step: 84500, training_loss: 7.59938e+00
+INFO - run_lib.py - 2025-03-23 03:13:51,186 - step: 84750, training_loss: 8.40139e+00
+INFO - run_lib.py - 2025-03-23 03:16:30,869 - step: 85000, training_loss: 8.07014e+00
+INFO - run_lib.py - 2025-03-23 03:19:14,982 - step: 85250, training_loss: 7.91685e+00
+INFO - run_lib.py - 2025-03-23 03:21:52,993 - step: 85500, training_loss: 8.24185e+00
+INFO - run_lib.py - 2025-03-23 03:24:29,605 - step: 85750, training_loss: 7.17308e+00
+INFO - run_lib.py - 2025-03-23 03:27:14,284 - step: 86000, training_loss: 8.71596e+00
+INFO - run_lib.py - 2025-03-23 03:29:54,992 - step: 86250, training_loss: 7.45656e+00
+INFO - run_lib.py - 2025-03-23 03:32:33,816 - step: 86500, training_loss: 8.10868e+00
+INFO - run_lib.py - 2025-03-23 03:35:10,611 - step: 86750, training_loss: 8.32885e+00
+INFO - run_lib.py - 2025-03-23 03:37:53,470 - step: 87000, training_loss: 7.63418e+00
+INFO - run_lib.py - 2025-03-23 03:40:34,051 - step: 87250, training_loss: 8.37606e+00
+INFO - run_lib.py - 2025-03-23 03:43:13,641 - step: 87500, training_loss: 7.65542e+00
+INFO - run_lib.py - 2025-03-23 03:45:53,701 - step: 87750, training_loss: 7.07510e+00
+INFO - run_lib.py - 2025-03-23 03:48:30,112 - step: 88000, training_loss: 7.87195e+00
+INFO - run_lib.py - 2025-03-23 03:51:03,058 - step: 88250, training_loss: 7.94639e+00
+INFO - run_lib.py - 2025-03-23 03:53:43,652 - step: 88500, training_loss: 7.97991e+00
+INFO - run_lib.py - 2025-03-23 03:56:18,927 - step: 88750, training_loss: 7.94121e+00
+INFO - run_lib.py - 2025-03-23 03:58:51,027 - step: 89000, training_loss: 8.06924e+00
+INFO - run_lib.py - 2025-03-23 04:01:26,343 - step: 89250, training_loss: 8.06276e+00
+INFO - run_lib.py - 2025-03-23 04:04:00,908 - step: 89500, training_loss: 8.10036e+00
+INFO - run_lib.py - 2025-03-23 04:06:32,932 - step: 89750, training_loss: 7.56489e+00
+INFO - run_lib.py - 2025-03-23 04:09:09,832 - step: 90000, training_loss: 8.02847e+00
+INFO - run_lib.py - 2025-03-23 04:11:44,119 - step: 90250, training_loss: 8.27397e+00
+INFO - run_lib.py - 2025-03-23 04:14:17,013 - step: 90500, training_loss: 8.27003e+00
+INFO - run_lib.py - 2025-03-23 04:16:48,772 - step: 90750, training_loss: 8.55603e+00
+INFO - run_lib.py - 2025-03-23 04:19:19,849 - step: 91000, training_loss: 7.34436e+00
+INFO - run_lib.py - 2025-03-23 04:21:52,700 - step: 91250, training_loss: 8.59983e+00
+INFO - run_lib.py - 2025-03-23 04:24:28,935 - step: 91500, training_loss: 7.74534e+00
+INFO - run_lib.py - 2025-03-23 04:27:01,907 - step: 91750, training_loss: 7.24292e+00
+INFO - run_lib.py - 2025-03-23 04:29:34,839 - step: 92000, training_loss: 7.13529e+00
+INFO - run_lib.py - 2025-03-23 04:32:09,576 - step: 92250, training_loss: 7.98137e+00
+INFO - run_lib.py - 2025-03-23 04:34:42,356 - step: 92500, training_loss: 8.35664e+00
+INFO - run_lib.py - 2025-03-23 04:37:16,171 - step: 92750, training_loss: 8.15831e+00
+INFO - run_lib.py - 2025-03-23 04:39:50,180 - step: 93000, training_loss: 8.22741e+00
+INFO - run_lib.py - 2025-03-23 04:42:26,349 - step: 93250, training_loss: 8.14100e+00
+INFO - run_lib.py - 2025-03-23 04:44:59,002 - step: 93500, training_loss: 7.87772e+00
+INFO - run_lib.py - 2025-03-23 04:47:33,317 - step: 93750, training_loss: 7.42221e+00
+INFO - run_lib.py - 2025-03-23 04:50:07,774 - step: 94000, training_loss: 7.83976e+00
+INFO - run_lib.py - 2025-03-23 04:52:41,691 - step: 94250, training_loss: 7.49925e+00
+INFO - run_lib.py - 2025-03-23 04:55:18,830 - step: 94500, training_loss: 8.35655e+00
+INFO - run_lib.py - 2025-03-23 04:57:48,106 - step: 94750, training_loss: 8.16604e+00
+INFO - run_lib.py - 2025-03-23 05:00:20,364 - step: 95000, training_loss: 8.19976e+00
+INFO - run_lib.py - 2025-03-23 05:02:55,017 - step: 95250, training_loss: 8.21745e+00
+INFO - run_lib.py - 2025-03-23 05:05:32,827 - step: 95500, training_loss: 8.39617e+00
+INFO - run_lib.py - 2025-03-23 05:08:05,030 - step: 95750, training_loss: 8.07749e+00
+INFO - run_lib.py - 2025-03-23 05:10:38,537 - step: 96000, training_loss: 7.59715e+00
+INFO - run_lib.py - 2025-03-23 05:13:13,667 - step: 96250, training_loss: 8.60664e+00
+INFO - run_lib.py - 2025-03-23 05:15:46,815 - step: 96500, training_loss: 6.91276e+00
+INFO - run_lib.py - 2025-03-23 05:18:17,036 - step: 96750, training_loss: 7.71930e+00
+INFO - run_lib.py - 2025-03-23 05:20:51,593 - step: 97000, training_loss: 7.75092e+00
+INFO - run_lib.py - 2025-03-23 05:23:20,779 - step: 97250, training_loss: 7.63815e+00
+INFO - run_lib.py - 2025-03-23 05:25:51,358 - step: 97500, training_loss: 7.38060e+00
+INFO - run_lib.py - 2025-03-23 05:28:24,445 - step: 97750, training_loss: 7.89632e+00
+INFO - run_lib.py - 2025-03-23 05:30:57,767 - step: 98000, training_loss: 7.72247e+00
+INFO - run_lib.py - 2025-03-23 05:33:30,116 - step: 98250, training_loss: 7.25075e+00
+INFO - run_lib.py - 2025-03-23 05:36:06,809 - step: 98500, training_loss: 7.52107e+00
+INFO - run_lib.py - 2025-03-23 05:38:40,737 - step: 98750, training_loss: 8.80203e+00
+INFO - run_lib.py - 2025-03-23 05:41:10,507 - step: 99000, training_loss: 7.58483e+00
+INFO - run_lib.py - 2025-03-23 05:43:45,577 - step: 99250, training_loss: 7.68779e+00
+INFO - run_lib.py - 2025-03-23 05:46:19,034 - step: 99500, training_loss: 8.15798e+00
+INFO - run_lib.py - 2025-03-23 05:48:52,001 - step: 99750, training_loss: 7.21630e+00
+INFO - run_lib.py - 2025-03-23 05:51:25,535 - step: 100000, training_loss: 8.52263e+00
+INFO - run_lib.py - 2025-03-23 05:54:37,343 - step: 100000, n_mol: 256, 3D atom stability: 0.9856, mol stability: 0.8477, validity: 0.9336, complete: 0.9336, unique & valid: 0.9336
+INFO - run_lib.py - 2025-03-23 05:54:37,749 - step: 100000, n_mol: 256, 2D atom stability: 0.9985, mol stability: 0.9805, validity: 0.9805, complete: 0.9805, unique & valid: 0.9805
+INFO - run_lib.py - 2025-03-23 05:54:37,755 - step: 100000, pos RMSE: 2.1660
+INFO - run_lib.py - 2025-03-23 05:57:12,753 - step: 100250, training_loss: 7.79222e+00
+INFO - run_lib.py - 2025-03-23 05:59:42,679 - step: 100500, training_loss: 7.85964e+00
+INFO - run_lib.py - 2025-03-23 06:02:23,038 - step: 100750, training_loss: 7.54696e+00
+INFO - run_lib.py - 2025-03-23 06:04:53,453 - step: 101000, training_loss: 8.16520e+00
+INFO - run_lib.py - 2025-03-23 06:07:24,715 - step: 101250, training_loss: 8.04711e+00
+INFO - run_lib.py - 2025-03-23 06:09:59,473 - step: 101500, training_loss: 7.14984e+00
+INFO - run_lib.py - 2025-03-23 06:12:33,770 - step: 101750, training_loss: 7.51270e+00
+INFO - run_lib.py - 2025-03-23 06:15:03,912 - step: 102000, training_loss: 8.12024e+00
+INFO - run_lib.py - 2025-03-23 06:17:40,254 - step: 102250, training_loss: 7.30684e+00
+INFO - run_lib.py - 2025-03-23 06:20:13,469 - step: 102500, training_loss: 6.92600e+00
+INFO - run_lib.py - 2025-03-23 06:22:48,791 - step: 102750, training_loss: 8.35612e+00
+INFO - run_lib.py - 2025-03-23 06:25:22,124 - step: 103000, training_loss: 8.10809e+00
+INFO - run_lib.py - 2025-03-23 06:27:59,924 - step: 103250, training_loss: 7.63071e+00
+INFO - run_lib.py - 2025-03-23 06:30:33,396 - step: 103500, training_loss: 8.05833e+00
+INFO - run_lib.py - 2025-03-23 06:33:06,436 - step: 103750, training_loss: 8.10398e+00
+INFO - run_lib.py - 2025-03-23 06:35:42,224 - step: 104000, training_loss: 8.24198e+00
+INFO - run_lib.py - 2025-03-23 06:38:15,434 - step: 104250, training_loss: 8.53818e+00
+INFO - run_lib.py - 2025-03-23 06:40:46,670 - step: 104500, training_loss: 7.65514e+00
+INFO - run_lib.py - 2025-03-23 06:43:21,060 - step: 104750, training_loss: 7.95011e+00
+INFO - run_lib.py - 2025-03-23 06:45:52,997 - step: 105000, training_loss: 8.30443e+00
+INFO - run_lib.py - 2025-03-23 06:48:28,353 - step: 105250, training_loss: 9.19233e+00
+INFO - run_lib.py - 2025-03-23 06:51:01,358 - step: 105500, training_loss: 7.56896e+00
+INFO - run_lib.py - 2025-03-23 06:53:34,182 - step: 105750, training_loss: 7.66725e+00
+INFO - run_lib.py - 2025-03-23 06:56:05,943 - step: 106000, training_loss: 7.64154e+00
+INFO - run_lib.py - 2025-03-23 06:58:41,766 - step: 106250, training_loss: 8.04351e+00
+INFO - run_lib.py - 2025-03-23 07:01:18,857 - step: 106500, training_loss: 7.90317e+00
+INFO - run_lib.py - 2025-03-23 07:03:50,974 - step: 106750, training_loss: 8.21191e+00
+INFO - run_lib.py - 2025-03-23 07:06:25,532 - step: 107000, training_loss: 8.90807e+00
+INFO - run_lib.py - 2025-03-23 07:08:57,329 - step: 107250, training_loss: 7.15900e+00
+INFO - run_lib.py - 2025-03-23 07:11:30,438 - step: 107500, training_loss: 8.84701e+00
+INFO - run_lib.py - 2025-03-23 07:14:07,181 - step: 107750, training_loss: 6.84417e+00
+INFO - run_lib.py - 2025-03-23 07:16:42,386 - step: 108000, training_loss: 8.25609e+00
+INFO - run_lib.py - 2025-03-23 07:19:12,139 - step: 108250, training_loss: 7.40174e+00
+INFO - run_lib.py - 2025-03-23 07:21:48,177 - step: 108500, training_loss: 6.47308e+00
+INFO - run_lib.py - 2025-03-23 07:24:20,716 - step: 108750, training_loss: 7.86473e+00
+INFO - run_lib.py - 2025-03-23 07:26:53,295 - step: 109000, training_loss: 7.39544e+00
+INFO - run_lib.py - 2025-03-23 07:29:26,164 - step: 109250, training_loss: 9.05490e+00
+INFO - run_lib.py - 2025-03-23 07:31:59,706 - step: 109500, training_loss: 7.09420e+00
+INFO - run_lib.py - 2025-03-23 07:34:33,354 - step: 109750, training_loss: 8.02276e+00
+INFO - run_lib.py - 2025-03-23 07:37:10,686 - step: 110000, training_loss: 7.90334e+00
+INFO - run_lib.py - 2025-03-23 07:39:46,922 - step: 110250, training_loss: 7.04141e+00
+INFO - run_lib.py - 2025-03-23 07:42:21,984 - step: 110500, training_loss: 6.89079e+00
+INFO - run_lib.py - 2025-03-23 07:44:53,824 - step: 110750, training_loss: 7.79608e+00
+INFO - run_lib.py - 2025-03-23 07:47:28,195 - step: 111000, training_loss: 7.89373e+00
+INFO - run_lib.py - 2025-03-23 07:49:57,863 - step: 111250, training_loss: 7.79785e+00
+INFO - run_lib.py - 2025-03-23 07:52:29,868 - step: 111500, training_loss: 8.46622e+00
+INFO - run_lib.py - 2025-03-23 07:55:04,259 - step: 111750, training_loss: 7.58334e+00
+INFO - run_lib.py - 2025-03-23 07:57:38,214 - step: 112000, training_loss: 8.04534e+00
+INFO - run_lib.py - 2025-03-23 08:00:09,736 - step: 112250, training_loss: 7.17969e+00
+INFO - run_lib.py - 2025-03-23 08:02:45,552 - step: 112500, training_loss: 7.63364e+00
+INFO - run_lib.py - 2025-03-23 08:05:17,479 - step: 112750, training_loss: 8.92206e+00
+INFO - run_lib.py - 2025-03-23 08:07:48,944 - step: 113000, training_loss: 7.75288e+00
+INFO - run_lib.py - 2025-03-23 08:10:25,560 - step: 113250, training_loss: 7.08242e+00
+INFO - run_lib.py - 2025-03-23 08:12:56,577 - step: 113500, training_loss: 8.44121e+00
+INFO - run_lib.py - 2025-03-23 08:15:30,188 - step: 113750, training_loss: 7.29305e+00
+INFO - run_lib.py - 2025-03-23 08:18:06,312 - step: 114000, training_loss: 8.00097e+00
+INFO - run_lib.py - 2025-03-23 08:20:40,283 - step: 114250, training_loss: 7.54759e+00
+INFO - run_lib.py - 2025-03-23 08:23:15,990 - step: 114500, training_loss: 8.91212e+00
+INFO - run_lib.py - 2025-03-23 08:25:51,481 - step: 114750, training_loss: 7.33715e+00
+INFO - run_lib.py - 2025-03-23 08:28:21,965 - step: 115000, training_loss: 7.13839e+00
+INFO - run_lib.py - 2025-03-23 08:30:58,014 - step: 115250, training_loss: 7.95260e+00
+INFO - run_lib.py - 2025-03-23 08:33:31,854 - step: 115500, training_loss: 7.16071e+00
+INFO - run_lib.py - 2025-03-23 08:36:06,522 - step: 115750, training_loss: 7.72702e+00
+INFO - run_lib.py - 2025-03-23 08:38:41,132 - step: 116000, training_loss: 8.54261e+00
+INFO - run_lib.py - 2025-03-23 08:41:18,821 - step: 116250, training_loss: 8.33369e+00
+INFO - run_lib.py - 2025-03-23 08:43:52,010 - step: 116500, training_loss: 7.97558e+00
+INFO - run_lib.py - 2025-03-23 08:46:25,827 - step: 116750, training_loss: 7.48580e+00
+INFO - run_lib.py - 2025-03-23 08:48:59,791 - step: 117000, training_loss: 7.89894e+00
+INFO - run_lib.py - 2025-03-23 08:51:29,427 - step: 117250, training_loss: 7.44223e+00
+INFO - run_lib.py - 2025-03-23 08:54:01,639 - step: 117500, training_loss: 7.52456e+00
+INFO - run_lib.py - 2025-03-23 08:56:36,303 - step: 117750, training_loss: 7.35555e+00
+INFO - run_lib.py - 2025-03-23 08:59:11,013 - step: 118000, training_loss: 8.30377e+00
+INFO - run_lib.py - 2025-03-23 09:01:42,343 - step: 118250, training_loss: 7.94038e+00
+INFO - run_lib.py - 2025-03-23 09:04:15,080 - step: 118500, training_loss: 6.56714e+00
+INFO - run_lib.py - 2025-03-23 09:06:50,525 - step: 118750, training_loss: 7.56908e+00
+INFO - run_lib.py - 2025-03-23 09:09:22,623 - step: 119000, training_loss: 7.56458e+00
+INFO - run_lib.py - 2025-03-23 09:11:56,790 - step: 119250, training_loss: 8.02922e+00
+INFO - run_lib.py - 2025-03-23 09:14:32,492 - step: 119500, training_loss: 7.75379e+00
+INFO - run_lib.py - 2025-03-23 09:17:04,511 - step: 119750, training_loss: 8.10095e+00
+INFO - run_lib.py - 2025-03-23 09:19:35,673 - step: 120000, training_loss: 7.29447e+00
+INFO - run_lib.py - 2025-03-23 09:22:13,482 - step: 120250, training_loss: 8.81641e+00
+INFO - run_lib.py - 2025-03-23 09:24:47,962 - step: 120500, training_loss: 7.55147e+00
+INFO - run_lib.py - 2025-03-23 09:27:20,998 - step: 120750, training_loss: 6.95436e+00
+INFO - run_lib.py - 2025-03-23 09:29:54,952 - step: 121000, training_loss: 7.46110e+00
+INFO - run_lib.py - 2025-03-23 09:32:26,843 - step: 121250, training_loss: 7.78738e+00
+INFO - run_lib.py - 2025-03-23 09:35:02,043 - step: 121500, training_loss: 7.60067e+00
+INFO - run_lib.py - 2025-03-23 09:37:35,387 - step: 121750, training_loss: 7.46082e+00
+INFO - run_lib.py - 2025-03-23 09:40:08,430 - step: 122000, training_loss: 7.85110e+00
+INFO - run_lib.py - 2025-03-23 09:42:40,997 - step: 122250, training_loss: 8.00216e+00
+INFO - run_lib.py - 2025-03-23 09:45:10,039 - step: 122500, training_loss: 7.06828e+00
+INFO - run_lib.py - 2025-03-23 09:47:43,251 - step: 122750, training_loss: 7.62101e+00
+INFO - run_lib.py - 2025-03-23 09:50:15,053 - step: 123000, training_loss: 8.09402e+00
+INFO - run_lib.py - 2025-03-23 09:52:50,489 - step: 123250, training_loss: 7.12059e+00
+INFO - run_lib.py - 2025-03-23 09:55:24,213 - step: 123500, training_loss: 6.73326e+00
+INFO - run_lib.py - 2025-03-23 09:57:52,169 - step: 123750, training_loss: 8.43181e+00
+INFO - run_lib.py - 2025-03-23 10:00:29,961 - step: 124000, training_loss: 8.61736e+00
+INFO - run_lib.py - 2025-03-23 10:03:03,580 - step: 124250, training_loss: 7.45381e+00
+INFO - run_lib.py - 2025-03-23 10:05:35,337 - step: 124500, training_loss: 7.21428e+00
+INFO - run_lib.py - 2025-03-23 10:08:11,617 - step: 124750, training_loss: 8.34758e+00
+INFO - run_lib.py - 2025-03-23 10:10:42,627 - step: 125000, training_loss: 8.09350e+00
+INFO - run_lib.py - 2025-03-23 10:13:53,179 - step: 125000, n_mol: 256, 3D atom stability: 0.9863, mol stability: 0.8867, validity: 0.9453, complete: 0.9414, unique & valid: 0.9453
+INFO - run_lib.py - 2025-03-23 10:13:53,582 - step: 125000, n_mol: 256, 2D atom stability: 0.9989, mol stability: 0.9805, validity: 0.9844, complete: 0.9844, unique & valid: 0.9844
+INFO - run_lib.py - 2025-03-23 10:13:53,588 - step: 125000, pos RMSE: 2.2064
+INFO - run_lib.py - 2025-03-23 10:16:26,536 - step: 125250, training_loss: 8.40463e+00
+INFO - run_lib.py - 2025-03-23 10:19:03,713 - step: 125500, training_loss: 8.09443e+00
+INFO - run_lib.py - 2025-03-23 10:21:36,801 - step: 125750, training_loss: 7.46291e+00
+INFO - run_lib.py - 2025-03-23 10:24:10,160 - step: 126000, training_loss: 7.95736e+00
+INFO - run_lib.py - 2025-03-23 10:26:41,534 - step: 126250, training_loss: 8.56399e+00
+INFO - run_lib.py - 2025-03-23 10:29:17,003 - step: 126500, training_loss: 6.59261e+00
+INFO - run_lib.py - 2025-03-23 10:31:48,436 - step: 126750, training_loss: 7.99083e+00
+INFO - run_lib.py - 2025-03-23 10:34:22,935 - step: 127000, training_loss: 7.50284e+00
+INFO - run_lib.py - 2025-03-23 10:36:57,785 - step: 127250, training_loss: 7.57394e+00
+INFO - run_lib.py - 2025-03-23 10:39:28,344 - step: 127500, training_loss: 7.31991e+00
+INFO - run_lib.py - 2025-03-23 10:42:00,520 - step: 127750, training_loss: 7.13597e+00
+INFO - run_lib.py - 2025-03-23 10:44:34,914 - step: 128000, training_loss: 8.09540e+00
+INFO - run_lib.py - 2025-03-23 10:47:06,533 - step: 128250, training_loss: 8.27815e+00
+INFO - run_lib.py - 2025-03-23 10:49:37,083 - step: 128500, training_loss: 7.57690e+00
+INFO - run_lib.py - 2025-03-23 10:52:15,185 - step: 128750, training_loss: 7.51220e+00
+INFO - run_lib.py - 2025-03-23 10:54:49,393 - step: 129000, training_loss: 7.53011e+00
+INFO - run_lib.py - 2025-03-23 10:57:23,170 - step: 129250, training_loss: 7.20417e+00
+INFO - run_lib.py - 2025-03-23 11:00:02,319 - step: 129500, training_loss: 8.27142e+00
+INFO - run_lib.py - 2025-03-23 11:02:32,828 - step: 129750, training_loss: 8.09123e+00
+INFO - run_lib.py - 2025-03-23 11:05:04,479 - step: 130000, training_loss: 8.00947e+00
+INFO - run_lib.py - 2025-03-23 11:07:41,090 - step: 130250, training_loss: 7.90665e+00
+INFO - run_lib.py - 2025-03-23 11:10:09,353 - step: 130500, training_loss: 6.89624e+00
+INFO - run_lib.py - 2025-03-23 11:12:40,543 - step: 130750, training_loss: 7.61316e+00
+INFO - run_lib.py - 2025-03-23 11:15:16,162 - step: 131000, training_loss: 8.24493e+00
+INFO - run_lib.py - 2025-03-23 11:17:51,333 - step: 131250, training_loss: 7.59263e+00
+INFO - run_lib.py - 2025-03-23 11:20:27,308 - step: 131500, training_loss: 7.67397e+00
+INFO - run_lib.py - 2025-03-23 11:23:03,012 - step: 131750, training_loss: 7.98387e+00
+INFO - run_lib.py - 2025-03-23 11:25:34,777 - step: 132000, training_loss: 7.52465e+00
+INFO - run_lib.py - 2025-03-23 11:28:08,426 - step: 132250, training_loss: 7.62747e+00
+INFO - run_lib.py - 2025-03-23 11:30:42,965 - step: 132500, training_loss: 8.38239e+00
+INFO - run_lib.py - 2025-03-23 11:33:14,947 - step: 132750, training_loss: 7.42693e+00
+INFO - run_lib.py - 2025-03-23 11:35:46,805 - step: 133000, training_loss: 7.55942e+00
+INFO - run_lib.py - 2025-03-23 11:38:21,527 - step: 133250, training_loss: 7.18584e+00
+INFO - run_lib.py - 2025-03-23 11:40:53,849 - step: 133500, training_loss: 8.29549e+00
+INFO - run_lib.py - 2025-03-23 11:43:26,462 - step: 133750, training_loss: 8.76730e+00
+INFO - run_lib.py - 2025-03-23 11:45:58,938 - step: 134000, training_loss: 8.43863e+00
+INFO - run_lib.py - 2025-03-23 11:48:34,316 - step: 134250, training_loss: 8.56214e+00
+INFO - run_lib.py - 2025-03-23 11:51:07,537 - step: 134500, training_loss: 8.00747e+00
+INFO - run_lib.py - 2025-03-23 11:53:39,558 - step: 134750, training_loss: 7.69167e+00
+INFO - run_lib.py - 2025-03-23 11:56:15,218 - step: 135000, training_loss: 8.08166e+00
+INFO - run_lib.py - 2025-03-23 11:58:49,296 - step: 135250, training_loss: 7.91259e+00
+INFO - run_lib.py - 2025-03-23 12:01:23,522 - step: 135500, training_loss: 8.91294e+00
+INFO - run_lib.py - 2025-03-23 12:03:57,609 - step: 135750, training_loss: 8.34053e+00
+INFO - run_lib.py - 2025-03-23 12:06:30,536 - step: 136000, training_loss: 7.44925e+00
+INFO - run_lib.py - 2025-03-23 12:09:01,920 - step: 136250, training_loss: 7.76566e+00
+INFO - run_lib.py - 2025-03-23 12:11:37,146 - step: 136500, training_loss: 7.71539e+00
+INFO - run_lib.py - 2025-03-23 12:14:08,453 - step: 136750, training_loss: 6.93080e+00
+INFO - run_lib.py - 2025-03-23 12:16:40,308 - step: 137000, training_loss: 7.25121e+00
+INFO - run_lib.py - 2025-03-23 12:19:16,839 - step: 137250, training_loss: 7.63797e+00
+INFO - run_lib.py - 2025-03-23 12:21:48,594 - step: 137500, training_loss: 7.83622e+00
+INFO - run_lib.py - 2025-03-23 12:24:20,343 - step: 137750, training_loss: 8.12753e+00
+INFO - run_lib.py - 2025-03-23 12:26:53,917 - step: 138000, training_loss: 8.00576e+00
+INFO - run_lib.py - 2025-03-23 12:29:24,593 - step: 138250, training_loss: 7.42253e+00
+INFO - run_lib.py - 2025-03-23 12:32:00,162 - step: 138500, training_loss: 8.38214e+00
+INFO - run_lib.py - 2025-03-23 12:34:33,780 - step: 138750, training_loss: 7.54295e+00
+INFO - run_lib.py - 2025-03-23 12:37:06,014 - step: 139000, training_loss: 7.04446e+00
+INFO - run_lib.py - 2025-03-23 12:39:38,329 - step: 139250, training_loss: 7.33078e+00
+INFO - run_lib.py - 2025-03-23 12:42:13,061 - step: 139500, training_loss: 7.43177e+00
+INFO - run_lib.py - 2025-03-23 12:44:46,923 - step: 139750, training_loss: 7.39109e+00
+INFO - run_lib.py - 2025-03-23 12:47:19,884 - step: 140000, training_loss: 7.99872e+00
+INFO - run_lib.py - 2025-03-23 12:49:55,645 - step: 140250, training_loss: 7.35147e+00
+INFO - run_lib.py - 2025-03-23 12:52:29,135 - step: 140500, training_loss: 7.48492e+00
+INFO - run_lib.py - 2025-03-23 12:55:01,288 - step: 140750, training_loss: 7.61090e+00
+INFO - run_lib.py - 2025-03-23 12:57:36,445 - step: 141000, training_loss: 7.92082e+00
+INFO - run_lib.py - 2025-03-23 13:00:09,904 - step: 141250, training_loss: 7.40032e+00
+INFO - run_lib.py - 2025-03-23 13:02:40,350 - step: 141500, training_loss: 7.03535e+00
+INFO - run_lib.py - 2025-03-23 13:05:14,676 - step: 141750, training_loss: 7.60556e+00
+INFO - run_lib.py - 2025-03-23 13:07:47,130 - step: 142000, training_loss: 8.08230e+00
+INFO - run_lib.py - 2025-03-23 13:10:17,755 - step: 142250, training_loss: 8.02899e+00
+INFO - run_lib.py - 2025-03-23 13:12:51,294 - step: 142500, training_loss: 7.84239e+00
+INFO - run_lib.py - 2025-03-23 13:15:26,405 - step: 142750, training_loss: 7.66955e+00
+INFO - run_lib.py - 2025-03-23 13:17:59,532 - step: 143000, training_loss: 7.75110e+00
+INFO - run_lib.py - 2025-03-23 13:20:29,326 - step: 143250, training_loss: 6.66517e+00
+INFO - run_lib.py - 2025-03-23 13:23:06,447 - step: 143500, training_loss: 7.32479e+00
+INFO - run_lib.py - 2025-03-23 13:25:36,852 - step: 143750, training_loss: 7.97756e+00
+INFO - run_lib.py - 2025-03-23 13:28:09,985 - step: 144000, training_loss: 8.84693e+00
+INFO - run_lib.py - 2025-03-23 13:30:47,902 - step: 144250, training_loss: 7.51080e+00
+INFO - run_lib.py - 2025-03-23 13:33:20,620 - step: 144500, training_loss: 7.25552e+00
+INFO - run_lib.py - 2025-03-23 13:35:51,567 - step: 144750, training_loss: 8.42941e+00
+INFO - run_lib.py - 2025-03-23 13:38:29,533 - step: 145000, training_loss: 7.67859e+00
+INFO - run_lib.py - 2025-03-23 13:41:04,907 - step: 145250, training_loss: 7.18384e+00
+INFO - run_lib.py - 2025-03-23 13:43:37,804 - step: 145500, training_loss: 7.69721e+00
+INFO - run_lib.py - 2025-03-23 13:46:11,790 - step: 145750, training_loss: 8.25061e+00
+INFO - run_lib.py - 2025-03-23 13:48:50,128 - step: 146000, training_loss: 7.54729e+00
+INFO - run_lib.py - 2025-03-23 13:51:28,586 - step: 146250, training_loss: 7.61738e+00
+INFO - run_lib.py - 2025-03-23 13:54:09,957 - step: 146500, training_loss: 8.14841e+00
+INFO - run_lib.py - 2025-03-23 13:56:47,860 - step: 146750, training_loss: 8.52203e+00
+INFO - run_lib.py - 2025-03-23 13:59:20,404 - step: 147000, training_loss: 7.42440e+00
+INFO - run_lib.py - 2025-03-23 14:01:54,055 - step: 147250, training_loss: 7.67102e+00
+INFO - run_lib.py - 2025-03-23 14:04:26,160 - step: 147500, training_loss: 8.13577e+00
+INFO - run_lib.py - 2025-03-23 14:07:01,746 - step: 147750, training_loss: 8.21720e+00
+INFO - run_lib.py - 2025-03-23 14:09:34,113 - step: 148000, training_loss: 7.37034e+00
+INFO - run_lib.py - 2025-03-23 14:12:06,826 - step: 148250, training_loss: 8.35731e+00
+INFO - run_lib.py - 2025-03-23 14:14:42,054 - step: 148500, training_loss: 7.71097e+00
+INFO - run_lib.py - 2025-03-23 14:17:17,535 - step: 148750, training_loss: 8.51792e+00
+INFO - run_lib.py - 2025-03-23 14:19:51,994 - step: 149000, training_loss: 7.73153e+00
+INFO - run_lib.py - 2025-03-23 14:22:25,525 - step: 149250, training_loss: 8.79794e+00
+INFO - run_lib.py - 2025-03-23 14:25:01,766 - step: 149500, training_loss: 8.11654e+00
+INFO - run_lib.py - 2025-03-23 14:27:34,125 - step: 149750, training_loss: 7.91428e+00
+INFO - run_lib.py - 2025-03-23 14:30:07,619 - step: 150000, training_loss: 7.45595e+00
+INFO - run_lib.py - 2025-03-23 14:33:13,687 - step: 150000, n_mol: 256, 3D atom stability: 0.9884, mol stability: 0.8594, validity: 0.9102, complete: 0.9102, unique & valid: 0.9102
+INFO - run_lib.py - 2025-03-23 14:33:14,098 - step: 150000, n_mol: 256, 2D atom stability: 0.9968, mol stability: 0.9570, validity: 0.9570, complete: 0.9570, unique & valid: 0.9570
+INFO - run_lib.py - 2025-03-23 14:33:14,104 - step: 150000, pos RMSE: 2.1954
+INFO - run_lib.py - 2025-03-23 14:35:49,781 - step: 150250, training_loss: 7.51138e+00
+INFO - run_lib.py - 2025-03-23 14:38:24,509 - step: 150500, training_loss: 7.68890e+00
+INFO - run_lib.py - 2025-03-23 14:40:56,409 - step: 150750, training_loss: 7.66147e+00
+INFO - run_lib.py - 2025-03-23 14:43:28,711 - step: 151000, training_loss: 7.79688e+00
+INFO - run_lib.py - 2025-03-23 14:46:04,533 - step: 151250, training_loss: 8.04645e+00
+INFO - run_lib.py - 2025-03-23 14:48:38,869 - step: 151500, training_loss: 6.85749e+00
+INFO - run_lib.py - 2025-03-23 14:51:10,432 - step: 151750, training_loss: 8.68551e+00
+INFO - run_lib.py - 2025-03-23 14:53:48,889 - step: 152000, training_loss: 8.05036e+00
+INFO - run_lib.py - 2025-03-23 14:56:19,488 - step: 152250, training_loss: 7.94873e+00
+INFO - run_lib.py - 2025-03-23 14:58:54,755 - step: 152500, training_loss: 7.81776e+00
+INFO - run_lib.py - 2025-03-23 15:01:38,317 - step: 152750, training_loss: 6.67956e+00
+INFO - run_lib.py - 2025-03-23 15:04:15,871 - step: 153000, training_loss: 8.40663e+00
+INFO - run_lib.py - 2025-03-23 15:06:48,421 - step: 153250, training_loss: 7.70228e+00
+INFO - run_lib.py - 2025-03-23 15:09:26,512 - step: 153500, training_loss: 7.06289e+00
+INFO - run_lib.py - 2025-03-23 15:11:59,925 - step: 153750, training_loss: 7.22499e+00
+INFO - run_lib.py - 2025-03-23 15:14:32,930 - step: 154000, training_loss: 7.27695e+00
+INFO - run_lib.py - 2025-03-23 15:17:05,189 - step: 154250, training_loss: 7.87128e+00
+INFO - run_lib.py - 2025-03-23 15:19:39,435 - step: 154500, training_loss: 8.71855e+00
+INFO - run_lib.py - 2025-03-23 15:22:15,984 - step: 154750, training_loss: 8.25892e+00
+INFO - run_lib.py - 2025-03-23 15:24:50,076 - step: 155000, training_loss: 7.52784e+00
+INFO - run_lib.py - 2025-03-23 15:27:26,315 - step: 155250, training_loss: 8.07275e+00
+INFO - run_lib.py - 2025-03-23 15:29:55,923 - step: 155500, training_loss: 6.69721e+00
+INFO - run_lib.py - 2025-03-23 15:32:30,462 - step: 155750, training_loss: 7.41852e+00
+INFO - run_lib.py - 2025-03-23 15:35:03,963 - step: 156000, training_loss: 7.60094e+00
+INFO - run_lib.py - 2025-03-23 15:37:37,333 - step: 156250, training_loss: 7.69522e+00
+INFO - run_lib.py - 2025-03-23 15:40:09,748 - step: 156500, training_loss: 7.06677e+00
+INFO - run_lib.py - 2025-03-23 15:42:41,736 - step: 156750, training_loss: 8.70136e+00
+INFO - run_lib.py - 2025-03-23 15:45:11,954 - step: 157000, training_loss: 7.50791e+00
+INFO - run_lib.py - 2025-03-23 15:47:46,460 - step: 157250, training_loss: 8.28363e+00
+INFO - run_lib.py - 2025-03-23 15:50:18,550 - step: 157500, training_loss: 7.51311e+00
+INFO - run_lib.py - 2025-03-23 15:52:50,514 - step: 157750, training_loss: 8.07771e+00
+INFO - run_lib.py - 2025-03-23 15:55:21,406 - step: 158000, training_loss: 7.57639e+00
+INFO - run_lib.py - 2025-03-23 15:57:56,636 - step: 158250, training_loss: 7.57948e+00
+INFO - run_lib.py - 2025-03-23 16:00:33,236 - step: 158500, training_loss: 8.22051e+00
+INFO - run_lib.py - 2025-03-23 16:03:06,884 - step: 158750, training_loss: 7.59789e+00
+INFO - run_lib.py - 2025-03-23 16:05:40,967 - step: 159000, training_loss: 7.78670e+00
+INFO - run_lib.py - 2025-03-23 16:08:15,869 - step: 159250, training_loss: 7.06115e+00
+INFO - run_lib.py - 2025-03-23 16:10:45,554 - step: 159500, training_loss: 7.72332e+00
+INFO - run_lib.py - 2025-03-23 16:13:18,545 - step: 159750, training_loss: 7.75289e+00
+INFO - run_lib.py - 2025-03-23 16:15:50,702 - step: 160000, training_loss: 7.58290e+00
+INFO - run_lib.py - 2025-03-23 16:18:22,772 - step: 160250, training_loss: 9.29540e+00
+INFO - run_lib.py - 2025-03-23 16:20:56,926 - step: 160500, training_loss: 7.84747e+00
+INFO - run_lib.py - 2025-03-23 16:23:30,886 - step: 160750, training_loss: 8.37829e+00
+INFO - run_lib.py - 2025-03-23 16:26:02,179 - step: 161000, training_loss: 7.74675e+00
+INFO - run_lib.py - 2025-03-23 16:28:37,319 - step: 161250, training_loss: 6.93325e+00
+INFO - run_lib.py - 2025-03-23 16:31:09,501 - step: 161500, training_loss: 7.73998e+00
+INFO - run_lib.py - 2025-03-23 16:33:41,723 - step: 161750, training_loss: 6.82677e+00
+INFO - run_lib.py - 2025-03-23 16:36:17,304 - step: 162000, training_loss: 8.13901e+00
+INFO - run_lib.py - 2025-03-23 16:38:50,206 - step: 162250, training_loss: 7.32496e+00
+INFO - run_lib.py - 2025-03-23 16:41:21,764 - step: 162500, training_loss: 8.07757e+00
+INFO - run_lib.py - 2025-03-23 16:43:58,160 - step: 162750, training_loss: 7.32242e+00
+INFO - run_lib.py - 2025-03-23 16:46:32,599 - step: 163000, training_loss: 7.71973e+00
+INFO - run_lib.py - 2025-03-23 16:49:04,689 - step: 163250, training_loss: 8.51019e+00
+INFO - run_lib.py - 2025-03-23 16:51:41,508 - step: 163500, training_loss: 8.23301e+00
+INFO - run_lib.py - 2025-03-23 16:54:11,022 - step: 163750, training_loss: 6.89697e+00
+INFO - run_lib.py - 2025-03-23 16:56:42,283 - step: 164000, training_loss: 7.35004e+00
+INFO - run_lib.py - 2025-03-23 16:59:17,561 - step: 164250, training_loss: 7.22943e+00
+INFO - run_lib.py - 2025-03-23 17:01:50,080 - step: 164500, training_loss: 7.84183e+00
+INFO - run_lib.py - 2025-03-23 17:04:21,951 - step: 164750, training_loss: 6.78073e+00
+INFO - run_lib.py - 2025-03-23 17:07:00,532 - step: 165000, training_loss: 7.63069e+00
+INFO - run_lib.py - 2025-03-23 17:09:34,400 - step: 165250, training_loss: 7.96409e+00
+INFO - run_lib.py - 2025-03-23 17:12:08,076 - step: 165500, training_loss: 7.49359e+00
+INFO - run_lib.py - 2025-03-23 17:14:39,022 - step: 165750, training_loss: 7.71350e+00
+INFO - run_lib.py - 2025-03-23 17:17:12,544 - step: 166000, training_loss: 8.18752e+00
+INFO - run_lib.py - 2025-03-23 17:19:46,347 - step: 166250, training_loss: 7.57710e+00
+INFO - run_lib.py - 2025-03-23 17:22:20,920 - step: 166500, training_loss: 7.84535e+00
+INFO - run_lib.py - 2025-03-23 17:24:56,133 - step: 166750, training_loss: 7.70255e+00
+INFO - run_lib.py - 2025-03-23 17:27:28,626 - step: 167000, training_loss: 7.38798e+00
+INFO - run_lib.py - 2025-03-23 17:29:59,847 - step: 167250, training_loss: 7.44575e+00
+INFO - run_lib.py - 2025-03-23 17:32:34,246 - step: 167500, training_loss: 7.45823e+00
+INFO - run_lib.py - 2025-03-23 17:35:04,616 - step: 167750, training_loss: 7.78117e+00
+INFO - run_lib.py - 2025-03-23 17:37:37,899 - step: 168000, training_loss: 7.72153e+00
+INFO - run_lib.py - 2025-03-23 17:40:13,120 - step: 168250, training_loss: 8.02008e+00
+INFO - run_lib.py - 2025-03-23 17:42:48,072 - step: 168500, training_loss: 8.68799e+00
+INFO - run_lib.py - 2025-03-23 17:45:21,357 - step: 168750, training_loss: 8.07036e+00
+INFO - run_lib.py - 2025-03-23 17:47:56,616 - step: 169000, training_loss: 7.30749e+00
+INFO - run_lib.py - 2025-03-23 17:50:29,116 - step: 169250, training_loss: 6.82667e+00
+INFO - run_lib.py - 2025-03-23 17:53:00,279 - step: 169500, training_loss: 7.78254e+00
+INFO - run_lib.py - 2025-03-23 17:55:32,797 - step: 169750, training_loss: 7.96638e+00
+INFO - run_lib.py - 2025-03-23 17:58:07,007 - step: 170000, training_loss: 9.27202e+00
+INFO - run_lib.py - 2025-03-23 18:00:41,250 - step: 170250, training_loss: 7.03788e+00
+INFO - run_lib.py - 2025-03-23 18:03:19,235 - step: 170500, training_loss: 8.08512e+00
+INFO - run_lib.py - 2025-03-23 18:05:55,031 - step: 170750, training_loss: 7.15773e+00
+INFO - run_lib.py - 2025-03-23 18:08:31,837 - step: 171000, training_loss: 6.96692e+00
+INFO - run_lib.py - 2025-03-23 18:11:10,854 - step: 171250, training_loss: 6.74135e+00
+INFO - run_lib.py - 2025-03-23 18:13:43,455 - step: 171500, training_loss: 7.05530e+00
+INFO - run_lib.py - 2025-03-23 18:16:16,396 - step: 171750, training_loss: 7.52265e+00
+INFO - run_lib.py - 2025-03-23 18:18:53,613 - step: 172000, training_loss: 7.49951e+00
+INFO - run_lib.py - 2025-03-23 18:21:26,786 - step: 172250, training_loss: 7.97090e+00
+INFO - run_lib.py - 2025-03-23 18:24:00,845 - step: 172500, training_loss: 7.82982e+00
+INFO - run_lib.py - 2025-03-23 18:26:36,725 - step: 172750, training_loss: 8.51687e+00
+INFO - run_lib.py - 2025-03-23 18:29:06,412 - step: 173000, training_loss: 9.25958e+00
+INFO - run_lib.py - 2025-03-23 18:31:38,361 - step: 173250, training_loss: 8.31936e+00
+INFO - run_lib.py - 2025-03-23 18:34:08,634 - step: 173500, training_loss: 9.12821e+00
+INFO - run_lib.py - 2025-03-23 18:36:42,249 - step: 173750, training_loss: 7.74201e+00
+INFO - run_lib.py - 2025-03-23 18:39:13,084 - step: 174000, training_loss: 7.62117e+00
+INFO - run_lib.py - 2025-03-23 18:41:44,442 - step: 174250, training_loss: 8.32844e+00
+INFO - run_lib.py - 2025-03-23 18:44:18,290 - step: 174500, training_loss: 8.18362e+00
+INFO - run_lib.py - 2025-03-23 18:46:49,355 - step: 174750, training_loss: 7.56132e+00
+INFO - run_lib.py - 2025-03-23 18:49:21,297 - step: 175000, training_loss: 8.28267e+00
+INFO - run_lib.py - 2025-03-23 18:52:35,134 - step: 175000, n_mol: 256, 3D atom stability: 0.9909, mol stability: 0.9023, validity: 0.9648, complete: 0.9609, unique & valid: 0.9609
+INFO - run_lib.py - 2025-03-23 18:52:35,550 - step: 175000, n_mol: 256, 2D atom stability: 0.9987, mol stability: 0.9766, validity: 0.9766, complete: 0.9727, unique & valid: 0.9727
+INFO - run_lib.py - 2025-03-23 18:52:35,556 - step: 175000, pos RMSE: 2.2062
+INFO - run_lib.py - 2025-03-23 18:55:09,447 - step: 175250, training_loss: 7.83512e+00
+INFO - run_lib.py - 2025-03-23 18:57:42,335 - step: 175500, training_loss: 7.08494e+00
+INFO - run_lib.py - 2025-03-23 19:00:12,567 - step: 175750, training_loss: 8.59536e+00
+INFO - run_lib.py - 2025-03-23 19:02:48,381 - step: 176000, training_loss: 7.60968e+00
+INFO - run_lib.py - 2025-03-23 19:05:19,221 - step: 176250, training_loss: 7.43186e+00
+INFO - run_lib.py - 2025-03-23 19:07:50,289 - step: 176500, training_loss: 7.49028e+00
+INFO - run_lib.py - 2025-03-23 19:10:25,151 - step: 176750, training_loss: 7.89714e+00
+INFO - run_lib.py - 2025-03-23 19:12:58,671 - step: 177000, training_loss: 7.65649e+00
+INFO - run_lib.py - 2025-03-23 19:15:31,308 - step: 177250, training_loss: 7.14878e+00
+INFO - run_lib.py - 2025-03-23 19:18:05,541 - step: 177500, training_loss: 8.08565e+00
+INFO - run_lib.py - 2025-03-23 19:20:39,116 - step: 177750, training_loss: 7.89430e+00
+INFO - run_lib.py - 2025-03-23 19:23:12,536 - step: 178000, training_loss: 7.64834e+00
+INFO - run_lib.py - 2025-03-23 19:25:48,818 - step: 178250, training_loss: 8.72153e+00
+INFO - run_lib.py - 2025-03-23 19:28:21,225 - step: 178500, training_loss: 7.62788e+00
+INFO - run_lib.py - 2025-03-23 19:30:55,193 - step: 178750, training_loss: 6.91470e+00
+INFO - run_lib.py - 2025-03-23 19:33:29,895 - step: 179000, training_loss: 7.94620e+00
+INFO - run_lib.py - 2025-03-23 19:36:03,536 - step: 179250, training_loss: 7.59515e+00
+INFO - run_lib.py - 2025-03-23 19:38:36,896 - step: 179500, training_loss: 8.29544e+00
+INFO - run_lib.py - 2025-03-23 19:41:11,285 - step: 179750, training_loss: 7.56042e+00
+INFO - run_lib.py - 2025-03-23 19:43:45,876 - step: 180000, training_loss: 6.96072e+00
+INFO - run_lib.py - 2025-03-23 19:46:20,655 - step: 180250, training_loss: 7.34548e+00
+INFO - run_lib.py - 2025-03-23 19:48:56,124 - step: 180500, training_loss: 7.29119e+00
+INFO - run_lib.py - 2025-03-23 19:51:26,821 - step: 180750, training_loss: 6.70920e+00
+INFO - run_lib.py - 2025-03-23 19:53:59,561 - step: 181000, training_loss: 7.03706e+00
+INFO - run_lib.py - 2025-03-23 19:56:31,259 - step: 181250, training_loss: 7.36104e+00
+INFO - run_lib.py - 2025-03-23 19:59:07,770 - step: 181500, training_loss: 7.55959e+00
+INFO - run_lib.py - 2025-03-23 20:01:39,525 - step: 181750, training_loss: 7.30142e+00
+INFO - run_lib.py - 2025-03-23 20:04:14,349 - step: 182000, training_loss: 6.21128e+00
+INFO - run_lib.py - 2025-03-23 20:06:47,989 - step: 182250, training_loss: 7.99218e+00
+INFO - run_lib.py - 2025-03-23 20:09:21,438 - step: 182500, training_loss: 6.99539e+00
+INFO - run_lib.py - 2025-03-23 20:11:51,744 - step: 182750, training_loss: 7.73520e+00
+INFO - run_lib.py - 2025-03-23 20:14:27,101 - step: 183000, training_loss: 7.93124e+00
+INFO - run_lib.py - 2025-03-23 20:17:00,945 - step: 183250, training_loss: 7.32121e+00
+INFO - run_lib.py - 2025-03-23 20:19:35,925 - step: 183500, training_loss: 7.96312e+00
+INFO - run_lib.py - 2025-03-23 20:22:08,792 - step: 183750, training_loss: 8.17493e+00
+INFO - run_lib.py - 2025-03-23 20:24:41,732 - step: 184000, training_loss: 7.45793e+00
+INFO - run_lib.py - 2025-03-23 20:27:14,261 - step: 184250, training_loss: 8.01700e+00
+INFO - run_lib.py - 2025-03-23 20:29:48,748 - step: 184500, training_loss: 7.71751e+00
+INFO - run_lib.py - 2025-03-23 20:32:22,853 - step: 184750, training_loss: 8.13740e+00
+INFO - run_lib.py - 2025-03-23 20:34:55,471 - step: 185000, training_loss: 7.23591e+00
+INFO - run_lib.py - 2025-03-23 20:37:34,504 - step: 185250, training_loss: 7.82011e+00
+INFO - run_lib.py - 2025-03-23 20:40:03,947 - step: 185500, training_loss: 7.63996e+00
+INFO - run_lib.py - 2025-03-23 20:42:38,112 - step: 185750, training_loss: 7.48840e+00
+INFO - run_lib.py - 2025-03-23 20:45:15,845 - step: 186000, training_loss: 7.80422e+00
+INFO - run_lib.py - 2025-03-23 20:47:49,931 - step: 186250, training_loss: 7.57475e+00
+INFO - run_lib.py - 2025-03-23 20:50:21,387 - step: 186500, training_loss: 8.10096e+00
+INFO - run_lib.py - 2025-03-23 20:53:01,618 - step: 186750, training_loss: 7.94890e+00
+INFO - run_lib.py - 2025-03-23 20:55:38,501 - step: 187000, training_loss: 6.72362e+00
+INFO - run_lib.py - 2025-03-23 20:58:12,224 - step: 187250, training_loss: 7.38894e+00
+INFO - run_lib.py - 2025-03-23 21:00:48,147 - step: 187500, training_loss: 6.60872e+00
+INFO - run_lib.py - 2025-03-23 21:03:21,492 - step: 187750, training_loss: 6.60962e+00
+INFO - run_lib.py - 2025-03-23 21:05:53,993 - step: 188000, training_loss: 7.96017e+00
+INFO - run_lib.py - 2025-03-23 21:08:26,960 - step: 188250, training_loss: 7.93398e+00
+INFO - run_lib.py - 2025-03-23 21:10:58,437 - step: 188500, training_loss: 7.52038e+00
+INFO - run_lib.py - 2025-03-23 21:13:30,797 - step: 188750, training_loss: 7.15710e+00
+INFO - run_lib.py - 2025-03-23 21:16:04,120 - step: 189000, training_loss: 8.05441e+00
+INFO - run_lib.py - 2025-03-23 21:18:36,308 - step: 189250, training_loss: 6.46126e+00
+INFO - run_lib.py - 2025-03-23 21:21:11,890 - step: 189500, training_loss: 7.34478e+00
+INFO - run_lib.py - 2025-03-23 21:23:45,263 - step: 189750, training_loss: 7.74247e+00
+INFO - run_lib.py - 2025-03-23 21:26:19,317 - step: 190000, training_loss: 7.37382e+00
+INFO - run_lib.py - 2025-03-23 21:28:54,074 - step: 190250, training_loss: 7.32351e+00
+INFO - run_lib.py - 2025-03-23 21:31:26,236 - step: 190500, training_loss: 7.82020e+00
+INFO - run_lib.py - 2025-03-23 21:34:03,182 - step: 190750, training_loss: 7.42598e+00
+INFO - run_lib.py - 2025-03-23 21:36:37,190 - step: 191000, training_loss: 6.94303e+00
+INFO - run_lib.py - 2025-03-23 21:39:08,354 - step: 191250, training_loss: 8.03520e+00
+INFO - run_lib.py - 2025-03-23 21:41:43,752 - step: 191500, training_loss: 8.16573e+00
+INFO - run_lib.py - 2025-03-23 21:44:12,122 - step: 191750, training_loss: 7.60936e+00
+INFO - run_lib.py - 2025-03-23 21:46:45,517 - step: 192000, training_loss: 8.01161e+00
+INFO - run_lib.py - 2025-03-23 21:49:21,755 - step: 192250, training_loss: 8.42089e+00
+INFO - run_lib.py - 2025-03-23 21:51:54,615 - step: 192500, training_loss: 8.12067e+00
+INFO - run_lib.py - 2025-03-23 21:54:28,946 - step: 192750, training_loss: 7.22068e+00
+INFO - run_lib.py - 2025-03-23 21:57:04,234 - step: 193000, training_loss: 8.35679e+00
+INFO - run_lib.py - 2025-03-23 21:59:36,094 - step: 193250, training_loss: 7.77691e+00
+INFO - run_lib.py - 2025-03-23 22:02:06,980 - step: 193500, training_loss: 7.25889e+00
+INFO - run_lib.py - 2025-03-23 22:04:43,759 - step: 193750, training_loss: 8.28406e+00
+INFO - run_lib.py - 2025-03-23 22:07:15,830 - step: 194000, training_loss: 7.40180e+00
+INFO - run_lib.py - 2025-03-23 22:09:47,184 - step: 194250, training_loss: 7.81396e+00
+INFO - run_lib.py - 2025-03-23 22:12:21,101 - step: 194500, training_loss: 7.86022e+00
+INFO - run_lib.py - 2025-03-23 22:14:53,539 - step: 194750, training_loss: 7.67845e+00
+INFO - run_lib.py - 2025-03-23 22:17:29,207 - step: 195000, training_loss: 7.98596e+00
+INFO - run_lib.py - 2025-03-23 22:20:07,382 - step: 195250, training_loss: 7.65381e+00
+INFO - run_lib.py - 2025-03-23 22:22:40,977 - step: 195500, training_loss: 7.21721e+00
+INFO - run_lib.py - 2025-03-23 22:25:15,634 - step: 195750, training_loss: 7.34125e+00
+INFO - run_lib.py - 2025-03-23 22:27:51,377 - step: 196000, training_loss: 7.90451e+00
+INFO - run_lib.py - 2025-03-23 22:30:25,456 - step: 196250, training_loss: 7.43296e+00
+INFO - run_lib.py - 2025-03-23 22:32:53,102 - step: 196500, training_loss: 8.72355e+00
+INFO - run_lib.py - 2025-03-23 22:35:31,995 - step: 196750, training_loss: 7.21538e+00
+INFO - run_lib.py - 2025-03-23 22:38:02,852 - step: 197000, training_loss: 7.57252e+00
+INFO - run_lib.py - 2025-03-23 22:40:35,908 - step: 197250, training_loss: 7.66913e+00
+INFO - run_lib.py - 2025-03-23 22:43:04,011 - step: 197500, training_loss: 6.88749e+00
+INFO - run_lib.py - 2025-03-23 22:45:40,045 - step: 197750, training_loss: 7.57156e+00
+INFO - run_lib.py - 2025-03-23 22:48:14,240 - step: 198000, training_loss: 7.01668e+00
+INFO - run_lib.py - 2025-03-23 22:50:47,106 - step: 198250, training_loss: 7.89298e+00
+INFO - run_lib.py - 2025-03-23 22:53:22,607 - step: 198500, training_loss: 8.16556e+00
+INFO - run_lib.py - 2025-03-23 22:55:52,010 - step: 198750, training_loss: 7.74039e+00
+INFO - run_lib.py - 2025-03-23 22:58:24,053 - step: 199000, training_loss: 8.20288e+00
+INFO - run_lib.py - 2025-03-23 23:00:57,527 - step: 199250, training_loss: 7.19241e+00
+INFO - run_lib.py - 2025-03-23 23:03:28,193 - step: 199500, training_loss: 7.61805e+00
+INFO - run_lib.py - 2025-03-23 23:06:00,553 - step: 199750, training_loss: 6.99134e+00
+INFO - run_lib.py - 2025-03-23 23:08:34,480 - step: 200000, training_loss: 7.83254e+00
+INFO - run_lib.py - 2025-03-23 23:11:41,292 - step: 200000, n_mol: 256, 3D atom stability: 0.9888, mol stability: 0.8828, validity: 0.9531, complete: 0.9492, unique & valid: 0.9531
+INFO - run_lib.py - 2025-03-23 23:11:41,699 - step: 200000, n_mol: 256, 2D atom stability: 0.9991, mol stability: 0.9844, validity: 0.9883, complete: 0.9883, unique & valid: 0.9883
+INFO - run_lib.py - 2025-03-23 23:11:41,705 - step: 200000, pos RMSE: 2.1955
+INFO - run_lib.py - 2025-03-23 23:14:13,269 - step: 200250, training_loss: 8.34587e+00
+INFO - run_lib.py - 2025-03-23 23:16:42,844 - step: 200500, training_loss: 8.17371e+00
+INFO - run_lib.py - 2025-03-23 23:19:18,902 - step: 200750, training_loss: 7.88982e+00
+INFO - run_lib.py - 2025-03-23 23:21:51,744 - step: 201000, training_loss: 7.87947e+00
+INFO - run_lib.py - 2025-03-23 23:24:23,742 - step: 201250, training_loss: 8.25142e+00
+INFO - run_lib.py - 2025-03-23 23:26:58,167 - step: 201500, training_loss: 7.60491e+00
+INFO - run_lib.py - 2025-03-23 23:29:31,229 - step: 201750, training_loss: 8.18092e+00
+INFO - run_lib.py - 2025-03-23 23:32:03,281 - step: 202000, training_loss: 6.95560e+00
+INFO - run_lib.py - 2025-03-23 23:34:39,042 - step: 202250, training_loss: 7.32944e+00
+INFO - run_lib.py - 2025-03-23 23:37:10,798 - step: 202500, training_loss: 6.76615e+00
+INFO - run_lib.py - 2025-03-23 23:39:43,653 - step: 202750, training_loss: 7.88218e+00
+INFO - run_lib.py - 2025-03-23 23:42:16,343 - step: 203000, training_loss: 8.51186e+00
+INFO - run_lib.py - 2025-03-23 23:44:50,590 - step: 203250, training_loss: 7.23811e+00
+INFO - run_lib.py - 2025-03-23 23:47:23,021 - step: 203500, training_loss: 8.50994e+00
+INFO - run_lib.py - 2025-03-23 23:49:57,386 - step: 203750, training_loss: 7.08579e+00
+INFO - run_lib.py - 2025-03-23 23:52:30,372 - step: 204000, training_loss: 8.55455e+00
+INFO - run_lib.py - 2025-03-23 23:55:03,358 - step: 204250, training_loss: 6.81447e+00
+INFO - run_lib.py - 2025-03-23 23:57:41,978 - step: 204500, training_loss: 8.70672e+00
+INFO - run_lib.py - 2025-03-24 00:00:15,745 - step: 204750, training_loss: 8.14697e+00
+INFO - run_lib.py - 2025-03-24 00:02:47,303 - step: 205000, training_loss: 8.09581e+00
+INFO - run_lib.py - 2025-03-24 00:05:23,434 - step: 205250, training_loss: 5.93281e+00
+INFO - run_lib.py - 2025-03-24 00:07:58,387 - step: 205500, training_loss: 7.66550e+00
+INFO - run_lib.py - 2025-03-24 00:10:30,606 - step: 205750, training_loss: 8.05354e+00
+INFO - run_lib.py - 2025-03-24 00:13:01,511 - step: 206000, training_loss: 8.84380e+00
+INFO - run_lib.py - 2025-03-24 00:15:39,766 - step: 206250, training_loss: 6.45654e+00
+INFO - run_lib.py - 2025-03-24 00:18:11,821 - step: 206500, training_loss: 7.70078e+00
+INFO - run_lib.py - 2025-03-24 00:20:44,590 - step: 206750, training_loss: 6.66798e+00
+INFO - run_lib.py - 2025-03-24 00:23:19,317 - step: 207000, training_loss: 7.91211e+00
+INFO - run_lib.py - 2025-03-24 00:25:50,739 - step: 207250, training_loss: 8.09152e+00
+INFO - run_lib.py - 2025-03-24 00:28:23,612 - step: 207500, training_loss: 7.72080e+00
+INFO - run_lib.py - 2025-03-24 00:30:58,239 - step: 207750, training_loss: 7.57641e+00
+INFO - run_lib.py - 2025-03-24 00:33:31,035 - step: 208000, training_loss: 7.86713e+00
+INFO - run_lib.py - 2025-03-24 00:36:00,780 - step: 208250, training_loss: 7.54207e+00
+INFO - run_lib.py - 2025-03-24 00:38:36,663 - step: 208500, training_loss: 8.35367e+00
+INFO - run_lib.py - 2025-03-24 00:41:06,828 - step: 208750, training_loss: 6.55979e+00
+INFO - run_lib.py - 2025-03-24 00:43:41,256 - step: 209000, training_loss: 7.27175e+00
+INFO - run_lib.py - 2025-03-24 00:46:15,562 - step: 209250, training_loss: 7.42968e+00
+INFO - run_lib.py - 2025-03-24 00:48:50,299 - step: 209500, training_loss: 6.80641e+00
+INFO - run_lib.py - 2025-03-24 00:51:20,081 - step: 209750, training_loss: 7.82594e+00
+INFO - run_lib.py - 2025-03-24 00:53:54,725 - step: 210000, training_loss: 7.85153e+00
+INFO - run_lib.py - 2025-03-24 00:56:28,145 - step: 210250, training_loss: 7.58228e+00
+INFO - run_lib.py - 2025-03-24 00:59:02,989 - step: 210500, training_loss: 7.88940e+00
+INFO - run_lib.py - 2025-03-24 01:01:37,216 - step: 210750, training_loss: 7.56813e+00
+INFO - run_lib.py - 2025-03-24 01:04:10,895 - step: 211000, training_loss: 7.70976e+00
+INFO - run_lib.py - 2025-03-24 01:06:43,627 - step: 211250, training_loss: 7.25406e+00
+INFO - run_lib.py - 2025-03-24 01:09:20,760 - step: 211500, training_loss: 7.28475e+00
+INFO - run_lib.py - 2025-03-24 01:11:52,426 - step: 211750, training_loss: 7.59550e+00
+INFO - run_lib.py - 2025-03-24 01:14:25,932 - step: 212000, training_loss: 8.52550e+00
+INFO - run_lib.py - 2025-03-24 01:16:59,753 - step: 212250, training_loss: 7.00759e+00
+INFO - run_lib.py - 2025-03-24 01:19:29,502 - step: 212500, training_loss: 7.30387e+00
+INFO - run_lib.py - 2025-03-24 01:22:02,114 - step: 212750, training_loss: 8.32435e+00
+INFO - run_lib.py - 2025-03-24 01:24:36,123 - step: 213000, training_loss: 6.81636e+00
+INFO - run_lib.py - 2025-03-24 01:27:09,464 - step: 213250, training_loss: 7.03146e+00
+INFO - run_lib.py - 2025-03-24 01:29:40,640 - step: 213500, training_loss: 8.01283e+00
+INFO - run_lib.py - 2025-03-24 01:32:12,706 - step: 213750, training_loss: 7.65105e+00
+INFO - run_lib.py - 2025-03-24 01:34:44,557 - step: 214000, training_loss: 7.21728e+00
+INFO - run_lib.py - 2025-03-24 01:37:16,950 - step: 214250, training_loss: 7.48442e+00
+INFO - run_lib.py - 2025-03-24 01:39:49,100 - step: 214500, training_loss: 7.68304e+00
+INFO - run_lib.py - 2025-03-24 01:42:25,112 - step: 214750, training_loss: 8.61758e+00
+INFO - run_lib.py - 2025-03-24 01:44:57,638 - step: 215000, training_loss: 8.72083e+00
+INFO - run_lib.py - 2025-03-24 01:47:31,737 - step: 215250, training_loss: 8.44699e+00
+INFO - run_lib.py - 2025-03-24 01:50:06,745 - step: 215500, training_loss: 8.24715e+00
+INFO - run_lib.py - 2025-03-24 01:52:40,818 - step: 215750, training_loss: 7.54038e+00
+INFO - run_lib.py - 2025-03-24 01:55:14,113 - step: 216000, training_loss: 7.99715e+00
+INFO - run_lib.py - 2025-03-24 01:57:48,327 - step: 216250, training_loss: 6.80484e+00
+INFO - run_lib.py - 2025-03-24 02:00:21,394 - step: 216500, training_loss: 7.46925e+00
+INFO - run_lib.py - 2025-03-24 02:02:54,694 - step: 216750, training_loss: 7.47835e+00
+INFO - run_lib.py - 2025-03-24 02:05:28,181 - step: 217000, training_loss: 7.84956e+00
+INFO - run_lib.py - 2025-03-24 02:08:03,583 - step: 217250, training_loss: 7.93884e+00
+INFO - run_lib.py - 2025-03-24 02:10:37,201 - step: 217500, training_loss: 7.68924e+00
+INFO - run_lib.py - 2025-03-24 02:13:13,667 - step: 217750, training_loss: 7.16843e+00
+INFO - run_lib.py - 2025-03-24 02:15:46,075 - step: 218000, training_loss: 8.62360e+00
+INFO - run_lib.py - 2025-03-24 02:18:21,102 - step: 218250, training_loss: 7.72610e+00
+INFO - run_lib.py - 2025-03-24 02:20:57,662 - step: 218500, training_loss: 8.69490e+00
+INFO - run_lib.py - 2025-03-24 02:23:30,283 - step: 218750, training_loss: 6.81208e+00
+INFO - run_lib.py - 2025-03-24 02:26:03,413 - step: 219000, training_loss: 7.57228e+00
+INFO - run_lib.py - 2025-03-24 02:28:38,340 - step: 219250, training_loss: 7.79235e+00
+INFO - run_lib.py - 2025-03-24 02:31:12,337 - step: 219500, training_loss: 7.45915e+00
+INFO - run_lib.py - 2025-03-24 02:33:42,999 - step: 219750, training_loss: 7.27938e+00
+INFO - run_lib.py - 2025-03-24 02:36:17,224 - step: 220000, training_loss: 7.35922e+00
+INFO - run_lib.py - 2025-03-24 02:38:54,106 - step: 220250, training_loss: 7.95077e+00
+INFO - run_lib.py - 2025-03-24 02:41:26,787 - step: 220500, training_loss: 7.37261e+00
+INFO - run_lib.py - 2025-03-24 02:43:58,866 - step: 220750, training_loss: 6.87368e+00
+INFO - run_lib.py - 2025-03-24 02:46:34,568 - step: 221000, training_loss: 7.61682e+00
+INFO - run_lib.py - 2025-03-24 02:49:03,370 - step: 221250, training_loss: 7.81895e+00
+INFO - run_lib.py - 2025-03-24 02:51:37,753 - step: 221500, training_loss: 8.14287e+00
+INFO - run_lib.py - 2025-03-24 02:54:14,656 - step: 221750, training_loss: 7.81034e+00
+INFO - run_lib.py - 2025-03-24 02:56:46,454 - step: 222000, training_loss: 6.56767e+00
+INFO - run_lib.py - 2025-03-24 02:59:20,444 - step: 222250, training_loss: 8.27801e+00
+INFO - run_lib.py - 2025-03-24 03:01:57,691 - step: 222500, training_loss: 7.81146e+00
+INFO - run_lib.py - 2025-03-24 03:04:28,719 - step: 222750, training_loss: 8.42344e+00
+INFO - run_lib.py - 2025-03-24 03:07:04,607 - step: 223000, training_loss: 7.95420e+00
+INFO - run_lib.py - 2025-03-24 03:09:43,177 - step: 223250, training_loss: 7.15698e+00
+INFO - run_lib.py - 2025-03-24 03:12:16,017 - step: 223500, training_loss: 7.48527e+00
+INFO - run_lib.py - 2025-03-24 03:14:49,362 - step: 223750, training_loss: 7.84619e+00
+INFO - run_lib.py - 2025-03-24 03:17:22,440 - step: 224000, training_loss: 7.29892e+00
+INFO - run_lib.py - 2025-03-24 03:19:54,197 - step: 224250, training_loss: 7.53568e+00
+INFO - run_lib.py - 2025-03-24 03:22:27,338 - step: 224500, training_loss: 8.37083e+00
+INFO - run_lib.py - 2025-03-24 03:25:01,353 - step: 224750, training_loss: 8.33611e+00
+INFO - run_lib.py - 2025-03-24 03:27:31,897 - step: 225000, training_loss: 7.83718e+00
+INFO - run_lib.py - 2025-03-24 03:30:43,680 - step: 225000, n_mol: 256, 3D atom stability: 0.9916, mol stability: 0.9102, validity: 0.9492, complete: 0.9453, unique & valid: 0.9492
+INFO - run_lib.py - 2025-03-24 03:30:44,087 - step: 225000, n_mol: 256, 2D atom stability: 0.9983, mol stability: 0.9766, validity: 0.9766, complete: 0.9766, unique & valid: 0.9766
+INFO - run_lib.py - 2025-03-24 03:30:44,093 - step: 225000, pos RMSE: 2.1889
+INFO - run_lib.py - 2025-03-24 03:33:19,455 - step: 225250, training_loss: 7.13295e+00
+INFO - run_lib.py - 2025-03-24 03:35:53,845 - step: 225500, training_loss: 7.75927e+00
+INFO - run_lib.py - 2025-03-24 03:38:28,692 - step: 225750, training_loss: 7.61318e+00
+INFO - run_lib.py - 2025-03-24 03:41:00,682 - step: 226000, training_loss: 7.87499e+00
+INFO - run_lib.py - 2025-03-24 03:43:31,514 - step: 226250, training_loss: 7.56686e+00
+INFO - run_lib.py - 2025-03-24 03:46:05,472 - step: 226500, training_loss: 7.46849e+00
+INFO - run_lib.py - 2025-03-24 03:48:38,879 - step: 226750, training_loss: 7.03974e+00
+INFO - run_lib.py - 2025-03-24 03:51:13,768 - step: 227000, training_loss: 8.73468e+00
+INFO - run_lib.py - 2025-03-24 03:53:44,866 - step: 227250, training_loss: 7.75786e+00
+INFO - run_lib.py - 2025-03-24 03:56:17,501 - step: 227500, training_loss: 7.46636e+00
+INFO - run_lib.py - 2025-03-24 03:58:52,589 - step: 227750, training_loss: 8.49762e+00
+INFO - run_lib.py - 2025-03-24 04:01:29,920 - step: 228000, training_loss: 8.79151e+00
+INFO - run_lib.py - 2025-03-24 04:04:04,000 - step: 228250, training_loss: 7.17699e+00
+INFO - run_lib.py - 2025-03-24 04:06:36,878 - step: 228500, training_loss: 7.90066e+00
+INFO - run_lib.py - 2025-03-24 04:09:14,651 - step: 228750, training_loss: 6.90612e+00
+INFO - run_lib.py - 2025-03-24 04:11:45,965 - step: 229000, training_loss: 7.86379e+00
+INFO - run_lib.py - 2025-03-24 04:14:16,202 - step: 229250, training_loss: 8.55164e+00
+INFO - run_lib.py - 2025-03-24 04:16:52,228 - step: 229500, training_loss: 8.38118e+00
+INFO - run_lib.py - 2025-03-24 04:19:27,649 - step: 229750, training_loss: 7.88433e+00
+INFO - run_lib.py - 2025-03-24 04:21:59,368 - step: 230000, training_loss: 6.35519e+00
+INFO - run_lib.py - 2025-03-24 04:24:34,610 - step: 230250, training_loss: 7.42676e+00
+INFO - run_lib.py - 2025-03-24 04:27:09,210 - step: 230500, training_loss: 7.63866e+00
+INFO - run_lib.py - 2025-03-24 04:29:42,607 - step: 230750, training_loss: 7.25518e+00
+INFO - run_lib.py - 2025-03-24 04:32:18,803 - step: 231000, training_loss: 7.28813e+00
+INFO - run_lib.py - 2025-03-24 04:34:50,744 - step: 231250, training_loss: 8.01503e+00
+INFO - run_lib.py - 2025-03-24 04:37:24,134 - step: 231500, training_loss: 7.66312e+00
+INFO - run_lib.py - 2025-03-24 04:39:58,054 - step: 231750, training_loss: 6.90008e+00
+INFO - run_lib.py - 2025-03-24 04:42:32,399 - step: 232000, training_loss: 7.88540e+00
+INFO - run_lib.py - 2025-03-24 04:45:06,215 - step: 232250, training_loss: 7.01309e+00
+INFO - run_lib.py - 2025-03-24 04:47:42,112 - step: 232500, training_loss: 8.28440e+00
+INFO - run_lib.py - 2025-03-24 04:50:13,368 - step: 232750, training_loss: 7.80338e+00
+INFO - run_lib.py - 2025-03-24 04:52:45,940 - step: 233000, training_loss: 7.21496e+00
+INFO - run_lib.py - 2025-03-24 04:55:20,808 - step: 233250, training_loss: 6.51549e+00
+INFO - run_lib.py - 2025-03-24 04:57:55,330 - step: 233500, training_loss: 6.68336e+00
+INFO - run_lib.py - 2025-03-24 05:00:27,083 - step: 233750, training_loss: 7.87767e+00
+INFO - run_lib.py - 2025-03-24 05:03:02,630 - step: 234000, training_loss: 8.34179e+00
+INFO - run_lib.py - 2025-03-24 05:05:33,641 - step: 234250, training_loss: 7.74369e+00
+INFO - run_lib.py - 2025-03-24 05:08:03,518 - step: 234500, training_loss: 7.35495e+00
+INFO - run_lib.py - 2025-03-24 05:10:37,494 - step: 234750, training_loss: 7.87768e+00
+INFO - run_lib.py - 2025-03-24 05:13:09,337 - step: 235000, training_loss: 6.67262e+00
+INFO - run_lib.py - 2025-03-24 05:15:46,869 - step: 235250, training_loss: 7.86117e+00
+INFO - run_lib.py - 2025-03-24 05:18:20,421 - step: 235500, training_loss: 7.41122e+00
+INFO - run_lib.py - 2025-03-24 05:20:52,740 - step: 235750, training_loss: 6.89704e+00
+INFO - run_lib.py - 2025-03-24 05:23:24,544 - step: 236000, training_loss: 7.61381e+00
+INFO - run_lib.py - 2025-03-24 05:25:59,998 - step: 236250, training_loss: 6.83798e+00
+INFO - run_lib.py - 2025-03-24 05:28:33,602 - step: 236500, training_loss: 6.84148e+00
+INFO - run_lib.py - 2025-03-24 05:31:06,996 - step: 236750, training_loss: 7.68174e+00
+INFO - run_lib.py - 2025-03-24 05:33:38,270 - step: 237000, training_loss: 8.59187e+00
+INFO - run_lib.py - 2025-03-24 05:36:13,199 - step: 237250, training_loss: 8.66652e+00
+INFO - run_lib.py - 2025-03-24 05:38:47,108 - step: 237500, training_loss: 7.80529e+00
+INFO - run_lib.py - 2025-03-24 05:41:19,745 - step: 237750, training_loss: 8.38912e+00
+INFO - run_lib.py - 2025-03-24 05:43:53,536 - step: 238000, training_loss: 8.42140e+00
+INFO - run_lib.py - 2025-03-24 05:46:26,022 - step: 238250, training_loss: 7.27138e+00
+INFO - run_lib.py - 2025-03-24 05:48:57,078 - step: 238500, training_loss: 7.08164e+00
+INFO - run_lib.py - 2025-03-24 05:51:32,799 - step: 238750, training_loss: 8.08527e+00
+INFO - run_lib.py - 2025-03-24 05:54:06,803 - step: 239000, training_loss: 7.77145e+00
+INFO - run_lib.py - 2025-03-24 05:56:37,756 - step: 239250, training_loss: 7.26755e+00
+INFO - run_lib.py - 2025-03-24 05:59:15,193 - step: 239500, training_loss: 7.03933e+00
+INFO - run_lib.py - 2025-03-24 06:01:47,332 - step: 239750, training_loss: 7.45923e+00
+INFO - run_lib.py - 2025-03-24 06:04:20,228 - step: 240000, training_loss: 7.01325e+00
+INFO - run_lib.py - 2025-03-24 06:06:58,614 - step: 240250, training_loss: 7.00516e+00
+INFO - run_lib.py - 2025-03-24 06:09:29,083 - step: 240500, training_loss: 7.81411e+00
+INFO - run_lib.py - 2025-03-24 06:12:01,287 - step: 240750, training_loss: 7.82969e+00
+INFO - run_lib.py - 2025-03-24 06:14:36,104 - step: 241000, training_loss: 8.67672e+00
+INFO - run_lib.py - 2025-03-24 06:17:08,226 - step: 241250, training_loss: 6.68143e+00
+INFO - run_lib.py - 2025-03-24 06:19:42,964 - step: 241500, training_loss: 7.18531e+00
+INFO - run_lib.py - 2025-03-24 06:22:15,300 - step: 241750, training_loss: 7.25985e+00
+INFO - run_lib.py - 2025-03-24 06:24:47,649 - step: 242000, training_loss: 7.35357e+00
+INFO - run_lib.py - 2025-03-24 06:27:20,381 - step: 242250, training_loss: 7.07846e+00
+INFO - run_lib.py - 2025-03-24 06:29:54,578 - step: 242500, training_loss: 7.06969e+00
+INFO - run_lib.py - 2025-03-24 06:32:30,282 - step: 242750, training_loss: 6.90591e+00
+INFO - run_lib.py - 2025-03-24 06:35:05,039 - step: 243000, training_loss: 8.83688e+00
+INFO - run_lib.py - 2025-03-24 06:37:38,221 - step: 243250, training_loss: 7.53992e+00
+INFO - run_lib.py - 2025-03-24 06:40:13,593 - step: 243500, training_loss: 7.69667e+00
+INFO - run_lib.py - 2025-03-24 06:42:45,882 - step: 243750, training_loss: 7.77805e+00
+INFO - run_lib.py - 2025-03-24 06:45:22,451 - step: 244000, training_loss: 7.89439e+00
+INFO - run_lib.py - 2025-03-24 06:47:54,890 - step: 244250, training_loss: 7.58156e+00
+INFO - run_lib.py - 2025-03-24 06:50:24,786 - step: 244500, training_loss: 7.33396e+00
+INFO - run_lib.py - 2025-03-24 06:52:57,215 - step: 244750, training_loss: 8.14317e+00
+INFO - run_lib.py - 2025-03-24 06:55:34,723 - step: 245000, training_loss: 6.66917e+00
+INFO - run_lib.py - 2025-03-24 06:58:09,600 - step: 245250, training_loss: 7.53715e+00
+INFO - run_lib.py - 2025-03-24 07:00:41,008 - step: 245500, training_loss: 7.04218e+00
+INFO - run_lib.py - 2025-03-24 07:03:12,149 - step: 245750, training_loss: 7.87639e+00
+INFO - run_lib.py - 2025-03-24 07:05:44,295 - step: 246000, training_loss: 7.56411e+00
+INFO - run_lib.py - 2025-03-24 07:08:16,868 - step: 246250, training_loss: 7.01156e+00
+INFO - run_lib.py - 2025-03-24 07:10:52,162 - step: 246500, training_loss: 7.48997e+00
+INFO - run_lib.py - 2025-03-24 07:13:22,591 - step: 246750, training_loss: 7.23226e+00
+INFO - run_lib.py - 2025-03-24 07:15:55,852 - step: 247000, training_loss: 7.89698e+00
+INFO - run_lib.py - 2025-03-24 07:18:29,188 - step: 247250, training_loss: 6.93077e+00
+INFO - run_lib.py - 2025-03-24 07:20:59,328 - step: 247500, training_loss: 8.14163e+00
+INFO - run_lib.py - 2025-03-24 07:23:33,821 - step: 247750, training_loss: 8.01144e+00
+INFO - run_lib.py - 2025-03-24 07:26:10,551 - step: 248000, training_loss: 8.62004e+00
+INFO - run_lib.py - 2025-03-24 07:28:42,341 - step: 248250, training_loss: 8.41095e+00
+INFO - run_lib.py - 2025-03-24 07:31:13,722 - step: 248500, training_loss: 8.17414e+00
+INFO - run_lib.py - 2025-03-24 07:33:50,926 - step: 248750, training_loss: 7.79428e+00
+INFO - run_lib.py - 2025-03-24 07:36:22,548 - step: 249000, training_loss: 7.59633e+00
+INFO - run_lib.py - 2025-03-24 07:38:55,299 - step: 249250, training_loss: 8.18381e+00
+INFO - run_lib.py - 2025-03-24 07:41:32,816 - step: 249500, training_loss: 8.25063e+00
+INFO - run_lib.py - 2025-03-24 07:44:07,077 - step: 249750, training_loss: 7.92852e+00
+INFO - run_lib.py - 2025-03-24 07:46:39,492 - step: 250000, training_loss: 8.08374e+00
+INFO - run_lib.py - 2025-03-24 07:49:55,009 - step: 250000, n_mol: 256, 3D atom stability: 0.9924, mol stability: 0.9219, validity: 0.9922, complete: 0.9727, unique & valid: 0.9883
+INFO - run_lib.py - 2025-03-24 07:49:55,422 - step: 250000, n_mol: 256, 2D atom stability: 0.9985, mol stability: 0.9766, validity: 0.9766, complete: 0.9766, unique & valid: 0.9727
+INFO - run_lib.py - 2025-03-24 07:49:55,428 - step: 250000, pos RMSE: 2.1936
+INFO - run_lib.py - 2025-03-24 07:52:29,672 - step: 250250, training_loss: 8.83931e+00
+INFO - run_lib.py - 2025-03-24 07:54:59,675 - step: 250500, training_loss: 7.69637e+00
+INFO - run_lib.py - 2025-03-24 07:57:32,024 - step: 250750, training_loss: 7.19476e+00
+INFO - run_lib.py - 2025-03-24 08:00:08,777 - step: 251000, training_loss: 7.67020e+00
+INFO - run_lib.py - 2025-03-24 08:02:43,049 - step: 251250, training_loss: 7.45830e+00
+INFO - run_lib.py - 2025-03-24 08:05:15,251 - step: 251500, training_loss: 7.70489e+00
+INFO - run_lib.py - 2025-03-24 08:07:48,348 - step: 251750, training_loss: 7.97002e+00
+INFO - run_lib.py - 2025-03-24 08:10:19,229 - step: 252000, training_loss: 7.49265e+00
+INFO - run_lib.py - 2025-03-24 08:12:51,501 - step: 252250, training_loss: 7.88111e+00
+INFO - run_lib.py - 2025-03-24 08:15:25,402 - step: 252500, training_loss: 7.52461e+00
+INFO - run_lib.py - 2025-03-24 08:18:00,345 - step: 252750, training_loss: 6.52223e+00
+INFO - run_lib.py - 2025-03-24 08:20:32,686 - step: 253000, training_loss: 6.70009e+00
+INFO - run_lib.py - 2025-03-24 08:23:04,490 - step: 253250, training_loss: 8.07161e+00
+INFO - run_lib.py - 2025-03-24 08:25:38,898 - step: 253500, training_loss: 7.20130e+00
+INFO - run_lib.py - 2025-03-24 08:28:09,823 - step: 253750, training_loss: 7.17943e+00
+INFO - run_lib.py - 2025-03-24 08:30:39,725 - step: 254000, training_loss: 7.04875e+00
+INFO - run_lib.py - 2025-03-24 08:33:15,907 - step: 254250, training_loss: 7.06753e+00
+INFO - run_lib.py - 2025-03-24 08:35:49,619 - step: 254500, training_loss: 7.70138e+00
+INFO - run_lib.py - 2025-03-24 08:38:19,560 - step: 254750, training_loss: 7.05582e+00
+INFO - run_lib.py - 2025-03-24 08:40:54,595 - step: 255000, training_loss: 6.96329e+00
+INFO - run_lib.py - 2025-03-24 08:43:29,363 - step: 255250, training_loss: 7.46780e+00
+INFO - run_lib.py - 2025-03-24 08:46:00,978 - step: 255500, training_loss: 7.58447e+00
+INFO - run_lib.py - 2025-03-24 08:48:35,943 - step: 255750, training_loss: 7.00012e+00
+INFO - run_lib.py - 2025-03-24 08:51:09,151 - step: 256000, training_loss: 8.23018e+00
+INFO - run_lib.py - 2025-03-24 08:53:43,626 - step: 256250, training_loss: 6.82188e+00
+INFO - run_lib.py - 2025-03-24 08:56:20,703 - step: 256500, training_loss: 7.40806e+00
+INFO - run_lib.py - 2025-03-24 08:58:53,942 - step: 256750, training_loss: 6.71744e+00
+INFO - run_lib.py - 2025-03-24 09:01:26,580 - step: 257000, training_loss: 7.80234e+00
+INFO - run_lib.py - 2025-03-24 09:04:00,315 - step: 257250, training_loss: 7.88575e+00
+INFO - run_lib.py - 2025-03-24 09:06:32,819 - step: 257500, training_loss: 7.67843e+00
+INFO - run_lib.py - 2025-03-24 09:09:06,244 - step: 257750, training_loss: 8.36608e+00
+INFO - run_lib.py - 2025-03-24 09:11:41,744 - step: 258000, training_loss: 7.24076e+00
+INFO - run_lib.py - 2025-03-24 09:14:14,604 - step: 258250, training_loss: 7.28552e+00
+INFO - run_lib.py - 2025-03-24 09:16:45,759 - step: 258500, training_loss: 6.42945e+00
+INFO - run_lib.py - 2025-03-24 09:19:19,656 - step: 258750, training_loss: 7.28300e+00
+INFO - run_lib.py - 2025-03-24 09:21:55,211 - step: 259000, training_loss: 7.13182e+00
+INFO - run_lib.py - 2025-03-24 09:24:30,251 - step: 259250, training_loss: 6.72237e+00
+INFO - run_lib.py - 2025-03-24 09:27:03,719 - step: 259500, training_loss: 7.91198e+00
+INFO - run_lib.py - 2025-03-24 09:29:38,124 - step: 259750, training_loss: 7.83914e+00
+INFO - run_lib.py - 2025-03-24 09:32:10,111 - step: 260000, training_loss: 7.52569e+00
+INFO - run_lib.py - 2025-03-24 09:34:43,710 - step: 260250, training_loss: 7.09987e+00
+INFO - run_lib.py - 2025-03-24 09:37:21,546 - step: 260500, training_loss: 8.63576e+00
+INFO - run_lib.py - 2025-03-24 09:39:53,165 - step: 260750, training_loss: 7.45335e+00
+INFO - run_lib.py - 2025-03-24 09:42:24,149 - step: 261000, training_loss: 7.75103e+00
+INFO - run_lib.py - 2025-03-24 09:44:58,532 - step: 261250, training_loss: 7.84500e+00
+INFO - run_lib.py - 2025-03-24 09:47:32,973 - step: 261500, training_loss: 7.65153e+00
+INFO - run_lib.py - 2025-03-24 09:50:05,863 - step: 261750, training_loss: 7.86665e+00
+INFO - run_lib.py - 2025-03-24 09:52:39,014 - step: 262000, training_loss: 7.87448e+00
+INFO - run_lib.py - 2025-03-24 09:55:16,130 - step: 262250, training_loss: 7.12879e+00
+INFO - run_lib.py - 2025-03-24 09:57:49,279 - step: 262500, training_loss: 7.96604e+00
+INFO - run_lib.py - 2025-03-24 10:00:23,049 - step: 262750, training_loss: 8.00397e+00
+INFO - run_lib.py - 2025-03-24 10:02:55,189 - step: 263000, training_loss: 8.02292e+00
+INFO - run_lib.py - 2025-03-24 10:05:27,824 - step: 263250, training_loss: 7.48080e+00
+INFO - run_lib.py - 2025-03-24 10:08:03,033 - step: 263500, training_loss: 7.82343e+00
+INFO - run_lib.py - 2025-03-24 10:10:31,906 - step: 263750, training_loss: 7.79501e+00
+INFO - run_lib.py - 2025-03-24 10:13:04,186 - step: 264000, training_loss: 7.34299e+00
+INFO - run_lib.py - 2025-03-24 10:15:38,775 - step: 264250, training_loss: 7.70834e+00
+INFO - run_lib.py - 2025-03-24 10:18:13,665 - step: 264500, training_loss: 7.32558e+00
+INFO - run_lib.py - 2025-03-24 10:20:46,760 - step: 264750, training_loss: 7.86849e+00
+INFO - run_lib.py - 2025-03-24 10:23:20,944 - step: 265000, training_loss: 7.75631e+00
+INFO - run_lib.py - 2025-03-24 10:25:55,414 - step: 265250, training_loss: 8.05626e+00
+INFO - run_lib.py - 2025-03-24 10:28:28,280 - step: 265500, training_loss: 7.72858e+00
+INFO - run_lib.py - 2025-03-24 10:31:02,817 - step: 265750, training_loss: 8.09774e+00
+INFO - run_lib.py - 2025-03-24 10:33:37,085 - step: 266000, training_loss: 6.87082e+00
+INFO - run_lib.py - 2025-03-24 10:36:09,202 - step: 266250, training_loss: 7.03566e+00
+INFO - run_lib.py - 2025-03-24 10:38:44,163 - step: 266500, training_loss: 8.92868e+00
+INFO - run_lib.py - 2025-03-24 10:41:14,350 - step: 266750, training_loss: 8.35252e+00
+INFO - run_lib.py - 2025-03-24 10:43:46,509 - step: 267000, training_loss: 7.29013e+00
+INFO - run_lib.py - 2025-03-24 10:46:19,370 - step: 267250, training_loss: 7.68770e+00
+INFO - run_lib.py - 2025-03-24 10:48:53,729 - step: 267500, training_loss: 7.37895e+00
+INFO - run_lib.py - 2025-03-24 10:51:26,604 - step: 267750, training_loss: 9.42887e+00
+INFO - run_lib.py - 2025-03-24 10:53:57,378 - step: 268000, training_loss: 7.57353e+00
+INFO - run_lib.py - 2025-03-24 10:56:34,259 - step: 268250, training_loss: 7.36586e+00
+INFO - run_lib.py - 2025-03-24 10:59:03,675 - step: 268500, training_loss: 8.16955e+00
+INFO - run_lib.py - 2025-03-24 11:01:36,325 - step: 268750, training_loss: 7.87591e+00
+INFO - run_lib.py - 2025-03-24 11:04:10,816 - step: 269000, training_loss: 7.43265e+00
+INFO - run_lib.py - 2025-03-24 11:06:44,561 - step: 269250, training_loss: 8.39812e+00
+INFO - run_lib.py - 2025-03-24 11:09:18,363 - step: 269500, training_loss: 7.99020e+00
+INFO - run_lib.py - 2025-03-24 11:11:51,540 - step: 269750, training_loss: 7.08241e+00
+INFO - run_lib.py - 2025-03-24 11:14:21,710 - step: 270000, training_loss: 7.70465e+00
+INFO - run_lib.py - 2025-03-24 11:16:56,695 - step: 270250, training_loss: 7.93248e+00
+INFO - run_lib.py - 2025-03-24 11:19:32,688 - step: 270500, training_loss: 6.90068e+00
+INFO - run_lib.py - 2025-03-24 11:22:08,125 - step: 270750, training_loss: 7.92683e+00
+INFO - run_lib.py - 2025-03-24 11:24:43,188 - step: 271000, training_loss: 7.80172e+00
+INFO - run_lib.py - 2025-03-24 11:27:20,282 - step: 271250, training_loss: 6.70807e+00
+INFO - run_lib.py - 2025-03-24 11:29:54,613 - step: 271500, training_loss: 8.56405e+00
+INFO - run_lib.py - 2025-03-24 11:32:32,776 - step: 271750, training_loss: 7.32626e+00
+INFO - run_lib.py - 2025-03-24 11:35:12,663 - step: 272000, training_loss: 6.94489e+00
+INFO - run_lib.py - 2025-03-24 11:37:46,351 - step: 272250, training_loss: 6.73812e+00
+INFO - run_lib.py - 2025-03-24 11:40:21,890 - step: 272500, training_loss: 8.30151e+00
+INFO - run_lib.py - 2025-03-24 11:42:58,948 - step: 272750, training_loss: 7.56125e+00
+INFO - run_lib.py - 2025-03-24 11:45:34,735 - step: 273000, training_loss: 7.10055e+00
+INFO - run_lib.py - 2025-03-24 11:48:10,635 - step: 273250, training_loss: 7.24151e+00
+INFO - run_lib.py - 2025-03-24 11:50:47,955 - step: 273500, training_loss: 6.98756e+00
+INFO - run_lib.py - 2025-03-24 11:53:24,272 - step: 273750, training_loss: 7.36478e+00
+INFO - run_lib.py - 2025-03-24 11:55:57,946 - step: 274000, training_loss: 7.45898e+00
+INFO - run_lib.py - 2025-03-24 11:58:34,034 - step: 274250, training_loss: 7.19948e+00
+INFO - run_lib.py - 2025-03-24 12:01:06,338 - step: 274500, training_loss: 8.40083e+00
+INFO - run_lib.py - 2025-03-24 12:03:38,239 - step: 274750, training_loss: 8.15240e+00
+INFO - run_lib.py - 2025-03-24 12:06:13,712 - step: 275000, training_loss: 7.49112e+00
+INFO - run_lib.py - 2025-03-24 12:09:26,095 - step: 275000, n_mol: 256, 3D atom stability: 0.9908, mol stability: 0.9062, validity: 0.9453, complete: 0.9414, unique & valid: 0.9453
+INFO - run_lib.py - 2025-03-24 12:09:26,500 - step: 275000, n_mol: 256, 2D atom stability: 0.9987, mol stability: 0.9805, validity: 0.9805, complete: 0.9805, unique & valid: 0.9805
+INFO - run_lib.py - 2025-03-24 12:09:26,506 - step: 275000, pos RMSE: 2.1702
+INFO - run_lib.py - 2025-03-24 12:11:57,597 - step: 275250, training_loss: 8.43990e+00
+INFO - run_lib.py - 2025-03-24 12:14:33,182 - step: 275500, training_loss: 7.48144e+00
+INFO - run_lib.py - 2025-03-24 12:17:08,057 - step: 275750, training_loss: 8.27675e+00
+INFO - run_lib.py - 2025-03-24 12:19:39,475 - step: 276000, training_loss: 7.02993e+00
+INFO - run_lib.py - 2025-03-24 12:22:11,541 - step: 276250, training_loss: 7.72594e+00
+INFO - run_lib.py - 2025-03-24 12:24:45,396 - step: 276500, training_loss: 7.94070e+00
+INFO - run_lib.py - 2025-03-24 12:27:18,738 - step: 276750, training_loss: 8.06494e+00
+INFO - run_lib.py - 2025-03-24 12:29:50,313 - step: 277000, training_loss: 7.69412e+00
+INFO - run_lib.py - 2025-03-24 12:32:18,937 - step: 277250, training_loss: 7.51353e+00
+INFO - run_lib.py - 2025-03-24 12:34:55,651 - step: 277500, training_loss: 7.66916e+00
+INFO - run_lib.py - 2025-03-24 12:37:28,046 - step: 277750, training_loss: 6.92525e+00
+INFO - run_lib.py - 2025-03-24 12:39:57,924 - step: 278000, training_loss: 8.14632e+00
+INFO - run_lib.py - 2025-03-24 12:42:32,723 - step: 278250, training_loss: 7.70155e+00
+INFO - run_lib.py - 2025-03-24 12:45:07,555 - step: 278500, training_loss: 7.52245e+00
+INFO - run_lib.py - 2025-03-24 12:47:43,386 - step: 278750, training_loss: 7.56453e+00
+INFO - run_lib.py - 2025-03-24 12:50:19,530 - step: 279000, training_loss: 7.71861e+00
+INFO - run_lib.py - 2025-03-24 12:52:50,635 - step: 279250, training_loss: 7.40191e+00
+INFO - run_lib.py - 2025-03-24 12:55:21,528 - step: 279500, training_loss: 7.02295e+00
+INFO - run_lib.py - 2025-03-24 12:57:57,801 - step: 279750, training_loss: 6.78934e+00
+INFO - run_lib.py - 2025-03-24 13:00:33,179 - step: 280000, training_loss: 6.28998e+00
+INFO - run_lib.py - 2025-03-24 13:03:09,933 - step: 280250, training_loss: 7.08560e+00
+INFO - run_lib.py - 2025-03-24 13:05:45,294 - step: 280500, training_loss: 7.84590e+00
+INFO - run_lib.py - 2025-03-24 13:08:17,464 - step: 280750, training_loss: 7.66916e+00
+INFO - run_lib.py - 2025-03-24 13:10:50,080 - step: 281000, training_loss: 7.03698e+00
+INFO - run_lib.py - 2025-03-24 13:13:22,880 - step: 281250, training_loss: 8.56707e+00
+INFO - run_lib.py - 2025-03-24 13:15:55,360 - step: 281500, training_loss: 7.48424e+00
+INFO - run_lib.py - 2025-03-24 13:18:30,289 - step: 281750, training_loss: 7.56056e+00
+INFO - run_lib.py - 2025-03-24 13:21:05,989 - step: 282000, training_loss: 8.29287e+00
+INFO - run_lib.py - 2025-03-24 13:23:39,332 - step: 282250, training_loss: 7.97402e+00
+INFO - run_lib.py - 2025-03-24 13:26:07,938 - step: 282500, training_loss: 8.21965e+00
+INFO - run_lib.py - 2025-03-24 13:28:45,236 - step: 282750, training_loss: 8.08454e+00
+INFO - run_lib.py - 2025-03-24 13:31:18,534 - step: 283000, training_loss: 8.27143e+00
+INFO - run_lib.py - 2025-03-24 13:33:51,436 - step: 283250, training_loss: 7.17564e+00
+INFO - run_lib.py - 2025-03-24 13:36:25,200 - step: 283500, training_loss: 8.24679e+00
+INFO - run_lib.py - 2025-03-24 13:38:54,193 - step: 283750, training_loss: 7.44214e+00
+INFO - run_lib.py - 2025-03-24 13:41:24,740 - step: 284000, training_loss: 8.27572e+00
+INFO - run_lib.py - 2025-03-24 13:43:58,153 - step: 284250, training_loss: 8.01354e+00
+INFO - run_lib.py - 2025-03-24 13:46:36,493 - step: 284500, training_loss: 8.56241e+00
+INFO - run_lib.py - 2025-03-24 13:49:07,213 - step: 284750, training_loss: 6.82828e+00
+INFO - run_lib.py - 2025-03-24 13:51:38,052 - step: 285000, training_loss: 7.89169e+00
+INFO - run_lib.py - 2025-03-24 13:54:19,224 - step: 285250, training_loss: 7.51488e+00
+INFO - run_lib.py - 2025-03-24 13:56:53,008 - step: 285500, training_loss: 7.75494e+00
+INFO - run_lib.py - 2025-03-24 13:59:23,799 - step: 285750, training_loss: 8.10425e+00
+INFO - run_lib.py - 2025-03-24 14:01:59,006 - step: 286000, training_loss: 7.44190e+00
+INFO - run_lib.py - 2025-03-24 14:04:29,548 - step: 286250, training_loss: 8.91385e+00
+INFO - run_lib.py - 2025-03-24 14:07:00,060 - step: 286500, training_loss: 7.67498e+00
+INFO - run_lib.py - 2025-03-24 14:09:35,259 - step: 286750, training_loss: 6.61873e+00
+INFO - run_lib.py - 2025-03-24 14:12:09,972 - step: 287000, training_loss: 7.24770e+00
+INFO - run_lib.py - 2025-03-24 14:14:42,325 - step: 287250, training_loss: 8.18151e+00
+INFO - run_lib.py - 2025-03-24 14:17:19,683 - step: 287500, training_loss: 7.87903e+00
+INFO - run_lib.py - 2025-03-24 14:19:53,741 - step: 287750, training_loss: 7.63373e+00
+INFO - run_lib.py - 2025-03-24 14:22:26,287 - step: 288000, training_loss: 7.98041e+00
+INFO - run_lib.py - 2025-03-24 14:25:01,850 - step: 288250, training_loss: 7.89628e+00
+INFO - run_lib.py - 2025-03-24 14:27:32,577 - step: 288500, training_loss: 7.34515e+00
+INFO - run_lib.py - 2025-03-24 14:30:06,267 - step: 288750, training_loss: 7.47341e+00
+INFO - run_lib.py - 2025-03-24 14:32:39,825 - step: 289000, training_loss: 7.25959e+00
+INFO - run_lib.py - 2025-03-24 14:35:13,009 - step: 289250, training_loss: 7.98159e+00
+INFO - run_lib.py - 2025-03-24 14:37:43,331 - step: 289500, training_loss: 7.71433e+00
+INFO - run_lib.py - 2025-03-24 14:40:21,307 - step: 289750, training_loss: 6.89200e+00
+INFO - run_lib.py - 2025-03-24 14:42:55,407 - step: 290000, training_loss: 7.79086e+00
+INFO - run_lib.py - 2025-03-24 14:45:26,844 - step: 290250, training_loss: 8.26458e+00
+INFO - run_lib.py - 2025-03-24 14:48:01,692 - step: 290500, training_loss: 7.55652e+00
+INFO - run_lib.py - 2025-03-24 14:50:33,477 - step: 290750, training_loss: 7.48281e+00
+INFO - run_lib.py - 2025-03-24 14:53:06,083 - step: 291000, training_loss: 7.08534e+00
+INFO - run_lib.py - 2025-03-24 14:55:41,398 - step: 291250, training_loss: 7.51429e+00
+INFO - run_lib.py - 2025-03-24 14:58:14,700 - step: 291500, training_loss: 8.07479e+00
+INFO - run_lib.py - 2025-03-24 15:00:45,670 - step: 291750, training_loss: 7.40245e+00
+INFO - run_lib.py - 2025-03-24 15:03:19,318 - step: 292000, training_loss: 7.91916e+00
+INFO - run_lib.py - 2025-03-24 15:05:55,462 - step: 292250, training_loss: 7.44934e+00
+INFO - run_lib.py - 2025-03-24 15:08:27,799 - step: 292500, training_loss: 7.84506e+00
+INFO - run_lib.py - 2025-03-24 15:11:01,451 - step: 292750, training_loss: 7.30723e+00
+INFO - run_lib.py - 2025-03-24 15:13:37,762 - step: 293000, training_loss: 7.54118e+00
+INFO - run_lib.py - 2025-03-24 15:16:13,785 - step: 293250, training_loss: 7.96648e+00
+INFO - run_lib.py - 2025-03-24 15:18:46,743 - step: 293500, training_loss: 7.44869e+00
+INFO - run_lib.py - 2025-03-24 15:21:23,168 - step: 293750, training_loss: 8.01993e+00
+INFO - run_lib.py - 2025-03-24 15:23:55,150 - step: 294000, training_loss: 7.47377e+00
+INFO - run_lib.py - 2025-03-24 15:26:28,344 - step: 294250, training_loss: 7.36664e+00
+INFO - run_lib.py - 2025-03-24 15:29:03,174 - step: 294500, training_loss: 7.69063e+00
+INFO - run_lib.py - 2025-03-24 15:31:36,893 - step: 294750, training_loss: 6.88921e+00
+INFO - run_lib.py - 2025-03-24 15:34:10,221 - step: 295000, training_loss: 7.18509e+00
+INFO - run_lib.py - 2025-03-24 15:36:49,107 - step: 295250, training_loss: 7.59698e+00
+INFO - run_lib.py - 2025-03-24 15:39:21,862 - step: 295500, training_loss: 7.79570e+00
+INFO - run_lib.py - 2025-03-24 15:41:54,972 - step: 295750, training_loss: 7.16934e+00
+INFO - run_lib.py - 2025-03-24 15:44:32,002 - step: 296000, training_loss: 6.88762e+00
+INFO - run_lib.py - 2025-03-24 15:47:02,916 - step: 296250, training_loss: 6.92513e+00
+INFO - run_lib.py - 2025-03-24 15:49:38,565 - step: 296500, training_loss: 7.54335e+00
+INFO - run_lib.py - 2025-03-24 15:52:16,186 - step: 296750, training_loss: 8.06743e+00
+INFO - run_lib.py - 2025-03-24 15:54:47,318 - step: 297000, training_loss: 7.22475e+00
+INFO - run_lib.py - 2025-03-24 15:57:21,404 - step: 297250, training_loss: 8.03093e+00
+INFO - run_lib.py - 2025-03-24 15:59:56,527 - step: 297500, training_loss: 9.36251e+00
+INFO - run_lib.py - 2025-03-24 16:02:31,720 - step: 297750, training_loss: 7.89847e+00
+INFO - run_lib.py - 2025-03-24 16:05:06,830 - step: 298000, training_loss: 7.65180e+00
+INFO - run_lib.py - 2025-03-24 16:07:42,325 - step: 298250, training_loss: 6.75006e+00
+INFO - run_lib.py - 2025-03-24 16:10:14,605 - step: 298500, training_loss: 6.89035e+00
+INFO - run_lib.py - 2025-03-24 16:12:47,083 - step: 298750, training_loss: 7.47881e+00
+INFO - run_lib.py - 2025-03-24 16:15:24,045 - step: 299000, training_loss: 8.35259e+00
+INFO - run_lib.py - 2025-03-24 16:17:58,836 - step: 299250, training_loss: 9.09613e+00
+INFO - run_lib.py - 2025-03-24 16:20:31,060 - step: 299500, training_loss: 7.36529e+00
+INFO - run_lib.py - 2025-03-24 16:23:02,539 - step: 299750, training_loss: 8.19407e+00
+INFO - run_lib.py - 2025-03-24 16:25:37,628 - step: 300000, training_loss: 7.83956e+00
+INFO - run_lib.py - 2025-03-24 16:28:50,014 - step: 300000, n_mol: 256, 3D atom stability: 0.9890, mol stability: 0.8906, validity: 0.9414, complete: 0.9414, unique & valid: 0.9414
+INFO - run_lib.py - 2025-03-24 16:28:50,420 - step: 300000, n_mol: 256, 2D atom stability: 0.9989, mol stability: 0.9844, validity: 0.9844, complete: 0.9844, unique & valid: 0.9844
+INFO - run_lib.py - 2025-03-24 16:28:50,426 - step: 300000, pos RMSE: 2.2034
+INFO - run_lib.py - 2025-03-24 16:31:22,084 - step: 300250, training_loss: 8.22354e+00
+INFO - run_lib.py - 2025-03-24 16:33:56,026 - step: 300500, training_loss: 7.72779e+00
+INFO - run_lib.py - 2025-03-24 16:36:31,543 - step: 300750, training_loss: 7.83639e+00
+INFO - run_lib.py - 2025-03-24 16:39:04,650 - step: 301000, training_loss: 7.00563e+00
+INFO - run_lib.py - 2025-03-24 16:41:39,551 - step: 301250, training_loss: 7.61120e+00
+INFO - run_lib.py - 2025-03-24 16:44:16,868 - step: 301500, training_loss: 7.06719e+00
+INFO - run_lib.py - 2025-03-24 16:46:50,232 - step: 301750, training_loss: 7.63318e+00
+INFO - run_lib.py - 2025-03-24 16:49:21,589 - step: 302000, training_loss: 7.94442e+00
+INFO - run_lib.py - 2025-03-24 16:51:56,220 - step: 302250, training_loss: 6.49003e+00
+INFO - run_lib.py - 2025-03-24 16:54:27,791 - step: 302500, training_loss: 6.98822e+00
+INFO - run_lib.py - 2025-03-24 16:57:00,455 - step: 302750, training_loss: 7.99355e+00
+INFO - run_lib.py - 2025-03-24 16:59:35,387 - step: 303000, training_loss: 8.20238e+00
+INFO - run_lib.py - 2025-03-24 17:02:06,538 - step: 303250, training_loss: 7.74402e+00
+INFO - run_lib.py - 2025-03-24 17:04:40,472 - step: 303500, training_loss: 7.41831e+00
+INFO - run_lib.py - 2025-03-24 17:07:17,462 - step: 303750, training_loss: 7.44058e+00
+INFO - run_lib.py - 2025-03-24 17:09:49,876 - step: 304000, training_loss: 8.26692e+00
+INFO - run_lib.py - 2025-03-24 17:12:23,306 - step: 304250, training_loss: 7.43941e+00
+INFO - run_lib.py - 2025-03-24 17:14:57,306 - step: 304500, training_loss: 7.58002e+00
+INFO - run_lib.py - 2025-03-24 17:17:35,251 - step: 304750, training_loss: 6.80836e+00
+INFO - run_lib.py - 2025-03-24 17:20:08,555 - step: 305000, training_loss: 7.93479e+00
+INFO - run_lib.py - 2025-03-24 17:22:46,506 - step: 305250, training_loss: 8.28178e+00
+INFO - run_lib.py - 2025-03-24 17:25:20,239 - step: 305500, training_loss: 8.41830e+00
+INFO - run_lib.py - 2025-03-24 17:27:51,548 - step: 305750, training_loss: 7.64073e+00
+INFO - run_lib.py - 2025-03-24 17:30:28,171 - step: 306000, training_loss: 7.65907e+00
+INFO - run_lib.py - 2025-03-24 17:33:00,482 - step: 306250, training_loss: 7.94640e+00
+INFO - run_lib.py - 2025-03-24 17:35:35,721 - step: 306500, training_loss: 7.13910e+00
+INFO - run_lib.py - 2025-03-24 17:38:10,256 - step: 306750, training_loss: 7.82740e+00
+INFO - run_lib.py - 2025-03-24 17:40:42,368 - step: 307000, training_loss: 7.49756e+00
+INFO - run_lib.py - 2025-03-24 17:43:16,721 - step: 307250, training_loss: 7.92260e+00
+INFO - run_lib.py - 2025-03-24 17:45:51,759 - step: 307500, training_loss: 7.87024e+00
+INFO - run_lib.py - 2025-03-24 17:48:29,637 - step: 307750, training_loss: 7.29045e+00
+INFO - run_lib.py - 2025-03-24 17:50:58,878 - step: 308000, training_loss: 6.85477e+00
+INFO - run_lib.py - 2025-03-24 17:53:33,170 - step: 308250, training_loss: 6.71348e+00
+INFO - run_lib.py - 2025-03-24 17:56:08,607 - step: 308500, training_loss: 7.28900e+00
+INFO - run_lib.py - 2025-03-24 17:58:41,769 - step: 308750, training_loss: 7.14231e+00
+INFO - run_lib.py - 2025-03-24 18:01:16,670 - step: 309000, training_loss: 7.98740e+00
+INFO - run_lib.py - 2025-03-24 18:03:51,260 - step: 309250, training_loss: 7.67170e+00
+INFO - run_lib.py - 2025-03-24 18:06:26,205 - step: 309500, training_loss: 7.42013e+00
+INFO - run_lib.py - 2025-03-24 18:08:57,900 - step: 309750, training_loss: 7.41337e+00
+INFO - run_lib.py - 2025-03-24 18:11:30,166 - step: 310000, training_loss: 7.80041e+00
+INFO - run_lib.py - 2025-03-24 18:14:04,098 - step: 310250, training_loss: 8.39022e+00
+INFO - run_lib.py - 2025-03-24 18:16:36,710 - step: 310500, training_loss: 8.11296e+00
+INFO - run_lib.py - 2025-03-24 18:19:14,429 - step: 310750, training_loss: 7.61909e+00
+INFO - run_lib.py - 2025-03-24 18:21:45,388 - step: 311000, training_loss: 6.78918e+00
+INFO - run_lib.py - 2025-03-24 18:24:18,544 - step: 311250, training_loss: 7.71008e+00
+INFO - run_lib.py - 2025-03-24 18:26:54,269 - step: 311500, training_loss: 8.18242e+00
+INFO - run_lib.py - 2025-03-24 18:29:27,979 - step: 311750, training_loss: 7.66840e+00
+INFO - run_lib.py - 2025-03-24 18:32:03,040 - step: 312000, training_loss: 7.11405e+00
+INFO - run_lib.py - 2025-03-24 18:34:40,058 - step: 312250, training_loss: 7.64151e+00
+INFO - run_lib.py - 2025-03-24 18:37:11,999 - step: 312500, training_loss: 8.43965e+00
+INFO - run_lib.py - 2025-03-24 18:39:44,776 - step: 312750, training_loss: 7.87509e+00
+INFO - run_lib.py - 2025-03-24 18:42:19,288 - step: 313000, training_loss: 7.19487e+00
+INFO - run_lib.py - 2025-03-24 18:44:53,436 - step: 313250, training_loss: 7.09835e+00
+INFO - run_lib.py - 2025-03-24 18:47:30,155 - step: 313500, training_loss: 7.01816e+00
+INFO - run_lib.py - 2025-03-24 18:50:05,285 - step: 313750, training_loss: 7.74977e+00
+INFO - run_lib.py - 2025-03-24 18:52:37,623 - step: 314000, training_loss: 7.16351e+00
+INFO - run_lib.py - 2025-03-24 18:55:09,225 - step: 314250, training_loss: 6.96846e+00
+INFO - run_lib.py - 2025-03-24 18:57:43,351 - step: 314500, training_loss: 7.31945e+00
+INFO - run_lib.py - 2025-03-24 19:00:14,953 - step: 314750, training_loss: 8.03393e+00
+INFO - run_lib.py - 2025-03-24 19:02:48,901 - step: 315000, training_loss: 9.06674e+00
+INFO - run_lib.py - 2025-03-24 19:05:28,266 - step: 315250, training_loss: 7.04508e+00
+INFO - run_lib.py - 2025-03-24 19:08:04,356 - step: 315500, training_loss: 7.50778e+00
+INFO - run_lib.py - 2025-03-24 19:10:35,691 - step: 315750, training_loss: 8.71895e+00
+INFO - run_lib.py - 2025-03-24 19:13:07,227 - step: 316000, training_loss: 7.90462e+00
+INFO - run_lib.py - 2025-03-24 19:15:43,824 - step: 316250, training_loss: 8.14446e+00
+INFO - run_lib.py - 2025-03-24 19:18:16,394 - step: 316500, training_loss: 7.92761e+00
+INFO - run_lib.py - 2025-03-24 19:20:48,054 - step: 316750, training_loss: 7.02965e+00
+INFO - run_lib.py - 2025-03-24 19:23:27,902 - step: 317000, training_loss: 7.95564e+00
+INFO - run_lib.py - 2025-03-24 19:26:02,957 - step: 317250, training_loss: 7.96684e+00
+INFO - run_lib.py - 2025-03-24 19:28:35,889 - step: 317500, training_loss: 7.79901e+00
+INFO - run_lib.py - 2025-03-24 19:31:07,462 - step: 317750, training_loss: 7.54700e+00
+INFO - run_lib.py - 2025-03-24 19:33:37,186 - step: 318000, training_loss: 7.38030e+00
+INFO - run_lib.py - 2025-03-24 19:36:09,933 - step: 318250, training_loss: 7.09444e+00
+INFO - run_lib.py - 2025-03-24 19:38:47,119 - step: 318500, training_loss: 7.56364e+00
+INFO - run_lib.py - 2025-03-24 19:41:16,743 - step: 318750, training_loss: 7.42083e+00
+INFO - run_lib.py - 2025-03-24 19:43:50,405 - step: 319000, training_loss: 6.34918e+00
+INFO - run_lib.py - 2025-03-24 19:46:25,023 - step: 319250, training_loss: 7.72712e+00
+INFO - run_lib.py - 2025-03-24 19:48:53,558 - step: 319500, training_loss: 7.96987e+00
+INFO - run_lib.py - 2025-03-24 19:51:28,398 - step: 319750, training_loss: 7.88772e+00
+INFO - run_lib.py - 2025-03-24 19:54:03,100 - step: 320000, training_loss: 7.53783e+00
+INFO - run_lib.py - 2025-03-24 19:56:37,907 - step: 320250, training_loss: 8.52411e+00
+INFO - run_lib.py - 2025-03-24 19:59:09,806 - step: 320500, training_loss: 8.47711e+00
+INFO - run_lib.py - 2025-03-24 20:01:44,256 - step: 320750, training_loss: 7.22797e+00
+INFO - run_lib.py - 2025-03-24 20:04:17,965 - step: 321000, training_loss: 7.78290e+00
+INFO - run_lib.py - 2025-03-24 20:06:51,228 - step: 321250, training_loss: 8.27803e+00
+INFO - run_lib.py - 2025-03-24 20:09:27,987 - step: 321500, training_loss: 7.01431e+00
+INFO - run_lib.py - 2025-03-24 20:12:00,114 - step: 321750, training_loss: 8.49314e+00
+INFO - run_lib.py - 2025-03-24 20:14:34,206 - step: 322000, training_loss: 8.19259e+00
+INFO - run_lib.py - 2025-03-24 20:17:12,602 - step: 322250, training_loss: 8.47265e+00
+INFO - run_lib.py - 2025-03-24 20:19:47,473 - step: 322500, training_loss: 6.75881e+00
+INFO - run_lib.py - 2025-03-24 20:22:17,928 - step: 322750, training_loss: 7.90142e+00
+INFO - run_lib.py - 2025-03-24 20:24:52,198 - step: 323000, training_loss: 8.01304e+00
+INFO - run_lib.py - 2025-03-24 20:27:28,060 - step: 323250, training_loss: 8.21895e+00
+INFO - run_lib.py - 2025-03-24 20:30:00,363 - step: 323500, training_loss: 6.73666e+00
+INFO - run_lib.py - 2025-03-24 20:32:33,680 - step: 323750, training_loss: 8.32404e+00
+INFO - run_lib.py - 2025-03-24 20:35:10,186 - step: 324000, training_loss: 8.17497e+00
+INFO - run_lib.py - 2025-03-24 20:37:42,631 - step: 324250, training_loss: 7.69727e+00
+INFO - run_lib.py - 2025-03-24 20:40:15,128 - step: 324500, training_loss: 8.05868e+00
+INFO - run_lib.py - 2025-03-24 20:42:51,438 - step: 324750, training_loss: 7.79234e+00
+INFO - run_lib.py - 2025-03-24 20:45:25,637 - step: 325000, training_loss: 8.30665e+00
+INFO - run_lib.py - 2025-03-24 20:48:37,795 - step: 325000, n_mol: 256, 3D atom stability: 0.9899, mol stability: 0.8984, validity: 0.9609, complete: 0.9531, unique & valid: 0.9609
+INFO - run_lib.py - 2025-03-24 20:48:38,198 - step: 325000, n_mol: 256, 2D atom stability: 0.9991, mol stability: 0.9844, validity: 0.9883, complete: 0.9883, unique & valid: 0.9883
+INFO - run_lib.py - 2025-03-24 20:48:38,203 - step: 325000, pos RMSE: 2.1725
+INFO - run_lib.py - 2025-03-24 20:51:10,203 - step: 325250, training_loss: 8.18379e+00
+INFO - run_lib.py - 2025-03-24 20:53:45,941 - step: 325500, training_loss: 8.11419e+00
+INFO - run_lib.py - 2025-03-24 20:56:18,564 - step: 325750, training_loss: 8.29646e+00
+INFO - run_lib.py - 2025-03-24 20:58:50,667 - step: 326000, training_loss: 8.53339e+00
+INFO - run_lib.py - 2025-03-24 21:01:25,218 - step: 326250, training_loss: 7.96461e+00
+INFO - run_lib.py - 2025-03-24 21:03:58,727 - step: 326500, training_loss: 7.51137e+00
+INFO - run_lib.py - 2025-03-24 21:06:31,473 - step: 326750, training_loss: 7.57938e+00
+INFO - run_lib.py - 2025-03-24 21:09:07,211 - step: 327000, training_loss: 6.80933e+00
+INFO - run_lib.py - 2025-03-24 21:11:41,913 - step: 327250, training_loss: 7.44271e+00
+INFO - run_lib.py - 2025-03-24 21:14:13,814 - step: 327500, training_loss: 7.18160e+00
+INFO - run_lib.py - 2025-03-24 21:16:50,139 - step: 327750, training_loss: 8.13133e+00
+INFO - run_lib.py - 2025-03-24 21:19:23,509 - step: 328000, training_loss: 7.20806e+00
+INFO - run_lib.py - 2025-03-24 21:21:58,768 - step: 328250, training_loss: 6.43778e+00
+INFO - run_lib.py - 2025-03-24 21:24:34,076 - step: 328500, training_loss: 7.26331e+00
+INFO - run_lib.py - 2025-03-24 21:27:08,491 - step: 328750, training_loss: 7.23334e+00
+INFO - run_lib.py - 2025-03-24 21:29:44,960 - step: 329000, training_loss: 7.37353e+00
+INFO - run_lib.py - 2025-03-24 21:32:20,027 - step: 329250, training_loss: 6.20744e+00
+INFO - run_lib.py - 2025-03-24 21:34:53,635 - step: 329500, training_loss: 6.75654e+00
+INFO - run_lib.py - 2025-03-24 21:37:27,355 - step: 329750, training_loss: 7.67292e+00
+INFO - run_lib.py - 2025-03-24 21:40:03,036 - step: 330000, training_loss: 8.48363e+00
+INFO - run_lib.py - 2025-03-24 21:42:38,596 - step: 330250, training_loss: 7.31513e+00
+INFO - run_lib.py - 2025-03-24 21:45:11,299 - step: 330500, training_loss: 7.17763e+00
+INFO - run_lib.py - 2025-03-24 21:47:46,519 - step: 330750, training_loss: 7.09971e+00
+INFO - run_lib.py - 2025-03-24 21:50:20,472 - step: 331000, training_loss: 6.80258e+00
+INFO - run_lib.py - 2025-03-24 21:52:52,826 - step: 331250, training_loss: 7.05907e+00
+INFO - run_lib.py - 2025-03-24 21:55:24,827 - step: 331500, training_loss: 8.15432e+00
+INFO - run_lib.py - 2025-03-24 21:57:58,920 - step: 331750, training_loss: 7.86001e+00
+INFO - run_lib.py - 2025-03-24 22:00:31,463 - step: 332000, training_loss: 7.64738e+00
+INFO - run_lib.py - 2025-03-24 22:03:02,752 - step: 332250, training_loss: 6.92083e+00
+INFO - run_lib.py - 2025-03-24 22:05:37,898 - step: 332500, training_loss: 8.15595e+00
+INFO - run_lib.py - 2025-03-24 22:08:12,255 - step: 332750, training_loss: 7.80305e+00
+INFO - run_lib.py - 2025-03-24 22:10:45,352 - step: 333000, training_loss: 7.02913e+00
+INFO - run_lib.py - 2025-03-24 22:13:21,427 - step: 333250, training_loss: 8.01565e+00
+INFO - run_lib.py - 2025-03-24 22:15:52,606 - step: 333500, training_loss: 6.95349e+00
+INFO - run_lib.py - 2025-03-24 22:18:25,858 - step: 333750, training_loss: 7.52314e+00
+INFO - run_lib.py - 2025-03-24 22:21:00,850 - step: 334000, training_loss: 8.22161e+00
+INFO - run_lib.py - 2025-03-24 22:23:34,830 - step: 334250, training_loss: 7.90789e+00
+INFO - run_lib.py - 2025-03-24 22:26:06,819 - step: 334500, training_loss: 7.47540e+00
+INFO - run_lib.py - 2025-03-24 22:28:44,943 - step: 334750, training_loss: 7.88083e+00
+INFO - run_lib.py - 2025-03-24 22:31:18,704 - step: 335000, training_loss: 8.34495e+00
+INFO - run_lib.py - 2025-03-24 22:33:56,145 - step: 335250, training_loss: 8.07416e+00
+INFO - run_lib.py - 2025-03-24 22:36:33,994 - step: 335500, training_loss: 7.72989e+00
+INFO - run_lib.py - 2025-03-24 22:39:08,005 - step: 335750, training_loss: 6.82277e+00
+INFO - run_lib.py - 2025-03-24 22:41:39,872 - step: 336000, training_loss: 7.50076e+00
+INFO - run_lib.py - 2025-03-24 22:44:12,681 - step: 336250, training_loss: 7.54395e+00
+INFO - run_lib.py - 2025-03-24 22:46:46,789 - step: 336500, training_loss: 7.52993e+00
+INFO - run_lib.py - 2025-03-24 22:49:20,634 - step: 336750, training_loss: 8.08257e+00
+INFO - run_lib.py - 2025-03-24 22:51:55,431 - step: 337000, training_loss: 7.54139e+00
+INFO - run_lib.py - 2025-03-24 22:54:31,027 - step: 337250, training_loss: 6.38097e+00
+INFO - run_lib.py - 2025-03-24 22:57:05,543 - step: 337500, training_loss: 7.94678e+00
+INFO - run_lib.py - 2025-03-24 22:59:41,210 - step: 337750, training_loss: 7.11275e+00
+INFO - run_lib.py - 2025-03-24 23:02:13,871 - step: 338000, training_loss: 8.12301e+00
+INFO - run_lib.py - 2025-03-24 23:04:45,819 - step: 338250, training_loss: 8.16135e+00
+INFO - run_lib.py - 2025-03-24 23:07:22,473 - step: 338500, training_loss: 7.47931e+00
+INFO - run_lib.py - 2025-03-24 23:09:57,216 - step: 338750, training_loss: 7.11819e+00
+INFO - run_lib.py - 2025-03-24 23:12:31,239 - step: 339000, training_loss: 7.54210e+00
+INFO - run_lib.py - 2025-03-24 23:15:03,158 - step: 339250, training_loss: 8.52161e+00
+INFO - run_lib.py - 2025-03-24 23:17:36,912 - step: 339500, training_loss: 7.64456e+00
+INFO - run_lib.py - 2025-03-24 23:20:10,850 - step: 339750, training_loss: 7.71687e+00
+INFO - run_lib.py - 2025-03-24 23:22:45,605 - step: 340000, training_loss: 8.30451e+00
+INFO - run_lib.py - 2025-03-24 23:25:24,024 - step: 340250, training_loss: 7.15617e+00
+INFO - run_lib.py - 2025-03-24 23:27:55,434 - step: 340500, training_loss: 7.73698e+00
+INFO - run_lib.py - 2025-03-24 23:30:25,350 - step: 340750, training_loss: 7.34410e+00
+INFO - run_lib.py - 2025-03-24 23:32:58,066 - step: 341000, training_loss: 7.89593e+00
+INFO - run_lib.py - 2025-03-24 23:35:32,116 - step: 341250, training_loss: 8.16425e+00
+INFO - run_lib.py - 2025-03-24 23:38:03,681 - step: 341500, training_loss: 7.70461e+00
+INFO - run_lib.py - 2025-03-24 23:40:37,876 - step: 341750, training_loss: 7.20734e+00
+INFO - run_lib.py - 2025-03-24 23:43:11,525 - step: 342000, training_loss: 7.17733e+00
+INFO - run_lib.py - 2025-03-24 23:45:44,111 - step: 342250, training_loss: 7.76310e+00
+INFO - run_lib.py - 2025-03-24 23:48:22,883 - step: 342500, training_loss: 7.04727e+00
+INFO - run_lib.py - 2025-03-24 23:50:55,537 - step: 342750, training_loss: 7.89903e+00
+INFO - run_lib.py - 2025-03-24 23:53:30,125 - step: 343000, training_loss: 7.82591e+00
+INFO - run_lib.py - 2025-03-24 23:56:06,266 - step: 343250, training_loss: 6.61796e+00
+INFO - run_lib.py - 2025-03-24 23:58:39,951 - step: 343500, training_loss: 7.64942e+00
+INFO - run_lib.py - 2025-03-25 00:01:16,432 - step: 343750, training_loss: 8.08094e+00
+INFO - run_lib.py - 2025-03-25 00:03:50,128 - step: 344000, training_loss: 7.45642e+00
+INFO - run_lib.py - 2025-03-25 00:06:20,822 - step: 344250, training_loss: 9.35251e+00
+INFO - run_lib.py - 2025-03-25 00:08:51,588 - step: 344500, training_loss: 7.56363e+00
+INFO - run_lib.py - 2025-03-25 00:11:27,692 - step: 344750, training_loss: 8.29742e+00
+INFO - run_lib.py - 2025-03-25 00:14:03,109 - step: 345000, training_loss: 7.95505e+00
+INFO - run_lib.py - 2025-03-25 00:16:42,030 - step: 345250, training_loss: 7.36876e+00
+INFO - run_lib.py - 2025-03-25 00:19:17,224 - step: 345500, training_loss: 7.34314e+00
+INFO - run_lib.py - 2025-03-25 00:21:49,975 - step: 345750, training_loss: 6.91706e+00
+INFO - run_lib.py - 2025-03-25 00:24:23,347 - step: 346000, training_loss: 7.11390e+00
+INFO - run_lib.py - 2025-03-25 00:26:59,544 - step: 346250, training_loss: 6.97982e+00
+INFO - run_lib.py - 2025-03-25 00:29:32,625 - step: 346500, training_loss: 7.74919e+00
+INFO - run_lib.py - 2025-03-25 00:32:05,800 - step: 346750, training_loss: 7.29986e+00
+INFO - run_lib.py - 2025-03-25 00:34:37,946 - step: 347000, training_loss: 8.32004e+00
+INFO - run_lib.py - 2025-03-25 00:37:12,724 - step: 347250, training_loss: 7.51386e+00
+INFO - run_lib.py - 2025-03-25 00:39:42,876 - step: 347500, training_loss: 8.57258e+00
+INFO - run_lib.py - 2025-03-25 00:42:15,193 - step: 347750, training_loss: 6.86721e+00
+INFO - run_lib.py - 2025-03-25 00:44:51,053 - step: 348000, training_loss: 8.14028e+00
+INFO - run_lib.py - 2025-03-25 00:47:23,080 - step: 348250, training_loss: 6.97760e+00
+INFO - run_lib.py - 2025-03-25 00:49:58,842 - step: 348500, training_loss: 7.48269e+00
+INFO - run_lib.py - 2025-03-25 00:52:34,798 - step: 348750, training_loss: 7.91825e+00
+INFO - run_lib.py - 2025-03-25 00:55:05,687 - step: 349000, training_loss: 7.72249e+00
+INFO - run_lib.py - 2025-03-25 00:57:39,108 - step: 349250, training_loss: 7.96109e+00
+INFO - run_lib.py - 2025-03-25 01:00:13,722 - step: 349500, training_loss: 7.83032e+00
+INFO - run_lib.py - 2025-03-25 01:02:47,874 - step: 349750, training_loss: 7.66586e+00
+INFO - run_lib.py - 2025-03-25 01:05:22,698 - step: 350000, training_loss: 8.16341e+00
+INFO - run_lib.py - 2025-03-25 01:08:35,689 - step: 350000, n_mol: 256, 3D atom stability: 0.9918, mol stability: 0.9062, validity: 0.9688, complete: 0.9688, unique & valid: 0.9688
+INFO - run_lib.py - 2025-03-25 01:08:36,101 - step: 350000, n_mol: 256, 2D atom stability: 0.9981, mol stability: 0.9766, validity: 0.9766, complete: 0.9766, unique & valid: 0.9766
+INFO - run_lib.py - 2025-03-25 01:08:36,107 - step: 350000, pos RMSE: 2.2093
+INFO - run_lib.py - 2025-03-25 01:11:14,251 - step: 350250, training_loss: 7.80767e+00
+INFO - run_lib.py - 2025-03-25 01:13:44,745 - step: 350500, training_loss: 8.88687e+00
+INFO - run_lib.py - 2025-03-25 01:16:15,846 - step: 350750, training_loss: 7.24511e+00
+INFO - run_lib.py - 2025-03-25 01:18:51,955 - step: 351000, training_loss: 7.79675e+00
+INFO - run_lib.py - 2025-03-25 01:21:28,469 - step: 351250, training_loss: 7.97261e+00
+INFO - run_lib.py - 2025-03-25 01:24:01,495 - step: 351500, training_loss: 7.54013e+00
+INFO - run_lib.py - 2025-03-25 01:26:37,083 - step: 351750, training_loss: 7.71402e+00
+INFO - run_lib.py - 2025-03-25 01:29:06,209 - step: 352000, training_loss: 7.37128e+00
+INFO - run_lib.py - 2025-03-25 01:31:41,360 - step: 352250, training_loss: 6.70770e+00
+INFO - run_lib.py - 2025-03-25 01:34:14,775 - step: 352500, training_loss: 6.47440e+00
+INFO - run_lib.py - 2025-03-25 01:36:48,233 - step: 352750, training_loss: 7.34306e+00
+INFO - run_lib.py - 2025-03-25 01:39:21,367 - step: 353000, training_loss: 7.36323e+00
+INFO - run_lib.py - 2025-03-25 01:41:56,249 - step: 353250, training_loss: 7.69397e+00
+INFO - run_lib.py - 2025-03-25 01:44:28,097 - step: 353500, training_loss: 7.55598e+00
+INFO - run_lib.py - 2025-03-25 01:47:03,491 - step: 353750, training_loss: 7.09855e+00
+INFO - run_lib.py - 2025-03-25 01:49:36,835 - step: 354000, training_loss: 7.65503e+00
+INFO - run_lib.py - 2025-03-25 01:52:10,952 - step: 354250, training_loss: 7.25881e+00
+INFO - run_lib.py - 2025-03-25 01:54:45,796 - step: 354500, training_loss: 7.89759e+00
+INFO - run_lib.py - 2025-03-25 01:57:16,785 - step: 354750, training_loss: 6.66245e+00
+INFO - run_lib.py - 2025-03-25 01:59:53,804 - step: 355000, training_loss: 8.21245e+00
+INFO - run_lib.py - 2025-03-25 02:02:27,537 - step: 355250, training_loss: 7.99946e+00
+INFO - run_lib.py - 2025-03-25 02:05:00,093 - step: 355500, training_loss: 7.05298e+00
+INFO - run_lib.py - 2025-03-25 02:07:34,218 - step: 355750, training_loss: 7.13215e+00
+INFO - run_lib.py - 2025-03-25 02:10:07,218 - step: 356000, training_loss: 7.82320e+00
+INFO - run_lib.py - 2025-03-25 02:12:38,582 - step: 356250, training_loss: 7.90564e+00
+INFO - run_lib.py - 2025-03-25 02:15:11,894 - step: 356500, training_loss: 7.24794e+00
+INFO - run_lib.py - 2025-03-25 02:17:46,830 - step: 356750, training_loss: 7.91038e+00
+INFO - run_lib.py - 2025-03-25 02:20:19,844 - step: 357000, training_loss: 7.45901e+00
+INFO - run_lib.py - 2025-03-25 02:22:54,600 - step: 357250, training_loss: 8.05642e+00
+INFO - run_lib.py - 2025-03-25 02:25:27,762 - step: 357500, training_loss: 7.92249e+00
+INFO - run_lib.py - 2025-03-25 02:28:03,257 - step: 357750, training_loss: 7.87050e+00
+INFO - run_lib.py - 2025-03-25 02:30:38,917 - step: 358000, training_loss: 7.51048e+00
+INFO - run_lib.py - 2025-03-25 02:33:11,452 - step: 358250, training_loss: 8.43769e+00
+INFO - run_lib.py - 2025-03-25 02:35:43,280 - step: 358500, training_loss: 7.91451e+00
+INFO - run_lib.py - 2025-03-25 02:38:21,154 - step: 358750, training_loss: 7.98603e+00
+INFO - run_lib.py - 2025-03-25 02:40:53,300 - step: 359000, training_loss: 7.42458e+00
+INFO - run_lib.py - 2025-03-25 02:43:29,096 - step: 359250, training_loss: 7.63292e+00
+INFO - run_lib.py - 2025-03-25 02:46:06,032 - step: 359500, training_loss: 7.26513e+00
+INFO - run_lib.py - 2025-03-25 02:48:36,627 - step: 359750, training_loss: 7.40009e+00
+INFO - run_lib.py - 2025-03-25 02:51:09,629 - step: 360000, training_loss: 7.97953e+00
+INFO - run_lib.py - 2025-03-25 02:53:47,568 - step: 360250, training_loss: 7.39557e+00
+INFO - run_lib.py - 2025-03-25 02:56:22,246 - step: 360500, training_loss: 6.78499e+00
+INFO - run_lib.py - 2025-03-25 02:58:51,684 - step: 360750, training_loss: 8.31095e+00
+INFO - run_lib.py - 2025-03-25 03:01:27,397 - step: 361000, training_loss: 6.70484e+00
+INFO - run_lib.py - 2025-03-25 03:04:01,412 - step: 361250, training_loss: 7.31910e+00
+INFO - run_lib.py - 2025-03-25 03:06:34,803 - step: 361500, training_loss: 7.24127e+00
+INFO - run_lib.py - 2025-03-25 03:09:08,912 - step: 361750, training_loss: 7.14016e+00
+INFO - run_lib.py - 2025-03-25 03:11:41,959 - step: 362000, training_loss: 8.07152e+00
+INFO - run_lib.py - 2025-03-25 03:14:15,819 - step: 362250, training_loss: 7.40242e+00
+INFO - run_lib.py - 2025-03-25 03:16:44,694 - step: 362500, training_loss: 6.76388e+00
+INFO - run_lib.py - 2025-03-25 03:19:19,507 - step: 362750, training_loss: 8.10201e+00
+INFO - run_lib.py - 2025-03-25 03:21:51,783 - step: 363000, training_loss: 7.72228e+00
+INFO - run_lib.py - 2025-03-25 03:24:27,472 - step: 363250, training_loss: 7.14303e+00
+INFO - run_lib.py - 2025-03-25 03:27:03,965 - step: 363500, training_loss: 7.89714e+00
+INFO - run_lib.py - 2025-03-25 03:29:32,210 - step: 363750, training_loss: 7.99547e+00
+INFO - run_lib.py - 2025-03-25 03:32:04,911 - step: 364000, training_loss: 8.06833e+00
+INFO - run_lib.py - 2025-03-25 03:34:41,419 - step: 364250, training_loss: 8.89439e+00
+INFO - run_lib.py - 2025-03-25 03:37:15,389 - step: 364500, training_loss: 7.28700e+00
+INFO - run_lib.py - 2025-03-25 03:39:48,905 - step: 364750, training_loss: 8.04348e+00
+INFO - run_lib.py - 2025-03-25 03:42:24,410 - step: 365000, training_loss: 8.03888e+00
+INFO - run_lib.py - 2025-03-25 03:44:59,865 - step: 365250, training_loss: 7.66248e+00
+INFO - run_lib.py - 2025-03-25 03:47:32,446 - step: 365500, training_loss: 8.08012e+00
+INFO - run_lib.py - 2025-03-25 03:50:06,881 - step: 365750, training_loss: 8.43117e+00
+INFO - run_lib.py - 2025-03-25 03:52:41,165 - step: 366000, training_loss: 7.44632e+00
+INFO - run_lib.py - 2025-03-25 03:55:10,721 - step: 366250, training_loss: 8.63295e+00
+INFO - run_lib.py - 2025-03-25 03:57:44,953 - step: 366500, training_loss: 7.14355e+00
+INFO - run_lib.py - 2025-03-25 04:00:16,847 - step: 366750, training_loss: 7.02050e+00
+INFO - run_lib.py - 2025-03-25 04:02:49,014 - step: 367000, training_loss: 7.46359e+00
+INFO - run_lib.py - 2025-03-25 04:05:23,858 - step: 367250, training_loss: 6.67863e+00
+INFO - run_lib.py - 2025-03-25 04:07:55,383 - step: 367500, training_loss: 8.29860e+00
+INFO - run_lib.py - 2025-03-25 04:10:29,026 - step: 367750, training_loss: 7.61153e+00
+INFO - run_lib.py - 2025-03-25 04:13:04,464 - step: 368000, training_loss: 8.02119e+00
+INFO - run_lib.py - 2025-03-25 04:15:36,764 - step: 368250, training_loss: 7.22508e+00
+INFO - run_lib.py - 2025-03-25 04:18:09,978 - step: 368500, training_loss: 8.23335e+00
+INFO - run_lib.py - 2025-03-25 04:20:44,302 - step: 368750, training_loss: 8.42563e+00
+INFO - run_lib.py - 2025-03-25 04:23:14,870 - step: 369000, training_loss: 7.19466e+00
+INFO - run_lib.py - 2025-03-25 04:25:47,408 - step: 369250, training_loss: 7.72730e+00
+INFO - run_lib.py - 2025-03-25 04:28:24,193 - step: 369500, training_loss: 7.19271e+00
+INFO - run_lib.py - 2025-03-25 04:30:56,565 - step: 369750, training_loss: 6.81338e+00
+INFO - run_lib.py - 2025-03-25 04:33:27,115 - step: 370000, training_loss: 8.36908e+00
+INFO - run_lib.py - 2025-03-25 04:36:00,230 - step: 370250, training_loss: 7.99316e+00
+INFO - run_lib.py - 2025-03-25 04:38:37,372 - step: 370500, training_loss: 7.77586e+00
+INFO - run_lib.py - 2025-03-25 04:41:07,525 - step: 370750, training_loss: 7.63742e+00
+INFO - run_lib.py - 2025-03-25 04:43:40,333 - step: 371000, training_loss: 7.96965e+00
+INFO - run_lib.py - 2025-03-25 04:46:14,469 - step: 371250, training_loss: 6.35450e+00
+INFO - run_lib.py - 2025-03-25 04:48:44,743 - step: 371500, training_loss: 7.12035e+00
+INFO - run_lib.py - 2025-03-25 04:51:15,998 - step: 371750, training_loss: 7.60370e+00
+INFO - run_lib.py - 2025-03-25 04:53:49,051 - step: 372000, training_loss: 7.63688e+00
+INFO - run_lib.py - 2025-03-25 04:56:22,809 - step: 372250, training_loss: 8.00383e+00
+INFO - run_lib.py - 2025-03-25 04:58:53,709 - step: 372500, training_loss: 7.60990e+00
+INFO - run_lib.py - 2025-03-25 05:01:24,854 - step: 372750, training_loss: 6.92815e+00
+INFO - run_lib.py - 2025-03-25 05:03:56,983 - step: 373000, training_loss: 7.37137e+00
+INFO - run_lib.py - 2025-03-25 05:06:31,148 - step: 373250, training_loss: 8.34977e+00
+INFO - run_lib.py - 2025-03-25 05:09:04,097 - step: 373500, training_loss: 7.53214e+00
+INFO - run_lib.py - 2025-03-25 05:11:37,169 - step: 373750, training_loss: 7.83217e+00
+INFO - run_lib.py - 2025-03-25 05:14:10,547 - step: 374000, training_loss: 6.70691e+00
+INFO - run_lib.py - 2025-03-25 05:16:44,460 - step: 374250, training_loss: 7.93410e+00
+INFO - run_lib.py - 2025-03-25 05:19:16,430 - step: 374500, training_loss: 7.74940e+00
+INFO - run_lib.py - 2025-03-25 05:21:50,209 - step: 374750, training_loss: 8.45434e+00
+INFO - run_lib.py - 2025-03-25 05:24:25,790 - step: 375000, training_loss: 8.03078e+00
+INFO - run_lib.py - 2025-03-25 05:27:38,957 - step: 375000, n_mol: 256, 3D atom stability: 0.9929, mol stability: 0.9219, validity: 0.9766, complete: 0.9766, unique & valid: 0.9766
+INFO - run_lib.py - 2025-03-25 05:27:39,367 - step: 375000, n_mol: 256, 2D atom stability: 0.9994, mol stability: 0.9922, validity: 0.9922, complete: 0.9922, unique & valid: 0.9922
+INFO - run_lib.py - 2025-03-25 05:27:39,373 - step: 375000, pos RMSE: 2.1796
+INFO - run_lib.py - 2025-03-25 05:30:12,389 - step: 375250, training_loss: 7.64773e+00
+INFO - run_lib.py - 2025-03-25 05:32:44,318 - step: 375500, training_loss: 7.61639e+00
+INFO - run_lib.py - 2025-03-25 05:35:19,598 - step: 375750, training_loss: 7.93020e+00
+INFO - run_lib.py - 2025-03-25 05:37:52,957 - step: 376000, training_loss: 7.63703e+00
+INFO - run_lib.py - 2025-03-25 05:40:26,049 - step: 376250, training_loss: 7.35300e+00
+INFO - run_lib.py - 2025-03-25 05:43:00,150 - step: 376500, training_loss: 7.68185e+00
+INFO - run_lib.py - 2025-03-25 05:45:30,649 - step: 376750, training_loss: 6.77761e+00
+INFO - run_lib.py - 2025-03-25 05:48:02,373 - step: 377000, training_loss: 7.97482e+00
+INFO - run_lib.py - 2025-03-25 05:50:36,382 - step: 377250, training_loss: 7.05645e+00
+INFO - run_lib.py - 2025-03-25 05:53:09,114 - step: 377500, training_loss: 7.40899e+00
+INFO - run_lib.py - 2025-03-25 05:55:44,923 - step: 377750, training_loss: 7.16400e+00
+INFO - run_lib.py - 2025-03-25 05:58:21,682 - step: 378000, training_loss: 7.22213e+00
+INFO - run_lib.py - 2025-03-25 06:00:54,372 - step: 378250, training_loss: 8.12412e+00
+INFO - run_lib.py - 2025-03-25 06:03:27,574 - step: 378500, training_loss: 8.28695e+00
+INFO - run_lib.py - 2025-03-25 06:05:59,649 - step: 378750, training_loss: 7.39587e+00
+INFO - run_lib.py - 2025-03-25 06:08:36,875 - step: 379000, training_loss: 7.23261e+00
+INFO - run_lib.py - 2025-03-25 06:11:07,990 - step: 379250, training_loss: 7.39226e+00
+INFO - run_lib.py - 2025-03-25 06:13:42,682 - step: 379500, training_loss: 7.30948e+00
+INFO - run_lib.py - 2025-03-25 06:16:17,483 - step: 379750, training_loss: 7.83395e+00
+INFO - run_lib.py - 2025-03-25 06:18:50,292 - step: 380000, training_loss: 8.09639e+00
+INFO - run_lib.py - 2025-03-25 06:21:26,400 - step: 380250, training_loss: 7.68856e+00
+INFO - run_lib.py - 2025-03-25 06:24:01,020 - step: 380500, training_loss: 7.14162e+00
+INFO - run_lib.py - 2025-03-25 06:26:32,465 - step: 380750, training_loss: 7.47933e+00
+INFO - run_lib.py - 2025-03-25 06:29:02,999 - step: 381000, training_loss: 7.37208e+00
+INFO - run_lib.py - 2025-03-25 06:31:40,669 - step: 381250, training_loss: 6.80849e+00
+INFO - run_lib.py - 2025-03-25 06:34:13,453 - step: 381500, training_loss: 7.56174e+00
+INFO - run_lib.py - 2025-03-25 06:36:47,263 - step: 381750, training_loss: 7.83722e+00
+INFO - run_lib.py - 2025-03-25 06:39:23,310 - step: 382000, training_loss: 6.66311e+00
+INFO - run_lib.py - 2025-03-25 06:41:53,559 - step: 382250, training_loss: 8.57518e+00
+INFO - run_lib.py - 2025-03-25 06:44:27,673 - step: 382500, training_loss: 6.86693e+00
+INFO - run_lib.py - 2025-03-25 06:47:01,363 - step: 382750, training_loss: 7.03973e+00
+INFO - run_lib.py - 2025-03-25 06:49:34,279 - step: 383000, training_loss: 7.49588e+00
+INFO - run_lib.py - 2025-03-25 06:52:07,874 - step: 383250, training_loss: 7.66440e+00
+INFO - run_lib.py - 2025-03-25 06:54:40,998 - step: 383500, training_loss: 6.99052e+00
+INFO - run_lib.py - 2025-03-25 06:57:16,108 - step: 383750, training_loss: 7.76436e+00
+INFO - run_lib.py - 2025-03-25 06:59:49,056 - step: 384000, training_loss: 6.98820e+00
+INFO - run_lib.py - 2025-03-25 07:02:27,763 - step: 384250, training_loss: 7.06419e+00
+INFO - run_lib.py - 2025-03-25 07:05:02,652 - step: 384500, training_loss: 7.59338e+00
+INFO - run_lib.py - 2025-03-25 07:07:35,457 - step: 384750, training_loss: 8.48834e+00
+INFO - run_lib.py - 2025-03-25 07:10:11,425 - step: 385000, training_loss: 8.14890e+00
+INFO - run_lib.py - 2025-03-25 07:12:46,708 - step: 385250, training_loss: 7.64919e+00
+INFO - run_lib.py - 2025-03-25 07:15:19,346 - step: 385500, training_loss: 7.83783e+00
+INFO - run_lib.py - 2025-03-25 07:17:56,031 - step: 385750, training_loss: 6.65315e+00
+INFO - run_lib.py - 2025-03-25 07:20:30,376 - step: 386000, training_loss: 7.43987e+00
+INFO - run_lib.py - 2025-03-25 07:23:03,883 - step: 386250, training_loss: 6.75160e+00
+INFO - run_lib.py - 2025-03-25 07:25:38,436 - step: 386500, training_loss: 7.52450e+00
+INFO - run_lib.py - 2025-03-25 07:28:12,489 - step: 386750, training_loss: 8.08459e+00
+INFO - run_lib.py - 2025-03-25 07:30:45,618 - step: 387000, training_loss: 7.50073e+00
+INFO - run_lib.py - 2025-03-25 07:33:18,079 - step: 387250, training_loss: 7.32753e+00
+INFO - run_lib.py - 2025-03-25 07:35:53,231 - step: 387500, training_loss: 7.23209e+00
+INFO - run_lib.py - 2025-03-25 07:38:26,468 - step: 387750, training_loss: 7.65424e+00
+INFO - run_lib.py - 2025-03-25 07:40:59,792 - step: 388000, training_loss: 8.35036e+00
+INFO - run_lib.py - 2025-03-25 07:43:36,538 - step: 388250, training_loss: 7.21921e+00
+INFO - run_lib.py - 2025-03-25 07:46:08,636 - step: 388500, training_loss: 8.49010e+00
+INFO - run_lib.py - 2025-03-25 07:48:41,796 - step: 388750, training_loss: 8.34439e+00
+INFO - run_lib.py - 2025-03-25 07:51:16,740 - step: 389000, training_loss: 7.44009e+00
+INFO - run_lib.py - 2025-03-25 07:53:47,627 - step: 389250, training_loss: 7.81223e+00
+INFO - run_lib.py - 2025-03-25 07:56:24,422 - step: 389500, training_loss: 8.08521e+00
+INFO - run_lib.py - 2025-03-25 07:59:00,044 - step: 389750, training_loss: 7.51215e+00
+INFO - run_lib.py - 2025-03-25 08:01:32,642 - step: 390000, training_loss: 8.17828e+00
+INFO - run_lib.py - 2025-03-25 08:04:07,656 - step: 390250, training_loss: 8.25672e+00
+INFO - run_lib.py - 2025-03-25 08:06:42,912 - step: 390500, training_loss: 7.65517e+00
+INFO - run_lib.py - 2025-03-25 08:09:15,225 - step: 390750, training_loss: 7.92177e+00
+INFO - run_lib.py - 2025-03-25 08:11:47,385 - step: 391000, training_loss: 7.95348e+00
+INFO - run_lib.py - 2025-03-25 08:14:27,759 - step: 391250, training_loss: 7.01559e+00
+INFO - run_lib.py - 2025-03-25 08:16:58,939 - step: 391500, training_loss: 8.12272e+00
+INFO - run_lib.py - 2025-03-25 08:19:32,307 - step: 391750, training_loss: 7.38345e+00
+INFO - run_lib.py - 2025-03-25 08:22:08,384 - step: 392000, training_loss: 6.69943e+00
+INFO - run_lib.py - 2025-03-25 08:24:39,206 - step: 392250, training_loss: 8.17800e+00
+INFO - run_lib.py - 2025-03-25 08:27:14,317 - step: 392500, training_loss: 7.05701e+00
+INFO - run_lib.py - 2025-03-25 08:29:48,475 - step: 392750, training_loss: 7.26369e+00
+INFO - run_lib.py - 2025-03-25 08:32:19,220 - step: 393000, training_loss: 7.26042e+00
+INFO - run_lib.py - 2025-03-25 08:34:49,402 - step: 393250, training_loss: 7.71287e+00
+INFO - run_lib.py - 2025-03-25 08:37:22,363 - step: 393500, training_loss: 8.02656e+00
+INFO - run_lib.py - 2025-03-25 08:39:56,276 - step: 393750, training_loss: 8.22807e+00
+INFO - run_lib.py - 2025-03-25 08:42:27,686 - step: 394000, training_loss: 7.62403e+00
+INFO - run_lib.py - 2025-03-25 08:45:00,757 - step: 394250, training_loss: 7.34479e+00
+INFO - run_lib.py - 2025-03-25 08:47:34,792 - step: 394500, training_loss: 6.64303e+00
+INFO - run_lib.py - 2025-03-25 08:50:07,198 - step: 394750, training_loss: 7.60033e+00
+INFO - run_lib.py - 2025-03-25 08:52:40,176 - step: 395000, training_loss: 6.88447e+00
+INFO - run_lib.py - 2025-03-25 08:55:16,656 - step: 395250, training_loss: 7.39800e+00
+INFO - run_lib.py - 2025-03-25 08:57:53,122 - step: 395500, training_loss: 7.09279e+00
+INFO - run_lib.py - 2025-03-25 09:00:28,364 - step: 395750, training_loss: 8.08169e+00
+INFO - run_lib.py - 2025-03-25 09:03:04,765 - step: 396000, training_loss: 7.75759e+00
+INFO - run_lib.py - 2025-03-25 09:05:37,549 - step: 396250, training_loss: 7.70705e+00
+INFO - run_lib.py - 2025-03-25 09:08:11,914 - step: 396500, training_loss: 6.84192e+00
+INFO - run_lib.py - 2025-03-25 09:10:46,924 - step: 396750, training_loss: 7.06111e+00
+INFO - run_lib.py - 2025-03-25 09:13:19,294 - step: 397000, training_loss: 7.40477e+00
+INFO - run_lib.py - 2025-03-25 09:15:53,476 - step: 397250, training_loss: 8.04201e+00
+INFO - run_lib.py - 2025-03-25 09:18:29,539 - step: 397500, training_loss: 7.35197e+00
+INFO - run_lib.py - 2025-03-25 09:20:59,673 - step: 397750, training_loss: 8.50606e+00
+INFO - run_lib.py - 2025-03-25 09:23:34,230 - step: 398000, training_loss: 7.36828e+00
+INFO - run_lib.py - 2025-03-25 09:26:11,590 - step: 398250, training_loss: 7.49163e+00
+INFO - run_lib.py - 2025-03-25 09:28:45,278 - step: 398500, training_loss: 7.49911e+00
+INFO - run_lib.py - 2025-03-25 09:31:20,090 - step: 398750, training_loss: 6.41391e+00
+INFO - run_lib.py - 2025-03-25 09:33:54,407 - step: 399000, training_loss: 7.08169e+00
+INFO - run_lib.py - 2025-03-25 09:36:26,361 - step: 399250, training_loss: 7.82866e+00
+INFO - run_lib.py - 2025-03-25 09:39:00,313 - step: 399500, training_loss: 7.31200e+00
+INFO - run_lib.py - 2025-03-25 09:41:35,852 - step: 399750, training_loss: 7.52109e+00
+INFO - run_lib.py - 2025-03-25 09:44:10,691 - step: 400000, training_loss: 6.84508e+00
+INFO - run_lib.py - 2025-03-25 09:47:22,763 - step: 400000, n_mol: 256, 3D atom stability: 0.9911, mol stability: 0.9180, validity: 0.9727, complete: 0.9727, unique & valid: 0.9727
+INFO - run_lib.py - 2025-03-25 09:47:23,167 - step: 400000, n_mol: 256, 2D atom stability: 0.9993, mol stability: 0.9883, validity: 0.9883, complete: 0.9883, unique & valid: 0.9883
+INFO - run_lib.py - 2025-03-25 09:47:23,173 - step: 400000, pos RMSE: 2.2143
+INFO - run_lib.py - 2025-03-25 09:49:59,203 - step: 400250, training_loss: 7.19012e+00
+INFO - run_lib.py - 2025-03-25 09:52:35,284 - step: 400500, training_loss: 8.08619e+00
+INFO - run_lib.py - 2025-03-25 09:55:08,025 - step: 400750, training_loss: 7.28869e+00
+INFO - run_lib.py - 2025-03-25 09:57:40,113 - step: 401000, training_loss: 8.76047e+00
+INFO - run_lib.py - 2025-03-25 10:00:17,567 - step: 401250, training_loss: 7.63181e+00
+INFO - run_lib.py - 2025-03-25 10:02:50,800 - step: 401500, training_loss: 7.47468e+00
+INFO - run_lib.py - 2025-03-25 10:05:26,249 - step: 401750, training_loss: 7.50920e+00
+INFO - run_lib.py - 2025-03-25 10:07:59,810 - step: 402000, training_loss: 7.49431e+00
+INFO - run_lib.py - 2025-03-25 10:10:36,657 - step: 402250, training_loss: 8.11160e+00
+INFO - run_lib.py - 2025-03-25 10:13:08,539 - step: 402500, training_loss: 8.22898e+00
+INFO - run_lib.py - 2025-03-25 10:15:42,086 - step: 402750, training_loss: 6.95274e+00
+INFO - run_lib.py - 2025-03-25 10:18:18,579 - step: 403000, training_loss: 6.37373e+00
+INFO - run_lib.py - 2025-03-25 10:20:53,835 - step: 403250, training_loss: 8.87673e+00
+INFO - run_lib.py - 2025-03-25 10:23:25,397 - step: 403500, training_loss: 6.55106e+00
+INFO - run_lib.py - 2025-03-25 10:25:59,256 - step: 403750, training_loss: 8.16042e+00
+INFO - run_lib.py - 2025-03-25 10:28:35,146 - step: 404000, training_loss: 7.72067e+00
+INFO - run_lib.py - 2025-03-25 10:31:11,834 - step: 404250, training_loss: 7.33207e+00
+INFO - run_lib.py - 2025-03-25 10:33:46,732 - step: 404500, training_loss: 6.32713e+00
+INFO - run_lib.py - 2025-03-25 10:36:19,033 - step: 404750, training_loss: 7.45748e+00
+INFO - run_lib.py - 2025-03-25 10:38:50,123 - step: 405000, training_loss: 7.46149e+00
+INFO - run_lib.py - 2025-03-25 10:41:27,752 - step: 405250, training_loss: 7.96680e+00
+INFO - run_lib.py - 2025-03-25 10:44:01,913 - step: 405500, training_loss: 8.19570e+00
+INFO - run_lib.py - 2025-03-25 10:46:36,743 - step: 405750, training_loss: 8.19767e+00
+INFO - run_lib.py - 2025-03-25 10:49:16,225 - step: 406000, training_loss: 7.09553e+00
+INFO - run_lib.py - 2025-03-25 10:51:50,351 - step: 406250, training_loss: 8.20798e+00
+INFO - run_lib.py - 2025-03-25 10:54:22,197 - step: 406500, training_loss: 7.70566e+00
+INFO - run_lib.py - 2025-03-25 10:56:58,532 - step: 406750, training_loss: 7.65014e+00
+INFO - run_lib.py - 2025-03-25 10:59:31,897 - step: 407000, training_loss: 6.79162e+00
+INFO - run_lib.py - 2025-03-25 11:02:03,769 - step: 407250, training_loss: 7.54442e+00
+INFO - run_lib.py - 2025-03-25 11:04:38,599 - step: 407500, training_loss: 7.66164e+00
+INFO - run_lib.py - 2025-03-25 11:07:12,232 - step: 407750, training_loss: 8.16869e+00
+INFO - run_lib.py - 2025-03-25 11:09:47,068 - step: 408000, training_loss: 8.24603e+00
+INFO - run_lib.py - 2025-03-25 11:12:25,818 - step: 408250, training_loss: 7.30974e+00
+INFO - run_lib.py - 2025-03-25 11:15:01,170 - step: 408500, training_loss: 7.15153e+00
+INFO - run_lib.py - 2025-03-25 11:17:34,215 - step: 408750, training_loss: 7.11595e+00
+INFO - run_lib.py - 2025-03-25 11:20:09,608 - step: 409000, training_loss: 7.80931e+00
+INFO - run_lib.py - 2025-03-25 11:22:42,946 - step: 409250, training_loss: 6.78318e+00
+INFO - run_lib.py - 2025-03-25 11:25:15,990 - step: 409500, training_loss: 7.90461e+00
+INFO - run_lib.py - 2025-03-25 11:27:48,416 - step: 409750, training_loss: 6.98363e+00
+INFO - run_lib.py - 2025-03-25 11:30:27,069 - step: 410000, training_loss: 7.09549e+00
+INFO - run_lib.py - 2025-03-25 11:33:02,119 - step: 410250, training_loss: 7.74619e+00
+INFO - run_lib.py - 2025-03-25 11:35:34,588 - step: 410500, training_loss: 7.08518e+00
+INFO - run_lib.py - 2025-03-25 11:38:10,968 - step: 410750, training_loss: 8.36245e+00
+INFO - run_lib.py - 2025-03-25 11:40:41,867 - step: 411000, training_loss: 8.62130e+00
+INFO - run_lib.py - 2025-03-25 11:43:14,035 - step: 411250, training_loss: 8.03546e+00
+INFO - run_lib.py - 2025-03-25 11:45:48,217 - step: 411500, training_loss: 7.64824e+00
+INFO - run_lib.py - 2025-03-25 11:48:22,355 - step: 411750, training_loss: 5.80404e+00
+INFO - run_lib.py - 2025-03-25 11:50:55,726 - step: 412000, training_loss: 7.54993e+00
+INFO - run_lib.py - 2025-03-25 11:53:31,071 - step: 412250, training_loss: 7.17930e+00
+INFO - run_lib.py - 2025-03-25 11:56:04,710 - step: 412500, training_loss: 6.87405e+00
+INFO - run_lib.py - 2025-03-25 11:58:39,631 - step: 412750, training_loss: 7.24078e+00
+INFO - run_lib.py - 2025-03-25 12:01:14,550 - step: 413000, training_loss: 7.50740e+00
+INFO - run_lib.py - 2025-03-25 12:03:49,587 - step: 413250, training_loss: 8.39837e+00
+INFO - run_lib.py - 2025-03-25 12:06:20,989 - step: 413500, training_loss: 8.48759e+00
+INFO - run_lib.py - 2025-03-25 12:08:58,151 - step: 413750, training_loss: 6.50956e+00
+INFO - run_lib.py - 2025-03-25 12:11:30,328 - step: 414000, training_loss: 8.41226e+00
+INFO - run_lib.py - 2025-03-25 12:14:03,156 - step: 414250, training_loss: 7.45390e+00
+INFO - run_lib.py - 2025-03-25 12:16:38,637 - step: 414500, training_loss: 6.36266e+00
+INFO - run_lib.py - 2025-03-25 12:19:08,282 - step: 414750, training_loss: 8.57025e+00
+INFO - run_lib.py - 2025-03-25 12:21:42,396 - step: 415000, training_loss: 7.72207e+00
+INFO - run_lib.py - 2025-03-25 12:24:18,909 - step: 415250, training_loss: 8.34684e+00
+INFO - run_lib.py - 2025-03-25 12:26:52,060 - step: 415500, training_loss: 8.09147e+00
+INFO - run_lib.py - 2025-03-25 12:29:27,967 - step: 415750, training_loss: 7.69625e+00
+INFO - run_lib.py - 2025-03-25 12:32:02,145 - step: 416000, training_loss: 7.35914e+00
+INFO - run_lib.py - 2025-03-25 12:34:34,776 - step: 416250, training_loss: 8.45651e+00
+INFO - run_lib.py - 2025-03-25 12:37:07,179 - step: 416500, training_loss: 7.46190e+00
+INFO - run_lib.py - 2025-03-25 12:39:42,677 - step: 416750, training_loss: 6.73656e+00
+INFO - run_lib.py - 2025-03-25 12:42:18,432 - step: 417000, training_loss: 6.89826e+00
+INFO - run_lib.py - 2025-03-25 12:44:53,642 - step: 417250, training_loss: 8.32849e+00
+INFO - run_lib.py - 2025-03-25 12:47:27,110 - step: 417500, training_loss: 7.01022e+00
+INFO - run_lib.py - 2025-03-25 12:50:02,171 - step: 417750, training_loss: 7.22098e+00
+INFO - run_lib.py - 2025-03-25 12:52:34,517 - step: 418000, training_loss: 7.87277e+00
+INFO - run_lib.py - 2025-03-25 12:55:05,983 - step: 418250, training_loss: 7.02896e+00
+INFO - run_lib.py - 2025-03-25 12:57:42,707 - step: 418500, training_loss: 8.47621e+00
+INFO - run_lib.py - 2025-03-25 13:00:12,139 - step: 418750, training_loss: 7.80871e+00
+INFO - run_lib.py - 2025-03-25 13:02:43,953 - step: 419000, training_loss: 7.10841e+00
+INFO - run_lib.py - 2025-03-25 13:05:19,587 - step: 419250, training_loss: 7.77883e+00
+INFO - run_lib.py - 2025-03-25 13:07:52,377 - step: 419500, training_loss: 6.84627e+00
+INFO - run_lib.py - 2025-03-25 13:10:25,330 - step: 419750, training_loss: 6.63642e+00
+INFO - run_lib.py - 2025-03-25 13:12:57,094 - step: 420000, training_loss: 7.86850e+00
+INFO - run_lib.py - 2025-03-25 13:15:35,195 - step: 420250, training_loss: 7.51189e+00
+INFO - run_lib.py - 2025-03-25 13:18:09,044 - step: 420500, training_loss: 7.16939e+00
+INFO - run_lib.py - 2025-03-25 13:20:45,147 - step: 420750, training_loss: 7.20883e+00
+INFO - run_lib.py - 2025-03-25 13:23:17,199 - step: 421000, training_loss: 6.83735e+00
+INFO - run_lib.py - 2025-03-25 13:25:50,288 - step: 421250, training_loss: 8.05496e+00
+INFO - run_lib.py - 2025-03-25 13:28:27,225 - step: 421500, training_loss: 8.33715e+00
+INFO - run_lib.py - 2025-03-25 13:31:01,564 - step: 421750, training_loss: 7.16957e+00
+INFO - run_lib.py - 2025-03-25 13:33:34,709 - step: 422000, training_loss: 7.37532e+00
+INFO - run_lib.py - 2025-03-25 13:36:10,892 - step: 422250, training_loss: 6.94474e+00
+INFO - run_lib.py - 2025-03-25 13:38:44,060 - step: 422500, training_loss: 8.03626e+00
+INFO - run_lib.py - 2025-03-25 13:41:17,407 - step: 422750, training_loss: 7.85181e+00
+INFO - run_lib.py - 2025-03-25 13:43:53,504 - step: 423000, training_loss: 7.41866e+00
+INFO - run_lib.py - 2025-03-25 13:46:29,399 - step: 423250, training_loss: 8.44489e+00
+INFO - run_lib.py - 2025-03-25 13:49:02,960 - step: 423500, training_loss: 8.39049e+00
+INFO - run_lib.py - 2025-03-25 13:51:38,072 - step: 423750, training_loss: 7.56935e+00
+INFO - run_lib.py - 2025-03-25 13:54:11,254 - step: 424000, training_loss: 7.45970e+00
+INFO - run_lib.py - 2025-03-25 13:56:46,832 - step: 424250, training_loss: 8.42752e+00
+INFO - run_lib.py - 2025-03-25 13:59:23,365 - step: 424500, training_loss: 8.12396e+00
+INFO - run_lib.py - 2025-03-25 14:01:54,360 - step: 424750, training_loss: 8.49572e+00
+INFO - run_lib.py - 2025-03-25 14:04:27,942 - step: 425000, training_loss: 7.81825e+00
+INFO - run_lib.py - 2025-03-25 14:07:40,427 - step: 425000, n_mol: 256, 3D atom stability: 0.9939, mol stability: 0.9375, validity: 0.9766, complete: 0.9766, unique & valid: 0.9766
+INFO - run_lib.py - 2025-03-25 14:07:40,835 - step: 425000, n_mol: 256, 2D atom stability: 0.9991, mol stability: 0.9844, validity: 0.9883, complete: 0.9883, unique & valid: 0.9883
+INFO - run_lib.py - 2025-03-25 14:07:40,842 - step: 425000, pos RMSE: 2.2004
+INFO - run_lib.py - 2025-03-25 14:10:13,386 - step: 425250, training_loss: 8.72280e+00
+INFO - run_lib.py - 2025-03-25 14:12:47,259 - step: 425500, training_loss: 7.68544e+00
+INFO - run_lib.py - 2025-03-25 14:15:20,692 - step: 425750, training_loss: 7.55352e+00
+INFO - run_lib.py - 2025-03-25 14:17:52,637 - step: 426000, training_loss: 7.44325e+00
+INFO - run_lib.py - 2025-03-25 14:20:30,125 - step: 426250, training_loss: 8.14334e+00
+INFO - run_lib.py - 2025-03-25 14:23:04,915 - step: 426500, training_loss: 7.78696e+00
+INFO - run_lib.py - 2025-03-25 14:25:37,683 - step: 426750, training_loss: 7.11995e+00
+INFO - run_lib.py - 2025-03-25 14:28:12,820 - step: 427000, training_loss: 8.22330e+00
+INFO - run_lib.py - 2025-03-25 14:30:48,703 - step: 427250, training_loss: 7.21850e+00
+INFO - run_lib.py - 2025-03-25 14:33:21,204 - step: 427500, training_loss: 7.04754e+00
+INFO - run_lib.py - 2025-03-25 14:35:58,920 - step: 427750, training_loss: 7.03654e+00
+INFO - run_lib.py - 2025-03-25 14:38:28,952 - step: 428000, training_loss: 7.78304e+00
+INFO - run_lib.py - 2025-03-25 14:40:59,776 - step: 428250, training_loss: 7.19277e+00
+INFO - run_lib.py - 2025-03-25 14:43:33,457 - step: 428500, training_loss: 7.33286e+00
+INFO - run_lib.py - 2025-03-25 14:46:06,718 - step: 428750, training_loss: 7.79376e+00
+INFO - run_lib.py - 2025-03-25 14:48:41,487 - step: 429000, training_loss: 7.99341e+00
+INFO - run_lib.py - 2025-03-25 14:51:17,462 - step: 429250, training_loss: 7.61469e+00
+INFO - run_lib.py - 2025-03-25 14:53:51,963 - step: 429500, training_loss: 8.03992e+00
+INFO - run_lib.py - 2025-03-25 14:56:24,795 - step: 429750, training_loss: 8.56276e+00
+INFO - run_lib.py - 2025-03-25 14:59:02,014 - step: 430000, training_loss: 7.77580e+00
+INFO - run_lib.py - 2025-03-25 15:01:38,138 - step: 430250, training_loss: 7.44509e+00
+INFO - run_lib.py - 2025-03-25 15:04:10,176 - step: 430500, training_loss: 7.74960e+00
+INFO - run_lib.py - 2025-03-25 15:06:45,063 - step: 430750, training_loss: 7.65531e+00
+INFO - run_lib.py - 2025-03-25 15:09:18,713 - step: 431000, training_loss: 7.46291e+00
+INFO - run_lib.py - 2025-03-25 15:11:51,327 - step: 431250, training_loss: 7.59564e+00
+INFO - run_lib.py - 2025-03-25 15:14:24,324 - step: 431500, training_loss: 6.76163e+00
+INFO - run_lib.py - 2025-03-25 15:16:56,207 - step: 431750, training_loss: 7.74419e+00
+INFO - run_lib.py - 2025-03-25 15:19:31,312 - step: 432000, training_loss: 7.84644e+00
+INFO - run_lib.py - 2025-03-25 15:22:10,635 - step: 432250, training_loss: 7.54354e+00
+INFO - run_lib.py - 2025-03-25 15:24:40,635 - step: 432500, training_loss: 8.10481e+00
+INFO - run_lib.py - 2025-03-25 15:27:12,258 - step: 432750, training_loss: 6.72842e+00
+INFO - run_lib.py - 2025-03-25 15:29:45,794 - step: 433000, training_loss: 6.75028e+00
+INFO - run_lib.py - 2025-03-25 15:32:17,086 - step: 433250, training_loss: 7.47548e+00
+INFO - run_lib.py - 2025-03-25 15:34:51,323 - step: 433500, training_loss: 7.39533e+00
+INFO - run_lib.py - 2025-03-25 15:37:26,218 - step: 433750, training_loss: 7.41789e+00
+INFO - run_lib.py - 2025-03-25 15:40:01,906 - step: 434000, training_loss: 6.93236e+00
+INFO - run_lib.py - 2025-03-25 15:42:33,468 - step: 434250, training_loss: 7.13256e+00
+INFO - run_lib.py - 2025-03-25 15:45:09,492 - step: 434500, training_loss: 7.36485e+00
+INFO - run_lib.py - 2025-03-25 15:47:45,541 - step: 434750, training_loss: 7.61685e+00
+INFO - run_lib.py - 2025-03-25 15:50:18,826 - step: 435000, training_loss: 7.12796e+00
+INFO - run_lib.py - 2025-03-25 15:52:54,595 - step: 435250, training_loss: 7.05991e+00
+INFO - run_lib.py - 2025-03-25 15:55:29,542 - step: 435500, training_loss: 7.61934e+00
+INFO - run_lib.py - 2025-03-25 15:58:05,243 - step: 435750, training_loss: 6.85460e+00
+INFO - run_lib.py - 2025-03-25 16:00:37,635 - step: 436000, training_loss: 7.43040e+00
+INFO - run_lib.py - 2025-03-25 16:03:11,950 - step: 436250, training_loss: 6.50726e+00
+INFO - run_lib.py - 2025-03-25 16:05:47,111 - step: 436500, training_loss: 7.07486e+00
+INFO - run_lib.py - 2025-03-25 16:08:22,274 - step: 436750, training_loss: 7.49297e+00
+INFO - run_lib.py - 2025-03-25 16:10:56,465 - step: 437000, training_loss: 7.52828e+00
+INFO - run_lib.py - 2025-03-25 16:13:29,841 - step: 437250, training_loss: 7.63695e+00
+INFO - run_lib.py - 2025-03-25 16:16:02,922 - step: 437500, training_loss: 7.37226e+00
+INFO - run_lib.py - 2025-03-25 16:18:38,725 - step: 437750, training_loss: 7.82359e+00
+INFO - run_lib.py - 2025-03-25 16:21:09,615 - step: 438000, training_loss: 7.43062e+00
+INFO - run_lib.py - 2025-03-25 16:23:40,123 - step: 438250, training_loss: 8.42066e+00
+INFO - run_lib.py - 2025-03-25 16:26:13,933 - step: 438500, training_loss: 7.06822e+00
+INFO - run_lib.py - 2025-03-25 16:28:49,086 - step: 438750, training_loss: 7.70188e+00
+INFO - run_lib.py - 2025-03-25 16:31:22,845 - step: 439000, training_loss: 7.13771e+00
+INFO - run_lib.py - 2025-03-25 16:33:58,595 - step: 439250, training_loss: 7.80596e+00
+INFO - run_lib.py - 2025-03-25 16:36:31,294 - step: 439500, training_loss: 7.85066e+00
+INFO - run_lib.py - 2025-03-25 16:39:01,855 - step: 439750, training_loss: 7.51769e+00
+INFO - run_lib.py - 2025-03-25 16:41:36,170 - step: 440000, training_loss: 7.19182e+00
+INFO - run_lib.py - 2025-03-25 16:44:08,883 - step: 440250, training_loss: 7.14226e+00
+INFO - run_lib.py - 2025-03-25 16:46:42,506 - step: 440500, training_loss: 7.57227e+00
+INFO - run_lib.py - 2025-03-25 16:49:17,133 - step: 440750, training_loss: 7.73780e+00
+INFO - run_lib.py - 2025-03-25 16:51:52,794 - step: 441000, training_loss: 8.84910e+00
+INFO - run_lib.py - 2025-03-25 16:54:24,528 - step: 441250, training_loss: 8.44059e+00
+INFO - run_lib.py - 2025-03-25 16:56:59,024 - step: 441500, training_loss: 7.73157e+00
+INFO - run_lib.py - 2025-03-25 16:59:35,898 - step: 441750, training_loss: 7.91644e+00
+INFO - run_lib.py - 2025-03-25 17:02:07,562 - step: 442000, training_loss: 7.50153e+00
+INFO - run_lib.py - 2025-03-25 17:04:41,199 - step: 442250, training_loss: 7.47297e+00
+INFO - run_lib.py - 2025-03-25 17:07:18,894 - step: 442500, training_loss: 7.72454e+00
+INFO - run_lib.py - 2025-03-25 17:09:50,160 - step: 442750, training_loss: 6.75368e+00
+INFO - run_lib.py - 2025-03-25 17:12:22,589 - step: 443000, training_loss: 7.56295e+00
+INFO - run_lib.py - 2025-03-25 17:14:57,738 - step: 443250, training_loss: 8.54276e+00
+INFO - run_lib.py - 2025-03-25 17:17:33,168 - step: 443500, training_loss: 7.22373e+00
+INFO - run_lib.py - 2025-03-25 17:20:07,338 - step: 443750, training_loss: 7.94822e+00
+INFO - run_lib.py - 2025-03-25 17:22:43,129 - step: 444000, training_loss: 7.72315e+00
+INFO - run_lib.py - 2025-03-25 17:25:15,814 - step: 444250, training_loss: 7.29252e+00
+INFO - run_lib.py - 2025-03-25 17:27:49,948 - step: 444500, training_loss: 7.94915e+00
+INFO - run_lib.py - 2025-03-25 17:30:24,732 - step: 444750, training_loss: 7.22160e+00
+INFO - run_lib.py - 2025-03-25 17:32:57,746 - step: 445000, training_loss: 7.95775e+00
+INFO - run_lib.py - 2025-03-25 17:35:31,847 - step: 445250, training_loss: 7.56873e+00
+INFO - run_lib.py - 2025-03-25 17:38:08,753 - step: 445500, training_loss: 7.52266e+00
+INFO - run_lib.py - 2025-03-25 17:40:41,245 - step: 445750, training_loss: 8.08637e+00
+INFO - run_lib.py - 2025-03-25 17:43:13,194 - step: 446000, training_loss: 7.19613e+00
+INFO - run_lib.py - 2025-03-25 17:45:52,464 - step: 446250, training_loss: 6.86215e+00
+INFO - run_lib.py - 2025-03-25 17:48:24,184 - step: 446500, training_loss: 6.61932e+00
+INFO - run_lib.py - 2025-03-25 17:50:59,892 - step: 446750, training_loss: 7.06730e+00
+INFO - run_lib.py - 2025-03-25 17:53:37,846 - step: 447000, training_loss: 7.49139e+00
+INFO - run_lib.py - 2025-03-25 17:56:12,207 - step: 447250, training_loss: 7.05934e+00
+INFO - run_lib.py - 2025-03-25 17:58:47,711 - step: 447500, training_loss: 7.18682e+00
+INFO - run_lib.py - 2025-03-25 18:01:21,106 - step: 447750, training_loss: 7.85055e+00
+INFO - run_lib.py - 2025-03-25 18:03:50,071 - step: 448000, training_loss: 8.22761e+00
+INFO - run_lib.py - 2025-03-25 18:06:18,680 - step: 448250, training_loss: 8.43805e+00
+INFO - run_lib.py - 2025-03-25 18:08:52,491 - step: 448500, training_loss: 7.64318e+00
+INFO - run_lib.py - 2025-03-25 18:11:22,210 - step: 448750, training_loss: 7.70640e+00
+INFO - run_lib.py - 2025-03-25 18:13:52,244 - step: 449000, training_loss: 7.26723e+00
+INFO - run_lib.py - 2025-03-25 18:16:27,225 - step: 449250, training_loss: 7.95686e+00
+INFO - run_lib.py - 2025-03-25 18:19:03,510 - step: 449500, training_loss: 7.77539e+00
+INFO - run_lib.py - 2025-03-25 18:21:36,710 - step: 449750, training_loss: 7.60782e+00
+INFO - run_lib.py - 2025-03-25 18:24:06,958 - step: 450000, training_loss: 7.53647e+00
+INFO - run_lib.py - 2025-03-25 18:27:22,633 - step: 450000, n_mol: 256, 3D atom stability: 0.9961, mol stability: 0.9648, validity: 0.9883, complete: 0.9844, unique & valid: 0.9883
+INFO - run_lib.py - 2025-03-25 18:27:23,043 - step: 450000, n_mol: 256, 2D atom stability: 0.9989, mol stability: 0.9883, validity: 0.9883, complete: 0.9883, unique & valid: 0.9883
+INFO - run_lib.py - 2025-03-25 18:27:23,049 - step: 450000, pos RMSE: 2.1805
+INFO - run_lib.py - 2025-03-25 18:29:58,950 - step: 450250, training_loss: 7.08075e+00
+INFO - run_lib.py - 2025-03-25 18:32:31,228 - step: 450500, training_loss: 7.62687e+00
+INFO - run_lib.py - 2025-03-25 18:35:05,482 - step: 450750, training_loss: 7.54414e+00
+INFO - run_lib.py - 2025-03-25 18:37:41,226 - step: 451000, training_loss: 6.54505e+00
+INFO - run_lib.py - 2025-03-25 18:40:18,703 - step: 451250, training_loss: 7.87861e+00
+INFO - run_lib.py - 2025-03-25 18:42:51,342 - step: 451500, training_loss: 7.62658e+00
+INFO - run_lib.py - 2025-03-25 18:45:25,165 - step: 451750, training_loss: 7.37753e+00
+INFO - run_lib.py - 2025-03-25 18:47:59,321 - step: 452000, training_loss: 7.05252e+00
+INFO - run_lib.py - 2025-03-25 18:50:32,075 - step: 452250, training_loss: 7.13960e+00
+INFO - run_lib.py - 2025-03-25 18:53:05,763 - step: 452500, training_loss: 6.25484e+00
+INFO - run_lib.py - 2025-03-25 18:55:39,362 - step: 452750, training_loss: 8.26937e+00
+INFO - run_lib.py - 2025-03-25 18:58:12,845 - step: 453000, training_loss: 7.85593e+00
+INFO - run_lib.py - 2025-03-25 19:00:49,014 - step: 453250, training_loss: 7.14036e+00
+INFO - run_lib.py - 2025-03-25 19:03:20,868 - step: 453500, training_loss: 8.11811e+00
+INFO - run_lib.py - 2025-03-25 19:05:53,002 - step: 453750, training_loss: 7.88335e+00
+INFO - run_lib.py - 2025-03-25 19:08:29,737 - step: 454000, training_loss: 7.04702e+00
+INFO - run_lib.py - 2025-03-25 19:11:03,839 - step: 454250, training_loss: 6.09397e+00
+INFO - run_lib.py - 2025-03-25 19:13:39,064 - step: 454500, training_loss: 8.06528e+00
+INFO - run_lib.py - 2025-03-25 19:16:14,391 - step: 454750, training_loss: 6.50725e+00
+INFO - run_lib.py - 2025-03-25 19:18:48,903 - step: 455000, training_loss: 7.09885e+00
+INFO - run_lib.py - 2025-03-25 19:21:24,916 - step: 455250, training_loss: 8.03322e+00
+INFO - run_lib.py - 2025-03-25 19:23:58,256 - step: 455500, training_loss: 7.87618e+00
+INFO - run_lib.py - 2025-03-25 19:26:32,520 - step: 455750, training_loss: 8.41261e+00
+INFO - run_lib.py - 2025-03-25 19:29:04,906 - step: 456000, training_loss: 7.53253e+00
+INFO - run_lib.py - 2025-03-25 19:31:41,371 - step: 456250, training_loss: 7.47867e+00
+INFO - run_lib.py - 2025-03-25 19:34:13,717 - step: 456500, training_loss: 8.49007e+00
+INFO - run_lib.py - 2025-03-25 19:36:48,570 - step: 456750, training_loss: 7.86151e+00
+INFO - run_lib.py - 2025-03-25 19:39:22,603 - step: 457000, training_loss: 7.63076e+00
+INFO - run_lib.py - 2025-03-25 19:41:58,099 - step: 457250, training_loss: 7.96648e+00
+INFO - run_lib.py - 2025-03-25 19:44:31,630 - step: 457500, training_loss: 7.52501e+00
+INFO - run_lib.py - 2025-03-25 19:47:04,093 - step: 457750, training_loss: 7.66355e+00
+INFO - run_lib.py - 2025-03-25 19:49:37,879 - step: 458000, training_loss: 8.10231e+00
+INFO - run_lib.py - 2025-03-25 19:52:10,147 - step: 458250, training_loss: 7.79089e+00
+INFO - run_lib.py - 2025-03-25 19:54:43,123 - step: 458500, training_loss: 6.89171e+00
+INFO - run_lib.py - 2025-03-25 19:57:15,869 - step: 458750, training_loss: 7.02780e+00
+INFO - run_lib.py - 2025-03-25 19:59:51,509 - step: 459000, training_loss: 6.97698e+00
+INFO - run_lib.py - 2025-03-25 20:02:21,974 - step: 459250, training_loss: 6.72842e+00
+INFO - run_lib.py - 2025-03-25 20:04:57,333 - step: 459500, training_loss: 7.98985e+00
+INFO - run_lib.py - 2025-03-25 20:07:30,665 - step: 459750, training_loss: 6.60441e+00
+INFO - run_lib.py - 2025-03-25 20:10:01,953 - step: 460000, training_loss: 7.31110e+00
+INFO - run_lib.py - 2025-03-25 20:12:41,644 - step: 460250, training_loss: 6.93193e+00
+INFO - run_lib.py - 2025-03-25 20:15:12,883 - step: 460500, training_loss: 7.33541e+00
+INFO - run_lib.py - 2025-03-25 20:17:44,025 - step: 460750, training_loss: 7.57157e+00
+INFO - run_lib.py - 2025-03-25 20:20:21,501 - step: 461000, training_loss: 7.82005e+00
+INFO - run_lib.py - 2025-03-25 20:22:54,529 - step: 461250, training_loss: 7.30307e+00
+INFO - run_lib.py - 2025-03-25 20:25:27,417 - step: 461500, training_loss: 7.94223e+00
+INFO - run_lib.py - 2025-03-25 20:28:02,140 - step: 461750, training_loss: 6.75463e+00
+INFO - run_lib.py - 2025-03-25 20:30:34,005 - step: 462000, training_loss: 7.57000e+00
+INFO - run_lib.py - 2025-03-25 20:33:08,331 - step: 462250, training_loss: 6.69989e+00
+INFO - run_lib.py - 2025-03-25 20:35:44,158 - step: 462500, training_loss: 7.42483e+00
+INFO - run_lib.py - 2025-03-25 20:38:17,946 - step: 462750, training_loss: 6.88992e+00
+INFO - run_lib.py - 2025-03-25 20:40:50,872 - step: 463000, training_loss: 8.28346e+00
+INFO - run_lib.py - 2025-03-25 20:43:26,103 - step: 463250, training_loss: 7.97908e+00
+INFO - run_lib.py - 2025-03-25 20:45:59,825 - step: 463500, training_loss: 7.19224e+00
+INFO - run_lib.py - 2025-03-25 20:48:29,087 - step: 463750, training_loss: 8.55774e+00
+INFO - run_lib.py - 2025-03-25 20:51:08,778 - step: 464000, training_loss: 8.29431e+00
+INFO - run_lib.py - 2025-03-25 20:53:44,678 - step: 464250, training_loss: 7.86480e+00
+INFO - run_lib.py - 2025-03-25 20:56:14,688 - step: 464500, training_loss: 7.11822e+00
+INFO - run_lib.py - 2025-03-25 20:58:46,223 - step: 464750, training_loss: 7.83719e+00
+INFO - run_lib.py - 2025-03-25 21:01:21,938 - step: 465000, training_loss: 7.20477e+00
+INFO - run_lib.py - 2025-03-25 21:03:59,509 - step: 465250, training_loss: 7.56688e+00
+INFO - run_lib.py - 2025-03-25 21:06:31,142 - step: 465500, training_loss: 7.20621e+00
+INFO - run_lib.py - 2025-03-25 21:09:07,780 - step: 465750, training_loss: 7.74287e+00
+INFO - run_lib.py - 2025-05-08 10:17:33,473 - model size: 131.7MB
+WARNING - utils.py - 2025-05-08 10:17:33,482 - No checkpoint found at exp/diffspectra_qm9allspectra_server1_2gpu/checkpoints-meta/checkpoint.pth. Returned the same state as input
+INFO - run_lib.py - 2025-05-08 10:17:33,483 - data:
+  atom_types: 5
+  bond_types: 4
+  centered: true
+  collate: collate_spectra_allspectra
+  compress_edge: true
+  fc_scale:
+  - -1.0
+  - 1.0
+  include_aromatic: false
+  info_name: qm9_second_half
+  max_node: 29
+  name: QM9
+  num_workers: 16
+  processed_file: ''
+  root: /home/wangliang/datasets/MolGeneration/DiffSpectra/QM9
+  spectra_version: allspectra
+  transform: EdgeComSpectra
+  use_normalize: true
+device: !!python/object/apply:torch.device
+- cuda
+- 0
+eval:
+  batch_size: 2500
+  begin_ckpt: 40
+  ckpts: ''
+  enable_sampling: true
+  end_ckpt: 40
+  num_samples: 10000
+  save_graph: false
+  save_mols: 'true'
+  sub_geometry: false
+exp_type: vpsde_edge_diffspectra
+model:
+  CoM: true
+  cond_ch: 1
+  cond_time: true
+  dist_gbf: true
+  dropout: 0.1
+  edge_ch: 2
+  edge_quan_th: 0.0
+  ema_decay: 0.999
+  gbf_name: CondGaussianLayer
+  include_fc_charge: true
+  loss_weights: 1., 0.25, 0.1
+  mlp_ratio: 2
+  n_extra_heads: 2
+  n_heads: 16
+  n_layers: 8
+  name: DiffSpectra_DMT
+  nf: 256
+  noise_align: true
+  normalize_factors: 1, 4, 4, 1
+  patch_len:
+  - 20
+  - 50
+  - 50
+  pred_data: true
+  pretrained_specformer_path: ''
+  self_cond: true
+  self_cond_type: ori
+  softmax_inf: true
+  spatial_cut_off: 2.0
+  stride:
+  - 10
+  - 25
+  - 25
+  trans_name: TransMixLayer
+only_2D: false
+optim:
+  beta1: 0.9
+  disable_grad_log: true
+  eps: 1.0e-08
+  grad_clip: 10.0
+  lr: 0.0002
+  optimizer: AdamW
+  warmup: 100000
+  weight_decay: 0
+pred_edge: true
+sampling:
+  method: ancestral
+  steps: 1000
+  vis_col: 4
+  vis_row: 4
+sde:
+  continuous_beta_0: 0.1
+  continuous_beta_1: 20.0
+  schedule: cosine
+seed: 42
+training:
+  batch_size: 128
+  dataloader_drop_last: false
+  distributed: true
+  eval_batch_size: 128
+  eval_samples: 128
+  local_rank: 0
+  log_freq: 500
+  n_iters: 2000000
+  num_gpus: 1
+  reduce_mean: false
+  snapshot_freq: 50000
+  snapshot_freq_for_preemption: 10000
+  snapshot_sampling: true
+  world_size: 1
+
+INFO - run_lib.py - 2025-05-08 10:17:33,503 - loading test mols
+INFO - run_lib.py - 2025-05-08 10:17:50,284 - step: 0, training_loss: 9.46955e+01
+INFO - run_lib.py - 2025-05-08 10:19:44,407 - step: 500, training_loss: 6.11531e+01
+INFO - run_lib.py - 2025-05-08 10:21:36,554 - step: 1000, training_loss: 1.89606e+01
+INFO - run_lib.py - 2025-05-08 10:23:30,681 - step: 1500, training_loss: 1.04286e+01

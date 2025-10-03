@@ -1,0 +1,6 @@
+
+*.xml
+*.iml
+
+**/__pycache__/
+logs/
