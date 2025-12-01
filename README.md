@@ -1,5 +1,7 @@
 # DiffSpectra: Molecular Structure Elucidation from Spectra using Diffusion Models
 
+[![arXiv](https://img.shields.io/badge/arXiv-2507.06853-3da8a2?style=flat)](https://arxiv.org/abs/2507.06853)
+
 This is the code for the Paper: [DiffSpectra: Molecular Structure Elucidation from Spectra using Diffusion Models](https://arxiv.org/abs/2507.06853).
 
 <img src="assets/1_overview.png" alt="model" style="zoom: 15%;" />
@@ -104,7 +106,7 @@ You can train the model with different spectra settings as follows:
 
 ### Evaluation
 
-To evaluate the trained model, run:
+To evaluate the trained model, first generate molecules according to the spectra:
 
 - **All spectra with pretrained SpecFormer**
 
@@ -175,6 +177,17 @@ To evaluate the trained model, run:
     --config.eval.save_mols true \
     --config.data.spectra_version uv
   ```
+
+After generating molecules, compute metrics based on the generated molecules. For accuracy and similarity evaluation, these metrics will be computed automatically along with the generation process. Alternatively, you can also compute them manually by running:
+```bash
+python eval_sampled_mols/base_metrics.py
+```
+For 3D structural evaluation, you can run:
+```bash
+python eval_sampled_mols/rmsd.py
+```
+
+The generated molecules and evaluation metrics will be found at `exp/{exp_name}/eval/`.
 
 ---
 

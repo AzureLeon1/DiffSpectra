@@ -126,9 +126,9 @@ def compute_metrics_for_saved_mols(base_path, output_path):
         logging.info(f"2D molecule pair statistics - Input: {len(mols['2d'])}, Valid: {len(true_mols_2d)}, Skipped: {skipped_2d}")
         
         if len(true_mols_2d) > 0:
-            csv_path_2d = os.path.join(output_path, 'similarity_metrics_2d.csv')
+            csv_path_2d = os.path.join(output_path, 'similarity_metrics.csv')
             evaluate_jsonl_predictions((true_mols_2d, pred_mols_2d), csv_path_2d)
-            logging.info(f"2D similarity metrics saved to: {csv_path_2d}")
+            logging.info(f"Base similarity metrics saved to: {csv_path_2d}")
             
             # Read and display results
             try:
@@ -150,26 +150,6 @@ def compute_metrics_for_saved_mols(base_path, output_path):
             except Exception as e:
                 logging.error(f"Error reading 2D results CSV: {e}")
         
-        # Compute similarity metrics for 3D molecules vs ground truth
-        logging.info("Computing metrics for 3D molecules vs ground truth...")
-        true_mols_3d, pred_mols_3d, skipped_3d = validate_and_prepare_mols(mols['3d'], mols['ground_truth'])
-        logging.info(f"3D molecule pair statistics - Input: {len(mols['3d'])}, Valid: {len(true_mols_3d)}, Skipped: {skipped_3d}")
-        
-        if len(true_mols_3d) > 0:
-            csv_path_3d = os.path.join(output_path, 'similarity_metrics_3d.csv')
-            evaluate_jsonl_predictions((true_mols_3d, pred_mols_3d), csv_path_3d)
-            logging.info(f"3D similarity metrics saved to: {csv_path_3d}")
-            
-            # Read and display results
-            try:
-                results_df = pd.read_csv(csv_path_3d)
-                for metric in metrics_to_show:
-                    if metric in results_df["Evaluation Metric"].values:
-                        value = results_df.loc[results_df["Evaluation Metric"] == metric, "Value"].iloc[0]
-                        logging.info(f"3D {metric}: {value}")
-            except Exception as e:
-                logging.error(f"Error reading 3D results CSV: {e}")
-        
         logging.info(f"All results have been saved to {output_path}")
         
     except Exception as e:
@@ -179,7 +159,7 @@ def compute_metrics_for_saved_mols(base_path, output_path):
 def main():
     parser = argparse.ArgumentParser(description='Compute metrics for saved molecules')
     parser.add_argument('--base_path', type=str, 
-                        default='/path/to/DiffSpectra/exp/allspectra_pretrained_specformer/eval',
+                        default='./exp/allspectra_pretrained_specformer/eval',
                         help='Path to the directory containing molecule pkl files')
     args = parser.parse_args()
 

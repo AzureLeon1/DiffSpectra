@@ -10,14 +10,15 @@ def get_config():
     config.exp_type = 'vpsde_edge_cond'
     config.pred_edge = True
     config.only_2D = False
+    config.cond_property = 'alpha'  # 'alpha', 'gap', 'homo', 'lumo', 'mu', 'Cv'
 
     # data
     config.data = data = ml_collections.ConfigDict()
     data.root = '/path/to/dataset/QM9S'
     data.name = 'QM9S'
     data.processed_file = ''
-    data.transform = 'EdgeComSpectra'
-    data.collate = 'collate_spectra'
+    data.transform = 'EdgeComCond'
+    data.collate = 'collate_cond'
     data.info_name = 'qm9_second_half'
     data.num_workers = 16
     

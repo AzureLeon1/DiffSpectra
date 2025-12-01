@@ -56,22 +56,21 @@ def save_mol_info(processed_mols, sampled_test_pos, sampled_test_rdkit_mols, sav
         pickle.dump(sampled_test_rdkit_mols, f)
 
 
-def compute_similarity_metrics(pred_rdmols, true_rdmols, eval_dir, ckpt, version_name):
+def compute_similarity_metrics(pred_rdmols, true_rdmols, eval_dir, ckpt):
     """
-    Compute similarity metrics between predicted and true molecules, automatically skip None values
+    Compute similarity metrics between predicted and true molecules
     
     Args:
         pred_rdmols: List of predicted RDKit molecules
         true_rdmols: List of true RDKit molecules
         eval_dir: Evaluation results save directory
         ckpt: Checkpoint number
-        version_name: Version name ('3D' or '2D')
     
     Returns:
         bool: Whether metrics were successfully computed
     """
     try:
-        logging.info(f"Computing {version_name} version similarity metrics")
+        logging.info(f"Computing similarity metrics")
         
         # Prepare data - each true molecule corresponds to a list of generated molecules, skip None values
         true_mols = []
@@ -124,13 +123,13 @@ def compute_similarity_metrics(pred_rdmols, true_rdmols, eval_dir, ckpt, version
                 skipped_count += 1
                 continue
         
-        logging.info(f"{version_name} molecule pair statistics - Input: {min_len}, Valid: {len(true_mols)}, Skipped: {skipped_count}")
+        logging.info(f"Molecule pair statistics - Input: {min_len}, Valid: {len(true_mols)}, Skipped: {skipped_count}")
         
         if len(true_mols) > 0:
-            csv_path = os.path.join(eval_dir, f"similarity_metrics_{version_name.lower()}_ckpt_{ckpt}.csv")
+            csv_path = os.path.join(eval_dir, f"similarity_metrics_ckpt_{ckpt}.csv")
             # Pass true_mols and pred_mols as tuple
             compute_metrics.evaluate_jsonl_predictions((true_mols, pred_mols), csv_path)
-            logging.info(f"{version_name} similarity metrics saved to: {csv_path}")
+            logging.info(f"Similarity metrics saved to: {csv_path}")
             
             # Read CSV file to get detailed metric results
             try:
@@ -152,19 +151,19 @@ def compute_similarity_metrics(pred_rdmols, true_rdmols, eval_dir, ckpt, version
                 for metric in metrics_to_show:
                     if metric in results_df["Evaluation Metric"].values:
                         value = results_df.loc[results_df["Evaluation Metric"] == metric, "Value"].iloc[0]
-                        logging.info(f"{version_name} {metric}: {value}")
+                        logging.info(f"{metric}: {value}")
                 
             except Exception as e:
                 logging.error(f"Error reading results CSV: {e}")
             
-            logging.info(f"Successfully computed {version_name} metrics for {len(true_mols)} molecule pairs")
+            logging.info(f"Successfully computed metrics for {len(true_mols)} molecule pairs")
             return True
         else:
-            logging.warning(f"No valid {version_name} molecule pairs found for similarity computation")
+            logging.warning(f"No valid molecule pairs found for similarity computation")
             return False
             
     except Exception as e:
-        logging.error(f"Error computing {version_name} similarity metrics: {e}")
+        logging.error(f"Error computing similarity metrics: {e}")
         logging.error(f"Traceback: {traceback.format_exc()}")
         return False
 
@@ -414,11 +413,8 @@ def diffspectra_evaluate(config, config_original_qm9, workdir, eval_folder="eval
             # Compute similarity metrics from compute_metrics
             logging.info("Computing similarity metrics from compute_metrics.py")
             
-            # 3D version metrics (sample_rdmols vs groundtruth_rdmols)
-            compute_similarity_metrics(sample_rdmols, groundtruth_rdmols, eval_dir, ckpt, "3D")
-            
             # 2D version metrics (complete_rdmols vs groundtruth_rdmols)
-            compute_similarity_metrics(complete_rdmols, groundtruth_rdmols, eval_dir, ckpt, "2D")
+            compute_similarity_metrics(complete_rdmols, groundtruth_rdmols, eval_dir, ckpt)
             
             # Save molecular data for subsequent analysis
             save_for_analysis = config.eval.save_mols.lower()

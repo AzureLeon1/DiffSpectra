@@ -5,6 +5,7 @@ from torch_geometric.data import Data
 from torch.utils.data import DataLoader
 import torch
 from scipy.spatial.transform import Rotation
+import numpy as np
 
 
 prop2idx = {'mu': 0, 'alpha': 1, 'homo': 2, 'lumo': 3, 'gap': 4, 'Cv': 11}
@@ -21,22 +22,27 @@ def get_dataset(config, transform=True):
         name_transform = getattr(config.data, 'transform', 'EdgeComSpectra')   # 'EdgeComSpectra'
         if name_transform == 'EdgeComSpectra':
             transform = EdgeComSpectraTransform(dataset_info['atom_encoder'].values(), config.data.include_aromatic, use_normalize=config.data.use_normalize)
+        elif name_transform == 'EdgeComCond':
+            prop2idx = dataset_info['prop2idx']
+            transform = EdgeComCondTransform(dataset_info['atom_encoder'].values(), config.data.include_aromatic,
+                                                prop2idx[config.cond_property])
         else:
             raise ValueError('Invalid data transform name')
     else:
         transform = None
 
     # Build up dataset
-    if config.data.name == 'QM9S':  # QM9
+    if config.data.name == 'QM9S':
         dataset = QM9SDataset(config.data.root, transform=transform, spectra_version=config.data.spectra_version)
     else:
         raise ValueError('Undefined dataset name.')
 
     # Split dataset
-    if 'diffspectra' in config.exp_type:
+    if 'cond' in config.exp_type or 'diffspectra' in config.exp_type:
         split_idx = dataset.get_cond_idx_split()
+        train_idx = np.concatenate([split_idx['first_train'], split_idx['second_train']])
         first_train_dataset = dataset.index_select(split_idx['first_train'])
-        second_train_dataset = dataset.index_select(split_idx['second_train'])
+        second_train_dataset = dataset.index_select(train_idx)
         val_dataset = dataset.index_select(split_idx['valid'])
         test_dataset = dataset.index_select(split_idx['test'])
         return first_train_dataset, second_train_dataset, val_dataset, test_dataset, dataset_info
@@ -60,10 +66,7 @@ def inf_iterator(iterable):
 
 # setup dataloader
 def get_dataloader(train_ds, val_ds, test_ds, config):
-    if config.model.name == 'DiffSpectra_DMT':
-        aug_rotation = True
-        aug_translation = True
-    elif config.model.name == 'DiffSpectra_DGT' or config.model.name == 'CDGS':
+    if config.model.name == 'DMT':
         aug_rotation = False
         aug_translation = False
     else:
@@ -146,6 +149,70 @@ class EdgeComSpectraTransform(object):
                 data.uv = torch.log10(data.uv + 1)
             if hasattr(data, 'raman'):
                 data.raman = torch.log10(data.raman + 1)
+        return data
+
+
+class EdgeComCondTransform(object):
+    """
+    Transform data with node and edge features. Compress single/double/triple bond types to one channel.
+    Conditional property.
+
+    Edge:
+        0-th ch: exist edge or not
+        1-th ch: 0, 1, 2, 3; other bonds, single, double, triple bonds
+        2-th ch: aromatic bond or not
+    """
+
+    def __init__(self, atom_type_list, include_aromatic, property_idx):
+        super().__init__()
+        self.atom_type_list = torch.tensor(list(atom_type_list))
+        self.include_aromatic = include_aromatic
+        self.property_idx = property_idx
+
+    def __call__(self, data: Data):
+        # add atom type one_hot
+        atom_type = data.atom_type
+        edge_type = data.edge_type
+
+        atom_one_hot = atom_type.unsqueeze(-1) == self.atom_type_list.unsqueeze(0)
+        data.atom_one_hot = atom_one_hot.float()
+
+        # dense bond type [N_node, N_node, ch], single(1000), double(0100), triple(0010), aromatic(0001), none(0000)
+        edge_bond = edge_type.clone()
+        edge_bond[edge_bond == 4] = 0
+        edge_bond = edge_bond / 3.
+        edge_feat = [edge_bond]
+        if self.include_aromatic:
+            edge_aromatic = (edge_type == 4).float()
+            edge_feat.append(edge_aromatic)
+        edge_feat = torch.stack(edge_feat, dim=-1)
+
+        edge_index = data.edge_index
+        dense_shape = (data.num_nodes, data.num_nodes, edge_feat.size(-1))
+        dense_edge_one_hot = torch.zeros((data.num_nodes**2, edge_feat.size(-1)), device=atom_type.device)
+
+        idx1, idx2 = edge_index[0], edge_index[1]
+        idx = idx1 * data.num_nodes + idx2
+        idx = idx.unsqueeze(-1).expand(edge_feat.size())
+        dense_edge_one_hot.scatter_add_(0, idx, edge_feat)
+        dense_edge_one_hot = dense_edge_one_hot.reshape(dense_shape)
+
+        edge_exist = (dense_edge_one_hot.sum(dim=-1, keepdim=True) != 0).float()
+        dense_edge_one_hot = torch.cat([edge_exist, dense_edge_one_hot], dim=-1)
+        data.edge_one_hot = dense_edge_one_hot
+
+        properties = data.y
+        if self.property_idx == 11:
+            Cv_atomref = [2.981, 2.981, 2.981, 2.981, 2.981]
+            atom_types = data.atom_type
+            atom_counts = torch.bincount(atom_types, minlength=len(Cv_atomref))
+
+            data.property = properties[0, self.property_idx:self.property_idx+1] - \
+                            torch.sum((atom_counts * torch.tensor(Cv_atomref)))
+        else:
+            property = properties[0, self.property_idx:self.property_idx+1]  # 从 data.y 中取出对应的那一列作为 data.property
+            data.property = property
+
         return data
 
 
