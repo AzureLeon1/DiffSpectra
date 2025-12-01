@@ -283,7 +283,7 @@ if __name__ == "__main__":
     ]
     for exp_name in exp_name_list:
         print(f"Processing {exp_name}...")
-        DEFAULT_BASE = f"/path/to/DiffSpectra/exp/{exp_name}/eval/molecules_ckpt_40"
+        DEFAULT_BASE = f"./exp/{exp_name}/eval/molecules_ckpt_40"
         GT_NAME = "groundtruth_rdmols.pkl"
         SM_NAME = "sample_rdmols_3d.pkl"
 
